@@ -1,0 +1,1178 @@
+---
+// src/pages/index.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Home"
+  description="Natural, Unprocessed. Good Earth Restaurant in Edina, MN. Seasonal, fresh, responsibly sourced food served daily."
+>
+  <!-- Hero -->
+  <section
+    class="hero"
+    aria-label="Welcome to Good Earth Restaurant"
+  >
+    <div
+      class="hero-bg"
+      aria-hidden="true"
+    >
+      <img
+        src="/images/pexels-elina-sazonova-1850600.jpg"
+        alt=""
+        width="1600"
+        height="1067"
+        fetchpriority="high"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <span class="hero-season-tag">
+        <svg
+          width="8"
+          height="8"
+          viewBox="0 0 8 8"
+          fill="currentColor"
+          aria-hidden="true"
+          ><circle
+            cx="4"
+            cy="4"
+            r="4"
+          ></circle></svg
+        >
+        Spring 2025
+      </span>
+      <h1 class="hero-headline">If only you ate this well every day.</h1>
+      <p class="hero-sub">Natural &nbsp;·&nbsp; Unprocessed</p>
+      <div class="hero-actions">
+        <a
+          href="https://www.opentable.com/restref/client/?rid=27313&restref=27313"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--light"
+          >Reserve a Table — Edina</a
+        >
+        <a
+          href="https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--outline-light"
+          >Order Delivery</a
+        >
+      </div>
+      <p class="hero-phone">
+        Takeout &amp; Curbside:&nbsp;<a href="tel:9529251001">(952) 925-1001</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Values bar -->
+  <div
+    class="values-bar"
+    aria-label="Our commitments"
+  >
+    <div class="container values-inner">
+      <div class="value-item">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"
+          ></path>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+        </svg>
+        <span>Hormone-Free</span>
+      </div>
+      <span
+        class="values-divider"
+        aria-hidden="true"
+        >·</span
+      >
+      <div class="value-item">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path
+            d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+          ></path>
+          <path
+            d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+          ></path>
+          <path
+            d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+          ></path>
+        </svg>
+        <span>Sustainable Seafood</span>
+      </div>
+      <span
+        class="values-divider"
+        aria-hidden="true"
+        >·</span
+      >
+      <div class="value-item">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path>
+          <path
+            d="M9.5 9.4c1.1.8 1.8 2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"
+          ></path>
+          <path d="M14.1 6a7 7 0 0 1 1.7 10.7"></path>
+          <path
+            d="M14 12.4c.8-1.1 2-1.8 3.7-2.3.4 2 .4 3.5-.3 4.8-.6 1.2-1.9 2.3-4.2 3-.5-2.8 0-4.4.8-5.5z"
+          ></path>
+        </svg>
+        <span>Locally Sourced</span>
+      </div>
+      <span
+        class="values-divider"
+        aria-hidden="true"
+        >·</span
+      >
+      <div class="value-item">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          ></circle>
+          <path d="M12 6v6l4 2"></path>
+        </svg>
+        <span>Since 1974</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seasonal Message -->
+  <section class="section season-section">
+    <div class="container season-inner">
+      <div class="season-text">
+        <span class="section-label">The Season</span>
+        <h2 class="section-display-headline">Return to your natural habitat</h2>
+        <p>
+          In Spring, Good Earth is reborn. Every day brings greater bounty, with the first spring
+          greens making room for fruits, vegetables and legumes — each an ode to the season and a
+          muse for our menu.
+        </p>
+        <a
+          href="/menu/seasonal-specials"
+          class="btn btn--primary"
+          >View Seasonal Specials</a
+        >
+      </div>
+      <div class="season-image">
+        <img
+          src="/images/pexels-annaelle-quionquion-2652658-15279908.jpg"
+          alt="Wooden crates of fresh vegetables and greens at a farm market"
+          width="800"
+          height="1067"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Standards / Values -->
+  <section class="section--sm standards-section">
+    <div class="container">
+      <div class="standards-header">
+        <span class="section-label">Our Promise</span>
+        <h2 class="section-display-headline">Standards we<br />never compromise</h2>
+      </div>
+      <div class="standards-grid">
+        <div class="standard-card">
+          <div class="standard-card-img">
+            <img
+              src="/images/pexels-sam-lion-5709296.jpg"
+              alt="A wicker basket filled with fresh leafy greens and colorful vegetables"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="standard-card-body">
+            <div
+              class="standard-icon"
+              aria-hidden="true"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"
+                ></path>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+              </svg>
+            </div>
+            <h3>From the Farm</h3>
+            <p>
+              Our meat and poultry is antibiotic, hormone and nitrate-free, humanely raised, fed a
+              vegetarian diet, and organic where indicated.
+            </p>
+          </div>
+        </div>
+
+        <div class="standard-card">
+          <div class="standard-card-img">
+            <img
+              src="/images/pexels-shootsaga-31610378.jpg"
+              alt="Fresh strawberries and seasonal fruit served in ceramic bowls"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="standard-card-body">
+            <div
+              class="standard-icon"
+              aria-hidden="true"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+                ></path>
+                <path
+                  d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+                ></path>
+                <path
+                  d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"
+                ></path>
+              </svg>
+            </div>
+            <h3>From the Sea</h3>
+            <p>
+              We only serve seafood from sustainable sources, harvested by methods that do not harm
+              the oceans' ecosystem.
+            </p>
+          </div>
+        </div>
+
+        <div class="standard-card">
+          <div class="standard-card-img">
+            <img
+              src="/images/pexels-gustavo-fring-5622165.jpg"
+              alt="Fresh vegetables including broccoli, carrots, and herbs arranged on a wooden tray"
+              width="600"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="standard-card-body">
+            <div
+              class="standard-icon"
+              aria-hidden="true"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path>
+                <path
+                  d="M9.5 9.4c1.1.8 1.8 2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"
+                ></path>
+                <path d="M14.1 6a7 7 0 0 1 1.7 10.7"></path>
+                <path
+                  d="M14 12.4c.8-1.1 2-1.8 3.7-2.3.4 2 .4 3.5-.3 4.8-.6 1.2-1.9 2.3-4.2 3-.5-2.8 0-4.4.8-5.5z"
+                ></path>
+              </svg>
+            </div>
+            <h3>From the Garden</h3>
+            <p>
+              We serve seasonal, fresh, unprocessed produce — organic where indicated and locally
+              sourced when possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menus CTA -->
+  <section class="section menus-cta-section">
+    <div class="container">
+      <div class="menus-cta-header">
+        <span class="section-label">Our Menus</span>
+        <h2 class="section-display-headline">Something for<br />every appetite</h2>
+      </div>
+
+      <a
+        href="/menu/seasonal-specials"
+        class="featured-menu-card"
+      >
+        <div
+          class="featured-menu-img"
+          aria-hidden="true"
+        >
+          <img
+            src="/images/pexels-valeriya-16204678.jpg"
+            alt=""
+            width="1200"
+            height="500"
+            loading="lazy"
+          />
+          <div class="featured-menu-overlay"></div>
+        </div>
+        <div class="featured-menu-body">
+          <span class="featured-menu-tag">
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 8 8"
+              fill="currentColor"
+              aria-hidden="true"
+              ><circle
+                cx="4"
+                cy="4"
+                r="4"
+              ></circle></svg
+            >
+            Now Available
+          </span>
+          <h3 class="featured-menu-headline">Seasonal<br />Specials</h3>
+          <p>Inspired by the harvest. Made with the best nature has to offer.</p>
+          <span class="featured-menu-cta">View Menu →</span>
+        </div>
+      </a>
+
+      <div class="menus-grid">
+        <a
+          href="/menu/pdf/Good_Earth_Breakfast_Menu.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="menu-card"
+        >
+          <div
+            class="menu-card-icon"
+            aria-hidden="true"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              ></circle>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+              ></path>
+            </svg>
+          </div>
+          <h3>Breakfast</h3>
+          <span class="menu-card-cta">View PDF →</span>
+        </a>
+        <a
+          href="/menu/pdf/Good_Earth_Lunch_Dinner_Menu.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="menu-card"
+        >
+          <div
+            class="menu-card-icon"
+            aria-hidden="true"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path>
+              <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"></path>
+            </svg>
+          </div>
+          <h3>Lunch &amp; Dinner</h3>
+          <span class="menu-card-cta">View PDF →</span>
+        </a>
+        <a
+          href="/menu/pdf/Good_Earth_Kids_Menu.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="menu-card"
+        >
+          <div
+            class="menu-card-icon"
+            aria-hidden="true"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
+            </svg>
+          </div>
+          <h3>Kids Menu</h3>
+          <span class="menu-card-cta">View PDF →</span>
+        </a>
+        <a
+          href="/menu/pdf/Good-Earth-Event-Platters.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="menu-card"
+        >
+          <div
+            class="menu-card-icon"
+            aria-hidden="true"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="20 12 20 22 4 22 4 12"></polyline><rect
+                x="2"
+                y="7"
+                width="20"
+                height="5"
+              ></rect>
+              <line
+                x1="12"
+                y1="22"
+                x2="12"
+                y2="7"
+              ></line>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+          </div>
+          <h3>Event Platters</h3>
+          <span class="menu-card-cta">View PDF →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="location-section">
+    <div class="container location-inner">
+      <div class="location-info">
+        <span class="section-label location-label">Find Us</span>
+        <h2 class="location-display-headline">Edina</h2>
+        <p class="location-sub">In the Galleria</p>
+        <address>
+          3460 Galleria<br />
+          Edina, MN 55435<br />
+          <a href="tel:9529251001">(952) 925-1001</a>
+        </address>
+        <div class="location-hours">
+          <strong>Hours</strong>
+          <p>Mon – Sat: 8am – 8pm<br />Sun: 8am – 7pm</p>
+        </div>
+        <div class="location-actions">
+          <a
+            href="https://www.opentable.com/restref/client/?rid=27313&restref=27313"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--light"
+            >Make a Reservation</a
+          >
+          <a
+            href="https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--outline-light"
+            >Order on Grubhub</a
+          >
+        </div>
+      </div>
+      <div class="location-image">
+        <img
+          src="/images/pexels-antonette-reyes-1123173-2526987.jpg"
+          alt="A beautifully plated dish with fresh vegetables and a golden juice"
+          width="800"
+          height="900"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ======================================================
+   Shared display headline style (Bebas Neue)
+   ====================================================== */
+  .section-display-headline {
+    font-family: var(--font-headline);
+    font-size: var(--text-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.92;
+    color: var(--color-green-dark);
+    margin-bottom: var(--space-6);
+  }
+
+  /* ======================================================
+   Hero
+   ====================================================== */
+  .hero {
+    position: relative;
+    min-height: 92svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--color-white);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(46, 90, 39, 0.93) 0%,
+      rgba(46, 90, 39, 0.88) 38%,
+      rgba(46, 90, 39, 0.45) 65%,
+      rgba(46, 90, 39, 0.1) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+    max-width: 1000px;
+  }
+
+  .hero-season-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+    background: var(--color-gold);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-5);
+  }
+
+  .hero-headline {
+    font-family: var(--font-headline);
+    font-size: var(--text-hero);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.88;
+    color: var(--color-white);
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-sub {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--space-8);
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+  .btn--outline-light {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    color: var(--color-white);
+    background: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    cursor: pointer;
+    min-height: 44px;
+    transition: all var(--transition-normal);
+  }
+  .btn--outline-light:hover {
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.12);
+  }
+  .hero-phone {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.45);
+    margin: 0;
+  }
+  .hero-phone a {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color var(--transition-fast);
+  }
+  .hero-phone a:hover {
+    color: var(--color-white);
+  }
+
+  /* ======================================================
+   Values bar
+   ====================================================== */
+  .values-bar {
+    background: var(--color-green-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .values-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+  .value-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .value-item svg {
+    color: var(--color-gold);
+    flex-shrink: 0;
+  }
+  .values-divider {
+    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--text-xl);
+    line-height: 1;
+  }
+
+  /* ======================================================
+   Season Section
+   ====================================================== */
+  .season-section {
+    background: var(--color-cream);
+  }
+  .season-inner {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+  .season-text .section-label {
+    margin-bottom: var(--space-3);
+  }
+  .season-text p {
+    margin-bottom: var(--space-6);
+    color: var(--color-gray-mid);
+    font-size: var(--text-md);
+  }
+  .season-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    aspect-ratio: 3 / 4;
+  }
+  .season-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+  .season-image:hover img {
+    transform: scale(1.03);
+  }
+
+  /* ======================================================
+   Standards
+   ====================================================== */
+  .standards-section {
+    background: var(--color-gray-pale);
+    padding: var(--space-16) 0;
+  }
+  .standards-header {
+    margin-bottom: var(--space-10);
+  }
+  .standards-header .section-label {
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+  .standards-header .section-display-headline {
+    max-width: 560px;
+  }
+  .standards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .standard-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: var(--border-thin);
+    transition:
+      box-shadow var(--transition-normal),
+      transform var(--transition-normal);
+  }
+  .standard-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+  .standard-card-img {
+    height: 220px;
+    overflow: hidden;
+  }
+  .standard-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+  .standard-card:hover .standard-card-img img {
+    transform: scale(1.05);
+  }
+  .standard-card-body {
+    padding: var(--space-6) var(--space-6) var(--space-7);
+  }
+  .standard-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-green-pale);
+    color: var(--color-green-dark);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+  }
+  .standard-card h3 {
+    font-family: var(--font-headline);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    color: var(--color-green-dark);
+    margin-bottom: var(--space-3);
+  }
+  .standard-card p {
+    color: var(--color-gray-mid);
+    font-size: var(--text-sm);
+    margin: 0;
+    line-height: var(--leading-loose);
+  }
+
+  /* ======================================================
+   Menus CTA
+   ====================================================== */
+  .menus-cta-section {
+    background: var(--color-cream);
+  }
+  .menus-cta-header {
+    margin-bottom: var(--space-8);
+  }
+  .menus-cta-header .section-label {
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+  .menus-cta-header .section-display-headline {
+    max-width: 520px;
+  }
+
+  .featured-menu-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    border: var(--border-thin);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-5);
+    transition:
+      box-shadow var(--transition-normal),
+      transform var(--transition-normal);
+  }
+  .featured-menu-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-3px);
+  }
+  .featured-menu-img {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+  }
+  .featured-menu-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+  .featured-menu-card:hover .featured-menu-img img {
+    transform: scale(1.04);
+  }
+  .featured-menu-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(46, 90, 39, 0.2) 0%, transparent 60%);
+  }
+  .featured-menu-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-10);
+    background: var(--color-green-dark);
+    color: var(--color-white);
+  }
+  .featured-menu-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+    background: var(--color-gold);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    width: fit-content;
+  }
+  .featured-menu-headline {
+    font-family: var(--font-headline);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.88;
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+  }
+  .featured-menu-body p {
+    font-size: var(--text-md);
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-loose);
+  }
+  .featured-menu-cta {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    transition: color var(--transition-fast);
+  }
+  .featured-menu-card:hover .featured-menu-cta {
+    color: var(--color-white);
+  }
+
+  .menus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+  .menu-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-3);
+    padding: var(--space-7) var(--space-4);
+    background: var(--color-white);
+    border: var(--border-thin);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    color: var(--color-gray-dark);
+    transition: all var(--transition-normal);
+  }
+  .menu-card:hover {
+    border-color: var(--color-green-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    color: var(--color-green-dark);
+  }
+  .menu-card:focus-visible {
+    outline: 2px solid var(--color-green-mid);
+    outline-offset: 2px;
+  }
+  .menu-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-green-pale);
+    color: var(--color-green-dark);
+    border-radius: var(--radius-md);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+  }
+  .menu-card:hover .menu-card-icon {
+    background: var(--color-green-dark);
+    color: var(--color-white);
+  }
+  .menu-card h3 {
+    font-family: var(--font-headline);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    margin: 0;
+  }
+  .menu-card-cta {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-green-mid);
+    margin-top: auto;
+  }
+
+  /* ======================================================
+   Location
+   ====================================================== */
+  .location-section {
+    background: var(--color-green-dark);
+    color: var(--color-white);
+    margin-top: var(--space-20);
+    margin-bottom: calc(-1 * var(--space-20));
+  }
+  .location-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    padding: var(--space-20) 0;
+  }
+  .location-label {
+    color: var(--color-gold);
+  }
+  .location-display-headline {
+    font-family: var(--font-headline);
+    font-size: clamp(5rem, 12vw, 10rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.85;
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+  .location-sub {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-6);
+  }
+  address {
+    font-style: normal;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: var(--leading-loose);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-5);
+  }
+  address a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  address a:hover {
+    color: var(--color-white);
+  }
+  .location-hours {
+    margin-bottom: var(--space-7);
+  }
+  .location-hours strong {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+  .location-hours p {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+  }
+  .location-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .location-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    aspect-ratio: 4 / 5;
+  }
+  .location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ======================================================
+   Section Label (shared)
+   ====================================================== */
+  .section-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: var(--space-3);
+  }
+
+  /* ======================================================
+   Responsive
+   ====================================================== */
+  @media (max-width: 1024px) {
+    .menus-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .season-inner {
+      grid-template-columns: 1fr;
+    }
+    .season-image {
+      aspect-ratio: 3 / 2;
+    }
+    .standards-grid {
+      grid-template-columns: 1fr;
+    }
+    .featured-menu-card {
+      grid-template-columns: 1fr;
+    }
+    .featured-menu-img {
+      min-height: 220px;
+    }
+    .location-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+    }
+    .location-image {
+      aspect-ratio: 16 / 9;
+    }
+  }
+  @media (max-width: 480px) {
+    .menus-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-actions {
+      flex-direction: column;
+    }
+    .values-inner {
+      gap: var(--space-3);
+    }
+    .values-divider {
+      display: none;
+    }
+  }
+</style>

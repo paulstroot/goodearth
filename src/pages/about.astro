@@ -1,0 +1,188 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Everything we believe comes down to one thing: The more direct our connection to the planet, the better off we are.">
+
+  <div class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="/images/pexels-wolfart-32383596.jpg" alt="" width="1600" height="900" fetchpriority="high" />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="container page-hero-content">
+      <span class="page-hero-label">Our Story</span>
+      <h1 class="page-hero-headline">About<br />Good Earth</h1>
+      <p>Everything we believe comes down to one thing.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container about-grid">
+
+      <article class="about-content prose">
+        <h2 class="about-statement">The more direct our connection to the planet, the better off we are.</h2>
+
+        <p>That's why we cook in harmony with the seasons. And why we're fanatical about freshness and passionate about purity. It's why we're partial to local growers and organic suppliers; and anti-factory farming, hormones and antibiotics.</p>
+
+        <p>Responsibly grown ingredients, carefully handled and lovingly prepared, are better for our health. They're better for the environment. And – more than anything else – they just taste better. Naturally.</p>
+
+        <p>Maybe that's why Citysearch.com counseled health-minded diners to come to the Good Earth for food that's so good, so natural, so close to the earth, that it doesn't need much augmentation.</p>
+
+        <p>Good Earth receives plenty of adulation, however. From the critics who praise the quality of our ingredients to the event planners who favor our delicious party platters, legions of loyal guests make Good Earth their first choice for hearty, healthy everyday eating.</p>
+
+        <div class="about-award">
+          <div class="award-badge" aria-label="Diner's Choice Award recipient">
+            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" stroke="var(--color-earth)" stroke-width="2"/>
+              <path d="M24 8l2.9 8.9H36l-7.6 5.5 2.9 8.9L24 26.8l-7.3 4.5 2.9-8.9L12 16.9h9.1z" fill="var(--color-earth-light)" stroke="var(--color-earth)" stroke-width="1"/>
+            </svg>
+            <div>
+              <strong>Diner's Choice Award</strong>
+              <span>OpenTable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-inline-img">
+          <img src="/images/pexels-tamira-kanemagi-2159935915-36567404.jpg" alt="A vibrant outdoor farm market with wooden crates and baskets of fresh seasonal produce" width="860" height="580" loading="lazy" />
+        </div>
+      </article>
+
+      <aside class="about-sidebar">
+        <div class="sidebar-card">
+          <h3>Our Standards</h3>
+
+          <div class="standard-item">
+            <div class="standard-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <div>
+              <h4>From the Farm</h4>
+              <p>Good Earth meat and poultry is antibiotic, hormone and nitrate-free, humanely raised, fed a vegetarian diet, and organic where indicated.</p>
+            </div>
+          </div>
+
+          <div class="standard-item">
+            <div class="standard-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+              </svg>
+            </div>
+            <div>
+              <h4>From the Sea</h4>
+              <p>Good Earth only serves seafood from sustainable sources, harvested by methods that do not harm the oceans' ecosystem.</p>
+            </div>
+          </div>
+
+          <div class="standard-item">
+            <div class="standard-icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/>
+                <path d="M9.5 9.4c1.1.8 1.8 2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
+                <path d="M14.1 6a7 7 0 0 1 1.7 10.7"/>
+                <path d="M14 12.4c.8-1.1 2-1.8 3.7-2.3.4 2 .4 3.5-.3 4.8-.6 1.2-1.9 2.3-4.2 3-.5-2.8 0-4.4.8-5.5z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>From the Garden</h4>
+              <p>Good Earth serves seasonal, fresh, unprocessed produce, organic where indicated and locally sourced when possible.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-links">
+          <a href="/locations" class="btn btn--primary sidebar-btn">Location &amp; Hours</a>
+          <a href="/careers" class="btn btn--outline sidebar-btn">Work @ Good Earth</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+/* ---- Page Hero ---- */
+.page-hero {
+  position: relative; min-height: 500px;
+  display: flex; align-items: flex-end; overflow: hidden; color: var(--color-white);
+}
+.page-hero-bg { position: absolute; inset: 0; }
+.page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(46,90,39,0.94) 0%, rgba(46,90,39,0.65) 40%, rgba(46,90,39,0.2) 100%);
+}
+.page-hero-content { position: relative; z-index: 1; padding-bottom: var(--space-16); padding-top: var(--space-16); }
+.page-hero-label {
+  display: block; font-family: var(--font-sans); font-size: var(--text-xs);
+  font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-gold); margin-bottom: var(--space-3);
+}
+.page-hero-headline {
+  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
+  letter-spacing: 0.02em; line-height: 0.88;
+  color: var(--color-white); margin-bottom: var(--space-4);
+  font-size: clamp(4rem, 10vw, 8rem);
+}
+.page-hero-content p {
+  color: rgba(255,255,255,0.7); font-family: var(--font-body);
+  font-style: italic; font-size: var(--text-lg); margin: 0;
+}
+
+/* ---- About Grid ---- */
+.about-grid { display: grid; grid-template-columns: 1fr 340px; gap: var(--space-16); align-items: start; }
+
+.about-statement {
+  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 0.02em; line-height: 0.92;
+  color: var(--color-green-dark); margin-bottom: var(--space-6);
+}
+.about-content p { color: var(--color-gray-mid); font-size: var(--text-md); line-height: var(--leading-loose); }
+
+.about-award { margin-top: var(--space-8); margin-bottom: var(--space-10); }
+.award-badge {
+  display: inline-flex; align-items: center; gap: var(--space-4);
+  background: var(--color-gray-pale); border: var(--border-thin);
+  border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5);
+}
+.award-badge strong { display: block; font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-gray-dark); }
+.award-badge span { font-family: var(--font-sans); font-size: var(--text-xs); color: var(--color-gray-mid); }
+
+.about-inline-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+.about-inline-img img { width: 100%; height: 360px; object-fit: cover; display: block; }
+
+/* ---- Sidebar ---- */
+.sidebar-card {
+  background: var(--color-gray-pale); border: var(--border-thin);
+  border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-5);
+}
+.sidebar-card h3 {
+  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
+  font-size: 1.8rem; letter-spacing: 0.03em; line-height: 1;
+  color: var(--color-green-dark); margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4); border-bottom: var(--border-thin);
+}
+.standard-item { display: flex; gap: var(--space-4); margin-bottom: var(--space-5); }
+.standard-item:last-child { margin-bottom: 0; }
+.standard-icon-wrap {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-green-pale); color: var(--color-green-dark);
+  border-radius: var(--radius-md); flex-shrink: 0; margin-top: 2px;
+}
+.standard-item h4 { font-family: var(--font-sans); font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-1); color: var(--color-green-dark); }
+.standard-item p { font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-gray-mid); line-height: var(--leading-normal); margin: 0; }
+
+.sidebar-links { display: flex; flex-direction: column; gap: var(--space-3); }
+.sidebar-btn { width: 100%; text-align: center; display: flex; justify-content: center; }
+
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .about-sidebar { order: -1; } }
+@media (max-width: 600px) { .page-hero { min-height: 380px; } }
+</style>

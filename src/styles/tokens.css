@@ -1,0 +1,91 @@
+/* ============================================================
+   Good Earth – Design Tokens
+   Style: Organic Biophilic × Bold Statement (Sunneen-inspired)
+   Fonts: Bebas Neue (display) · Lora (content) · Raleway (UI)
+   ============================================================ */
+
+:root {
+  /* --- Brand Colors --- */
+  --color-green-dark: #2e5a27; /* Primary brand green */
+  --color-green-mid: #3a7a32; /* Heading green */
+  --color-green-light: #5a9b4f; /* Accent / hover */
+  --color-green-pale: #ebf4e8; /* Subtle backgrounds */
+  --color-gold: #c9961a; /* Warm gold accent — for tags, highlights */
+  --color-gold-light: #f5e8c0; /* Gold pale — for gold tag backgrounds */
+  --color-earth: #7b5e3a; /* Earthy brown accent */
+  --color-earth-light: #c8a97a; /* Warm tan */
+  --color-cream: #faf7f2; /* Page background */
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --color-gray-dark: #333333;
+  --color-gray-mid: #666666;
+  --color-gray-light: #aaaaaa;
+  --color-gray-pale: #f0ede8; /* Card / section background */
+  --color-border: #d9d3ca;
+
+  /* --- Typography --- */
+  /* --font-headline injected by Astro (Bebas Neue) — for massive display text */
+  /* --font-display  injected by Astro (Lora)       — for content headings      */
+  --font-body: var(--font-display); /* Lora for body copy */
+  /* --font-sans    injected by Astro (Raleway)     — for UI elements           */
+
+  /* --- Type Scale --- */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-md: 1.125rem; /* 18px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.5rem; /* 24px */
+  --text-2xl: 1.875rem; /* 30px */
+  --text-3xl: 2.25rem; /* 36px */
+  --text-4xl: 3rem; /* 48px */
+  --text-5xl: 3.75rem; /* 60px */
+  /* Bebas Neue display sizes */
+  --text-display: clamp(4rem, 8vw, 5rem); /* Section display headlines */
+  --text-hero: clamp(4.5rem, 12vw, 8rem); /* Hero h1 */
+
+  --leading-tight: 1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.6;
+  --leading-loose: 1.8;
+
+  /* --- Spacing (4pt scale) --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-narrow: 760px;
+  --nav-height: 72px;
+
+  /* --- Borders & Radius --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  --border-thin: 1px solid var(--color-border);
+  --border-mid: 2px solid var(--color-border);
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.14);
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 400ms ease-out;
+}

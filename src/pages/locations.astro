@@ -1,0 +1,153 @@
+---
+// src/pages/locations.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Location & Hours" description="Visit Good Earth Restaurant in Edina, MN at the Galleria. Open Mon–Sat 8am–8pm, Sun 8am–7pm.">
+
+  <div class="page-hero">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="/images/pexels-elina-sazonova-1850600.jpg" alt="" width="1600" height="900" fetchpriority="high" />
+      <div class="page-hero-overlay"></div>
+    </div>
+    <div class="container page-hero-content">
+      <span class="page-hero-label">Edina, Minnesota</span>
+      <h1 class="page-hero-headline">Location<br />&amp; Hours</h1>
+      <p>Come visit us in the Galleria.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="locations-grid">
+
+        <div class="location-map-wrap">
+          <iframe
+            title="Good Earth Edina location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.0!2d-93.33!3d44.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f621e1b3e5a5c5%3A0x8bdf8e9c4c4e4e4e!2sGood+Earth+Restaurant!5e0!3m2!1sen!2sus!4v1"
+            width="100%" height="420"
+            style="border:0; border-radius: var(--radius-xl);"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <a href="https://maps.google.com/maps?q=Good+Earth+Restaurant,+Galleria,+Edina,+MN+55435" target="_blank" rel="noopener noreferrer" class="map-directions-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+            Get Directions
+          </a>
+        </div>
+
+        <div class="location-details">
+          <div class="location-header">
+            <h2 class="location-name">Edina</h2>
+            <span class="location-badge">Open Today</span>
+          </div>
+          <p class="location-descriptor">In the Galleria</p>
+
+          <div class="detail-block">
+            <h3>Address</h3>
+            <address>3460 Galleria<br />Edina, MN 55435</address>
+            <a href="tel:9529251001" class="phone-link">(952) 925-1001</a>
+          </div>
+
+          <div class="detail-block">
+            <h3>Hours</h3>
+            <table class="hours-table">
+              <tbody>
+                <tr><td>Monday – Saturday</td><td><strong>8:00am – 8:00pm</strong></td></tr>
+                <tr><td>Sunday</td><td><strong>8:00am – 7:00pm</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="detail-actions">
+            <a href="https://www.opentable.com/restref/client/?rid=27313&restref=27313" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Reserve a Table</a>
+            <a href="https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Order Delivery</a>
+            <a href="tel:9529251001" class="btn btn--outline">Call for Takeout</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero {
+  position: relative; min-height: 420px;
+  display: flex; align-items: flex-end; overflow: hidden; color: var(--color-white);
+}
+.page-hero-bg { position: absolute; inset: 0; }
+.page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(46,90,39,0.94) 0%, rgba(46,90,39,0.6) 40%, rgba(46,90,39,0.2) 100%);
+}
+.page-hero-content { position: relative; z-index: 1; padding-bottom: var(--space-14); padding-top: var(--space-16); }
+.page-hero-label {
+  display: block; font-family: var(--font-sans); font-size: var(--text-xs);
+  font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-gold); margin-bottom: var(--space-3);
+}
+.page-hero-headline {
+  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
+  letter-spacing: 0.02em; line-height: 0.88; color: var(--color-white);
+  margin-bottom: var(--space-4); font-size: clamp(4rem, 10vw, 8rem);
+}
+.page-hero-content p {
+  color: rgba(255,255,255,0.7); font-family: var(--font-body);
+  font-style: italic; font-size: var(--text-lg); margin: 0;
+}
+
+/* ---- Location ---- */
+.locations-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-12); align-items: start; }
+
+.location-map-wrap { position: relative; }
+.map-directions-link {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  margin-top: var(--space-3); font-family: var(--font-sans); font-size: var(--text-sm);
+  font-weight: 500; color: var(--color-green-mid); text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.map-directions-link:hover { color: var(--color-green-dark); }
+
+.location-header { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-2); }
+.location-name {
+  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(3rem, 6vw, 5rem); letter-spacing: 0.02em; line-height: 0.9;
+  color: var(--color-green-dark); margin: 0;
+}
+.location-badge {
+  font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--color-gold-light); color: var(--color-gold);
+  border: 1px solid var(--color-gold); padding: 3px 10px; border-radius: var(--radius-full);
+}
+.location-descriptor {
+  font-family: var(--font-sans); font-size: var(--text-xs);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-gold); margin-bottom: var(--space-8);
+}
+.detail-block { margin-bottom: var(--space-8); }
+.detail-block h3 {
+  font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gray-mid); margin-bottom: var(--space-3);
+}
+address {
+  font-style: normal; font-family: var(--font-sans); font-size: var(--text-base);
+  line-height: var(--leading-loose); color: var(--color-gray-dark); margin-bottom: var(--space-3);
+}
+.phone-link {
+  font-family: var(--font-sans); font-size: var(--text-lg); font-weight: 500;
+  color: var(--color-green-dark); text-decoration: none; transition: color var(--transition-fast);
+}
+.phone-link:hover { color: var(--color-green-mid); }
+.hours-table { width: 100%; border-collapse: collapse; font-family: var(--font-sans); font-size: var(--text-sm); }
+.hours-table tr { border-bottom: var(--border-thin); }
+.hours-table td { padding: var(--space-3) 0; color: var(--color-gray-dark); }
+.hours-table td:last-child { text-align: right; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
+
+@media (max-width: 768px) { .locations-grid { grid-template-columns: 1fr; } }
+</style>
