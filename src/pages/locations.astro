@@ -1,153 +1,311 @@
 ---
 // src/pages/locations.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/page-sections/page-hero/PageHero.astro';
 ---
 
-<BaseLayout title="Location & Hours" description="Visit Good Earth Restaurant in Edina, MN at the Galleria. Open Mon–Sat 8am–8pm, Sun 8am–7pm.">
+<BaseLayout
+  title="Location & Hours"
+  description="Visit Good Earth Restaurant in Edina, MN at the Galleria. Open Mon–Sat 8am–8pm, Sun 8am–7pm."
+>
+  <div class="ip-page lo-page">
 
-  <div class="page-hero">
-    <div class="page-hero-bg" aria-hidden="true">
-      <img src="/images/pexels-elina-sazonova-1850600.jpg" alt="" width="1600" height="900" fetchpriority="high" />
-      <div class="page-hero-overlay"></div>
-    </div>
-    <div class="container page-hero-content">
-      <span class="page-hero-label">Edina, Minnesota</span>
-      <h1 class="page-hero-headline">Location<br />&amp; Hours</h1>
-      <p>Come visit us in the Galleria.</p>
-    </div>
-  </div>
+    <!-- ── 1. HERO ─────────────────────────────────────────── -->
+    <PageHero
+      label="Edina, Minnesota"
+      title="<em>Location</em><br />&amp; Hours"
+      subtitle="Come visit us at the Galleria."
+      image="/images/pexels-elina-sazonova-1850600.jpg"
+      imagePosition="center 55%"
+      curveFill="#f3f1eb"
+    />
 
-  <section class="section">
-    <div class="container">
-      <div class="locations-grid">
+    <!-- ── 2. MAP + DETAILS ──────────────────────────────── -->
+    <section class="ip-section">
+      <div class="ip-wrap">
+        <div class="lo-grid">
 
-        <div class="location-map-wrap">
-          <iframe
-            title="Good Earth Edina location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.0!2d-93.33!3d44.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f621e1b3e5a5c5%3A0x8bdf8e9c4c4e4e4e!2sGood+Earth+Restaurant!5e0!3m2!1sen!2sus!4v1"
-            width="100%" height="420"
-            style="border:0; border-radius: var(--radius-xl);"
-            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-          <a href="https://maps.google.com/maps?q=Good+Earth+Restaurant,+Galleria,+Edina,+MN+55435" target="_blank" rel="noopener noreferrer" class="map-directions-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-            </svg>
-            Get Directions
-          </a>
+          <!-- Map -->
+          <div class="lo-map-col ip-wide">
+            <div class="lo-map-frame">
+              <iframe
+                title="Good Earth Edina location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.0!2d-93.33!3d44.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f621e1b3e5a5c5%3A0x8bdf8e9c4c4e4e4e!2sGood+Earth+Restaurant!5e0!3m2!1sen!2sus!4v1"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <a
+              href="https://maps.google.com/maps?q=Good+Earth+Restaurant,+Galleria,+Edina,+MN+55435"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="lo-directions ip-up-d"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              Get Directions
+            </a>
+          </div>
+
+          <!-- Details -->
+          <div class="lo-details-col">
+            <span class="ip-eyebrow ip-up">The Galleria · Edina</span>
+            <div class="lo-name-row ip-up-d">
+              <h2 class="lo-name ip-display">
+                <em>Edina,</em><br />Minnesota.
+              </h2>
+              <span class="lo-badge">Open Today</span>
+            </div>
+
+            <div class="lo-detail-block ip-up-dl">
+              <h3 class="lo-detail-label">Address</h3>
+              <address class="lo-address">
+                3460 Galleria<br />Edina, MN 55435
+              </address>
+              <a href="tel:9529251001" class="lo-phone">(952) 925-1001</a>
+            </div>
+
+            <div class="lo-detail-block ip-up-dl">
+              <h3 class="lo-detail-label">Hours</h3>
+              <table class="lo-hours">
+                <tbody>
+                  <tr>
+                    <td>Monday – Saturday</td>
+                    <td><strong>8:00 am – 8:00 pm</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td><strong>8:00 am – 7:00 pm</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="lo-actions ip-up-dl">
+              <a
+                href="https://www.opentable.com/restref/client/?rid=27313&restref=27313"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ip-btn ip-btn--dark"
+              >Reserve a Table</a>
+              <a
+                href="https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ip-btn ip-btn--outline"
+              >Order Delivery</a>
+              <a
+                href="tel:9529251001"
+                class="ip-btn ip-btn--outline"
+              >Call for Takeout</a>
+            </div>
+          </div>
+
         </div>
-
-        <div class="location-details">
-          <div class="location-header">
-            <h2 class="location-name">Edina</h2>
-            <span class="location-badge">Open Today</span>
-          </div>
-          <p class="location-descriptor">In the Galleria</p>
-
-          <div class="detail-block">
-            <h3>Address</h3>
-            <address>3460 Galleria<br />Edina, MN 55435</address>
-            <a href="tel:9529251001" class="phone-link">(952) 925-1001</a>
-          </div>
-
-          <div class="detail-block">
-            <h3>Hours</h3>
-            <table class="hours-table">
-              <tbody>
-                <tr><td>Monday – Saturday</td><td><strong>8:00am – 8:00pm</strong></td></tr>
-                <tr><td>Sunday</td><td><strong>8:00am – 7:00pm</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="detail-actions">
-            <a href="https://www.opentable.com/restref/client/?rid=27313&restref=27313" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Reserve a Table</a>
-            <a href="https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Order Delivery</a>
-            <a href="tel:9529251001" class="btn btn--outline">Call for Takeout</a>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- ── 3. PARALLAX BANNER ────────────────────────────── -->
+    <section class="ip-banner" aria-label="Good Earth hospitality">
+      <div class="ip-banner-media">
+        <img
+          class="lo-banner-img"
+          src="/images/pexels-mike-468229-1192034.jpg"
+          alt=""
+          width="1920"
+          height="1280"
+          loading="lazy"
+        />
+      </div>
+      <div class="ip-banner-veil" aria-hidden="true"></div>
+      <div class="ip-banner-content">
+        <div class="ip-wrap-sm">
+          <p class="ip-pullquote ip-up">
+            <em>"A good meal deserves a warm room and familiar faces."</em>
+          </p>
+          <span class="ip-pullquote-attr ip-up-d">Good Earth · Edina, Minnesota · Since 1974</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. CLOSING CTA ────────────────────────────────── -->
+    <section class="ip-section lo-closing">
+      <div class="ip-wrap">
+        <div class="lo-closing-inner ip-up">
+          <span class="ip-eyebrow">Plan your visit</span>
+          <h2 class="ip-display lo-closing-head">
+            <em>We'd love</em><br />to see you.
+          </h2>
+          <div class="lo-closing-actions">
+            <a href="/about" class="ip-btn ip-btn--dark">Our Story</a>
+            <a href="/careers" class="ip-btn ip-btn--outline">Work With Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.lo-page -->
 </BaseLayout>
 
 <style>
-.page-hero {
-  position: relative; min-height: 420px;
-  display: flex; align-items: flex-end; overflow: hidden; color: var(--color-white);
-}
-.page-hero-bg { position: absolute; inset: 0; }
-.page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
-.page-hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(46,90,39,0.94) 0%, rgba(46,90,39,0.6) 40%, rgba(46,90,39,0.2) 100%);
-}
-.page-hero-content { position: relative; z-index: 1; padding-bottom: var(--space-14); padding-top: var(--space-16); }
-.page-hero-label {
-  display: block; font-family: var(--font-sans); font-size: var(--text-xs);
-  font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--color-gold); margin-bottom: var(--space-3);
-}
-.page-hero-headline {
-  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
-  letter-spacing: 0.02em; line-height: 0.88; color: var(--color-white);
-  margin-bottom: var(--space-4); font-size: clamp(4rem, 10vw, 8rem);
-}
-.page-hero-content p {
-  color: rgba(255,255,255,0.7); font-family: var(--font-body);
-  font-style: italic; font-size: var(--text-lg); margin: 0;
-}
+  /* ── Layout ──────────────────────────────────────────── */
+  .lo-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: start;
+  }
 
-/* ---- Location ---- */
-.locations-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-12); align-items: start; }
+  /* ── Map ─────────────────────────────────────────────── */
+  .lo-map-col { display: flex; flex-direction: column; }
+  .lo-map-frame {
+    width: 100%;
+    aspect-ratio: 4 / 3.2;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #e8e4dc;
+  }
+  .lo-map-frame iframe { width: 100%; height: 100%; display: block; }
+  .lo-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ip-gold, #8c6e3c);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .lo-directions:hover { color: #5c4426; }
 
-.location-map-wrap { position: relative; }
-.map-directions-link {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  margin-top: var(--space-3); font-family: var(--font-sans); font-size: var(--text-sm);
-  font-weight: 500; color: var(--color-green-mid); text-decoration: none;
-  transition: color var(--transition-fast);
-}
-.map-directions-link:hover { color: var(--color-green-dark); }
+  /* ── Details ─────────────────────────────────────────── */
+  .lo-name-row { display: flex; align-items: flex-end; gap: 1.2rem; flex-wrap: wrap; }
+  .lo-name { margin-bottom: 0 !important; }
+  .lo-badge {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4a7a3e;
+    background: rgba(74, 122, 62, 0.1);
+    border: 1px solid rgba(74, 122, 62, 0.3);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 2.1rem;
+    flex-shrink: 0;
+  }
 
-.location-header { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-2); }
-.location-name {
-  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
-  font-size: clamp(3rem, 6vw, 5rem); letter-spacing: 0.02em; line-height: 0.9;
-  color: var(--color-green-dark); margin: 0;
-}
-.location-badge {
-  font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  background: var(--color-gold-light); color: var(--color-gold);
-  border: 1px solid var(--color-gold); padding: 3px 10px; border-radius: var(--radius-full);
-}
-.location-descriptor {
-  font-family: var(--font-sans); font-size: var(--text-xs);
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--color-gold); margin-bottom: var(--space-8);
-}
-.detail-block { margin-bottom: var(--space-8); }
-.detail-block h3 {
-  font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-gray-mid); margin-bottom: var(--space-3);
-}
-address {
-  font-style: normal; font-family: var(--font-sans); font-size: var(--text-base);
-  line-height: var(--leading-loose); color: var(--color-gray-dark); margin-bottom: var(--space-3);
-}
-.phone-link {
-  font-family: var(--font-sans); font-size: var(--text-lg); font-weight: 500;
-  color: var(--color-green-dark); text-decoration: none; transition: color var(--transition-fast);
-}
-.phone-link:hover { color: var(--color-green-mid); }
-.hours-table { width: 100%; border-collapse: collapse; font-family: var(--font-sans); font-size: var(--text-sm); }
-.hours-table tr { border-bottom: var(--border-thin); }
-.hours-table td { padding: var(--space-3) 0; color: var(--color-gray-dark); }
-.hours-table td:last-child { text-align: right; }
-.detail-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8); }
+  .lo-detail-block { margin-bottom: 2.2rem; }
+  .lo-detail-label {
+    font-family: var(--font-sans) !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.35) !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .lo-address {
+    font-style: normal;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--ip-text, #1a1a1a);
+    margin-bottom: 0.5rem;
+  }
+  .lo-phone {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ip-gold, #8c6e3c);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  .lo-phone:hover { color: #5c4426; }
 
-@media (max-width: 768px) { .locations-grid { grid-template-columns: 1fr; } }
+  .lo-hours {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+  .lo-hours tr { border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .lo-hours td {
+    padding: 0.65rem 0;
+    color: var(--ip-mid, #555);
+  }
+  .lo-hours td:last-child { text-align: right; color: var(--ip-text, #1a1a1a); }
+
+  .lo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  /* ── Parallax Banner ──────────────────────────────────── */
+  .lo-banner-img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 60%;
+    display: block; will-change: transform;
+  }
+
+  /* ── Closing ─────────────────────────────────────────── */
+  .lo-closing { border-top: 1px solid rgba(0,0,0,0.07); }
+  .lo-closing-head { margin-bottom: 2rem; }
+  .lo-closing-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  /* ── Responsive ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .lo-grid { grid-template-columns: 1fr; }
+    .lo-map-frame { aspect-ratio: 16 / 9; }
+  }
+  @media (max-width: 560px) {
+    .lo-actions { flex-direction: column; }
+    .lo-closing-actions { flex-direction: column; }
+  }
 </style>
+
+<script>
+  // Scroll-reveal
+  (function () {
+    const sel = ".ip-up, .ip-up-d, .ip-up-dl, .ip-right, .ip-right-d, .ip-wide";
+    const reveals = document.querySelectorAll(".lo-page " + sel.split(", ").join(", .lo-page "));
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("is-vis"); io.unobserve(e.target); }
+      }),
+      { threshold: 0.1 }
+    );
+    reveals.forEach((el) => io.observe(el));
+
+    // Parallax on banner
+    const bannerEl  = document.querySelector(".ip-banner") as HTMLElement | null;
+    const bannerImg = document.querySelector(".lo-banner-img") as HTMLElement | null;
+    if (!bannerEl || !bannerImg) return;
+    let ticking = false;
+    function update() {
+      ticking = false;
+      if (bannerImg && bannerEl) {
+        const rect = bannerEl.getBoundingClientRect();
+        const vh = window.innerHeight;
+        bannerImg.style.transform = `translateY(${(vh / 2 - rect.top - rect.height / 2) * 0.28}px)`;
+      }
+    }
+    window.addEventListener("scroll", () => {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  })();
+</script>

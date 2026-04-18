@@ -10,12 +10,12 @@ import { fontProviders } from "astro/config";
 
 export const siteFonts = [
   {
-    // Ultra-bold condensed display — for large hero headlines & key callouts
-    name: "Bebas Neue",
+    // Light condensed display serif — for large editorial headlines with italic mixing
+    name: "Cormorant",
     cssVariable: "--font-headline",
     provider: fontProviders.google(),
-    weights: [400],
-    styles: ["normal"],
+    weights: [300, 400, 700],
+    styles: ["normal", "italic"],
   },
   {
     // Warm editorial serif — for content headings & body copy

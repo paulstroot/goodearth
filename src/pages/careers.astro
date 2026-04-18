@@ -1,173 +1,265 @@
 ---
 // src/pages/careers.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/page-sections/page-hero/PageHero.astro';
 ---
 
-<BaseLayout title="Careers" description="Work at Good Earth Restaurant. We welcome your interest — apply online today.">
+<BaseLayout
+  title="Careers"
+  description="Work at Good Earth Restaurant. We welcome your interest — passionate people who care about real food and great hospitality."
+>
+  <div class="ip-page ca-page">
 
-  <div class="page-hero">
-    <div class="page-hero-bg" aria-hidden="true">
-      <img src="/images/pexels-cristian-rojas-8230026.jpg" alt="" width="1600" height="900" fetchpriority="high" />
-      <div class="page-hero-overlay"></div>
-    </div>
-    <div class="container page-hero-content">
-      <span class="page-hero-label">Join the Team</span>
-      <h1 class="page-hero-headline">Work @<br />Good Earth</h1>
-      <p>Join our team of passionate, purpose-driven people.</p>
-    </div>
-  </div>
+    <!-- ── 1. HERO ─────────────────────────────────────────── -->
+    <PageHero
+      label="Join the Team"
+      title="Work @<br />Good Earth"
+      subtitle="Join a team that cares about real food and real people."
+      image="/images/pexels-cristian-rojas-8230026.jpg"
+      imagePosition="center 60%"
+      curveFill="#f3f1eb"
+    />
 
-  <section class="section">
-    <div class="container container--narrow careers-wrap">
-
-      <div class="careers-intro">
-        <h2 class="careers-headline">We'd love to have you.</h2>
-        <p>We welcome your interest in Good Earth! We're always looking for talented, enthusiastic individuals who share our passion for natural, high-quality food and exceptional hospitality.</p>
-        <p>Apply online through our Parasole careers portal — you'll find all available positions at Good Earth there.</p>
-      </div>
-
-      <div class="careers-cta-card">
-        <div class="careers-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/>
-            <path d="M9.5 9.4c1.1.8 1.8 2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/>
-            <path d="M14.1 6a7 7 0 0 1 1.7 10.7"/>
-            <path d="M14 12.4c.8-1.1 2-1.8 3.7-2.3.4 2 .4 3.5-.3 4.8-.6 1.2-1.9 2.3-4.2 3-.5-2.8 0-4.4.8-5.5z"/>
-          </svg>
+    <!-- ── 2. INTRO ──────────────────────────────────────── -->
+    <section class="ip-section">
+      <div class="ip-wrap">
+        <div class="ca-intro-cols">
+          <div class="ca-intro-left">
+            <span class="ip-eyebrow ip-up">Opportunities</span>
+            <h2 class="ip-display ip-up-d">
+              <em>We'd love</em><br />to have you.
+            </h2>
+          </div>
+          <div class="ca-intro-right">
+            <p class="ip-prose ip-right">
+              We welcome your interest in Good Earth! We're always looking for talented, enthusiastic
+              individuals who share our passion for natural, high-quality food and exceptional
+              hospitality.
+            </p>
+            <p class="ip-prose ip-right-d">
+              Apply online through our Parasole careers portal — you'll find all available positions
+              at Good Earth there. We look forward to hearing from you.
+            </p>
+            <a
+              href="https://parasole.com/careers/#goodearth"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="ip-btn ip-btn--dark ip-up-dl"
+            >View Open Positions &amp; Apply</a>
+          </div>
         </div>
-        <h3>Ready to apply?</h3>
-        <p>Visit our Parasole careers page to see current openings and submit your application.</p>
-        <a href="https://parasole.com/careers/#goodearth" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-          View Open Positions &amp; Apply
-        </a>
       </div>
+    </section>
 
-      <div class="why-section">
-        <h3 class="why-headline">Why Good Earth?</h3>
-        <div class="why-grid">
-          <div class="why-item">
-            <div class="why-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- ── 3. WHY GOOD EARTH ──────────────────────────────── -->
+    <section class="ip-section ca-why-section">
+      <div class="ip-wrap">
+        <div class="ca-why-header ip-up">
+          <span class="ip-eyebrow">Why Good Earth?</span>
+          <h2 class="ip-display">
+            <em>Good work starts</em><br />with good people.
+          </h2>
+        </div>
+        <div class="ca-standards">
+
+          <div class="ca-standard ip-up">
+            <div class="ca-standard-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
                 <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
               </svg>
             </div>
-            <div>
-              <strong>Real Ingredients</strong>
-              <p>We work with the best — antibiotic-free meats, sustainable seafood, locally sourced produce.</p>
-            </div>
+            <h3 class="ca-standard-title">Real Ingredients</h3>
+            <p class="ca-standard-body">
+              We work with the best — antibiotic-free meats, sustainable seafood, and locally sourced
+              produce. You'll be proud of what you serve.
+            </p>
           </div>
-          <div class="why-item">
-            <div class="why-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+          <div class="ca-standard ip-up-d">
+            <div class="ca-standard-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <div>
-              <strong>Great Team</strong>
-              <p>A community of people who care deeply about food, guests, and each other.</p>
-            </div>
+            <h3 class="ca-standard-title">Great Community</h3>
+            <p class="ca-standard-body">
+              A team of people who care deeply about food, guests, and each other. We foster a warm,
+              supportive environment where you can grow and thrive.
+            </p>
           </div>
-          <div class="why-item">
-            <div class="why-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="17" x2="12" y2="21"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
+
+          <div class="ca-standard ip-up-dl">
+            <div class="ca-standard-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/>
                 <path d="M7 4h10v7a5 5 0 0 1-5 5v0a5 5 0 0 1-5-5V4z"/>
                 <path d="M7 9H3v-2a4 4 0 0 1 4-4"/>
                 <path d="M17 9h4v-2a4 4 0 0 0-4-4"/>
               </svg>
             </div>
-            <div>
-              <strong>Parasole Family</strong>
-              <p>Part of the respected Parasole Family of Restaurants with opportunities across multiple concepts.</p>
-            </div>
+            <h3 class="ca-standard-title">Parasole Family</h3>
+            <p class="ca-standard-body">
+              Part of the respected Parasole Family of Restaurants — a heritage of hospitality with
+              opportunities to grow across multiple award-winning concepts.
+            </p>
           </div>
+
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- ── 4. APPLY CTA ──────────────────────────────────── -->
+    <section class="ca-cta ip-up">
+      <div class="ip-wrap-sm">
+        <span class="ip-eyebrow ca-cta-eyebrow">Ready to apply?</span>
+        <h2 class="ca-cta-head">
+          <em>Your next chapter</em><br />starts here.
+        </h2>
+        <p class="ca-cta-body">
+          Visit our Parasole careers page to browse current openings at Good Earth and submit your
+          application online.
+        </p>
+        <div class="ca-cta-actions">
+          <a
+            href="https://parasole.com/careers/#goodearth"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ip-btn ip-btn--white"
+          >View Open Positions &amp; Apply</a>
+          <a href="/locations" class="ip-btn ca-btn-ghost">Location &amp; Hours</a>
+        </div>
+      </div>
+    </section>
 
+  </div><!-- /.ca-page -->
 </BaseLayout>
 
 <style>
-.page-hero {
-  position: relative; min-height: 460px;
-  display: flex; align-items: flex-end; overflow: hidden; color: var(--color-white);
-}
-.page-hero-bg { position: absolute; inset: 0; }
-.page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block; }
-.page-hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(46,90,39,0.94) 0%, rgba(46,90,39,0.6) 40%, rgba(46,90,39,0.2) 100%);
-}
-.page-hero-content { position: relative; z-index: 1; padding-bottom: var(--space-16); padding-top: var(--space-16); }
-.page-hero-label {
-  display: block; font-family: var(--font-sans); font-size: var(--text-xs);
-  font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--color-gold); margin-bottom: var(--space-3);
-}
-.page-hero-headline {
-  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
-  letter-spacing: 0.02em; line-height: 0.88; color: var(--color-white);
-  margin-bottom: var(--space-4); font-size: clamp(4rem, 10vw, 8rem);
-}
-.page-hero-content p {
-  color: rgba(255,255,255,0.7); font-family: var(--font-body);
-  font-style: italic; font-size: var(--text-lg); margin: 0;
-}
+  /* ── Intro ───────────────────────────────────────────── */
+  .ca-intro-cols {
+    display: flex;
+    gap: clamp(3rem, 6vw, 8rem);
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .ca-intro-left { flex: 0 0 clamp(240px, 40%, 460px); }
+  .ca-intro-right { flex: 1; padding-top: 0.5rem; }
+  .ca-intro-right .ip-prose { max-width: none; }
 
-/* ---- Careers ---- */
-.careers-wrap { padding-top: 0; }
-.careers-intro { margin-bottom: var(--space-10); }
-.careers-headline {
-  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
-  font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: 0.02em; line-height: 0.92;
-  color: var(--color-green-dark); margin-bottom: var(--space-5);
-}
-.careers-intro p { color: var(--color-gray-mid); font-size: var(--text-md); line-height: var(--leading-loose); }
+  /* ── Why section ─────────────────────────────────────── */
+  .ca-why-section { border-top: 1px solid rgba(0,0,0,0.07); }
+  .ca-why-header { margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .ca-why-header .ip-display { margin-bottom: 0; }
+  .ca-standards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+  .ca-standard { display: flex; flex-direction: column; gap: 1rem; }
+  .ca-standard-icon {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.04);
+    color: var(--ip-gold, #8c6e3c);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .ca-standard-title {
+    font-family: var(--font-headline) !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    font-size: clamp(1.8rem, 2.8vw, 2.6rem) !important;
+    line-height: 1 !important;
+    color: var(--ip-text, #1a1a1a) !important;
+    margin: 0 !important;
+  }
+  .ca-standard-body {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    line-height: 1.85;
+    color: var(--ip-mid, #555);
+    margin: 0;
+  }
 
-.careers-cta-card {
-  background: var(--color-green-dark);
-  border-radius: var(--radius-xl); padding: var(--space-12);
-  margin-bottom: var(--space-12); text-align: center; color: var(--color-white);
-}
-.careers-icon {
-  width: 64px; height: 64px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.12); color: var(--color-gold);
-  border-radius: var(--radius-lg); margin: 0 auto var(--space-5);
-}
-.careers-cta-card h3 {
-  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
-  font-size: 2.5rem; letter-spacing: 0.03em; line-height: 0.9;
-  color: var(--color-white); margin-bottom: var(--space-3);
-}
-.careers-cta-card p { color: rgba(255,255,255,0.65); margin-bottom: var(--space-6); font-size: var(--text-md); }
+  /* ── Apply CTA ───────────────────────────────────────── */
+  .ca-cta {
+    background: #1a1a1a;
+    padding: clamp(5rem, 10vw, 9rem) 0;
+    text-align: center;
+  }
+  .ca-cta-eyebrow { color: rgba(255,255,255,0.35) !important; }
+  .ca-cta-head {
+    font-family: var(--font-headline);
+    font-weight: 300;
+    font-size: clamp(3.2rem, 6vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0 0 1.8rem;
+  }
+  .ca-cta-head em { font-style: italic; }
+  .ca-cta-body {
+    font-family: var(--font-display);
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+  .ca-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .ca-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    min-height: 44px;
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  .ca-btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
 
-.why-headline {
-  font-family: var(--font-headline); font-weight: 400; text-transform: uppercase;
-  font-size: 2.5rem; letter-spacing: 0.02em; line-height: 0.92;
-  color: var(--color-green-dark); margin-bottom: var(--space-6);
-}
-.why-grid { display: flex; flex-direction: column; gap: var(--space-4); }
-.why-item {
-  display: flex; gap: var(--space-4); align-items: flex-start;
-  padding: var(--space-5) var(--space-6);
-  background: var(--color-gray-pale); border-radius: var(--radius-lg); border: var(--border-thin);
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
-}
-.why-item:hover { box-shadow: var(--shadow-md); transform: translateX(4px); }
-.why-icon {
-  width: 44px; height: 44px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--color-green-pale); color: var(--color-green-dark);
-  border-radius: var(--radius-md); flex-shrink: 0;
-}
-.why-item strong { display: block; font-family: var(--font-sans); font-size: var(--text-base); font-weight: 600; color: var(--color-gray-dark); margin-bottom: var(--space-1); }
-.why-item p { font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-gray-mid); margin: 0; line-height: var(--leading-normal); }
+  /* ── Responsive ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .ca-intro-cols { flex-direction: column; gap: 2rem; }
+    .ca-intro-left { flex: auto; }
+    .ca-standards { grid-template-columns: 1fr; gap: 3rem; }
+  }
+  @media (max-width: 560px) {
+    .ca-cta-actions { flex-direction: column; align-items: center; }
+  }
 </style>
+
+<script>
+  // Scroll-reveal
+  (function () {
+    const sel = ".ip-up, .ip-up-d, .ip-up-dl, .ip-right, .ip-right-d, .ip-wide";
+    const parts = sel.split(", ").map((s) => `.ca-page ${s}`).join(", ");
+    const reveals = document.querySelectorAll(parts);
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("is-vis"); io.unobserve(e.target); }
+      }),
+      { threshold: 0.1 }
+    );
+    reveals.forEach((el) => io.observe(el));
+  })();
+</script>
