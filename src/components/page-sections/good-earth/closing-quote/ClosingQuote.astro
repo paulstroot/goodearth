@@ -1,0 +1,93 @@
+---
+const {
+  quoteText = "",
+  quoteName = "",
+  quoteDesc = "",
+  imageSrc = "",
+  imageAlt = "",
+  imageWidth = 900,
+  imageHeight = 675,
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<section class="st-section st-section--close" {...htmlAttributes}>
+  <div class="st-wrap">
+    <div class="st-final-cols">
+      <div class="st-final-img st-wide">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+          loading="lazy"
+        />
+      </div>
+      <div class="st-final-text">
+        <p class="st-quote st-right"><em>"{quoteText}"</em></p>
+        <div class="st-right-d">
+          <span class="st-quote-name">{quoteName}</span>
+          <span class="st-quote-desc">{quoteDesc}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .st-final-cols {
+    display: flex;
+    gap: clamp(3rem, 7vw, 7rem);
+    align-items: center;
+  }
+  .st-final-img {
+    flex: 0 0 60%;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+  }
+  .st-final-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .st-final-text {
+    flex: 1;
+  }
+
+  @media (max-width: 960px) {
+    .st-final-cols {
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .st-final-img {
+      flex: auto;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    // Scroll-reveal — guarded so only one instance runs per page load
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+  })();
+</script>

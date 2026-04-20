@@ -1,4 +1,6 @@
-# Astro Component Starter
+# Good Earth proposed redesign
+
+## Based on the CloudCannon Astro Starter.
 
 A starter template with 40+ Astro components, each built for visual editing in [CloudCannon](https://cloudcannon.com/). You clone it, you own it. Every component is your source code to modify, extend, or delete.
 

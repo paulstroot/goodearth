@@ -1,0 +1,302 @@
+---
+interface HoursRow {
+  days: string;
+  time: string;
+}
+
+interface Button {
+  text: string;
+  href: string;
+  /** Visual style — matches the shared st-btn-- variants */
+  style?: "dark" | "outline" | "light";
+  external?: boolean;
+}
+
+const {
+  eyebrow = "",
+  headingItalic = "",
+  headingPlain = "",
+  badgeText = "",
+  address = "",
+  phone = "",
+  phoneHref = "",
+  mapEmbedUrl = "",
+  directionsUrl = "",
+  directionsLabel = "Get Directions",
+  hours = [] as HoursRow[],
+  buttons = [] as Button[],
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+
+const addressLines = (address as string).split("\n").filter(Boolean);
+---
+
+<section class="st-section" {...htmlAttributes}>
+  <div class="st-wrap">
+    <div class="st-loc-grid">
+
+      <!-- Map column -->
+      <div class="st-loc-map-col st-wide">
+        <div class="st-loc-map-frame">
+          <iframe
+            title={`${headingItalic} ${headingPlain} location`}
+            src={mapEmbedUrl}
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        {directionsUrl && (
+          <a
+            href={directionsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="st-loc-directions st-up-d"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+            </svg>
+            {directionsLabel}
+          </a>
+        )}
+      </div>
+
+      <!-- Details column -->
+      <div class="st-loc-details-col">
+        <span class="st-sub st-up">{eyebrow}</span>
+
+        <div class="st-loc-name-row st-up-d">
+          <h2 class="st-title-l st-loc-name">
+            <span><em>{headingItalic}</em><br />{headingPlain}</span>
+          </h2>
+          {badgeText && <span class="st-loc-badge">{badgeText}</span>}
+        </div>
+
+        {(address || phone) && (
+          <div class="st-loc-detail-block st-up-dl">
+            <h3 class="st-loc-detail-label">Address</h3>
+            {addressLines.length > 0 && (
+              <address class="st-loc-address">
+                {addressLines.map((line, i) => (
+                  <>{i > 0 && <br />}{line}</>
+                ))}
+              </address>
+            )}
+            {phone && (
+              <a href={phoneHref || `tel:${phone.replace(/\D/g, "")}`} class="st-loc-phone">
+                {phone}
+              </a>
+            )}
+          </div>
+        )}
+
+        {hours.length > 0 && (
+          <div class="st-loc-detail-block st-up-dl">
+            <h3 class="st-loc-detail-label">Hours</h3>
+            <table class="st-loc-hours">
+              <tbody>
+                {hours.map((row) => (
+                  <tr>
+                    <td>{row.days}</td>
+                    <td><strong>{row.time}</strong></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {buttons.length > 0 && (
+          <div class="st-loc-actions st-up-dl">
+            {buttons.map((btn) => (
+              <a
+                href={btn.href}
+                class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}
+                target={btn.external ? "_blank" : undefined}
+                rel={btn.external ? "noopener noreferrer" : undefined}
+              >
+                {btn.text}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .st-loc-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: start;
+  }
+
+  /* ─── Map column ─── */
+  .st-loc-map-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .st-loc-map-frame {
+    width: 100%;
+    aspect-ratio: 4 / 3.2;
+    overflow: hidden;
+    border-radius: 3px;
+    background: #e8e4dc;
+  }
+  .st-loc-map-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .st-loc-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .st-loc-directions:hover {
+    color: #5c4426;
+  }
+
+  /* ─── Details column ─── */
+  .st-loc-name-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .st-loc-name {
+    margin-bottom: 0 !important;
+  }
+  .st-loc-badge {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #4a7a3e;
+    background: rgba(74, 122, 62, 0.1);
+    border: 1px solid rgba(74, 122, 62, 0.3);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 2.1rem;
+    flex-shrink: 0;
+  }
+  .st-loc-detail-block {
+    margin-bottom: 2.2rem;
+  }
+  .st-loc-detail-label {
+    font-family: var(--font-sans) !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.35) !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .st-loc-address {
+    font-style: normal;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .st-loc-phone {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+  }
+  .st-loc-phone:hover {
+    color: #5c4426;
+  }
+  .st-loc-hours {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+  .st-loc-hours tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .st-loc-hours td {
+    padding: 0.65rem 0;
+    color: var(--mid);
+  }
+  .st-loc-hours td:last-child {
+    text-align: right;
+    color: var(--text);
+  }
+  .st-loc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    .st-loc-grid {
+      grid-template-columns: 1fr;
+    }
+    .st-loc-map-frame {
+      aspect-ratio: 16 / 9;
+    }
+  }
+  @media (max-width: 560px) {
+    .st-loc-actions {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+  })();
+</script>

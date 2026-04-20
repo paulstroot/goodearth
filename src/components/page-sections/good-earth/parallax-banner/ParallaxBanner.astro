@@ -1,0 +1,220 @@
+---
+/**
+ * layout variants:
+ *   "two-col"    — eyebrow + heading + body + button split across two columns (default)
+ *   "centered"   — large pull-quote centered over the image
+ *   "image-only" — full-bleed parallax image with no text overlay
+ */
+const {
+  layout = "two-col",
+  // two-col props
+  eyebrow = "",
+  headingItalic = "",
+  headingPlain = "",
+  body = "",
+  buttonText = "",
+  buttonHref = "",
+  // centered props
+  quoteText = "",
+  quoteAttribution = "",
+  // shared
+  imageSrc = "",
+  imageAlt = "",
+  imageWidth = 1920,
+  imageHeight = 1280,
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+---
+
+<section
+  class:list={["st-banner", layout === "image-only" && "st-banner--image-only"]}
+  aria-label={eyebrow || undefined}
+  {...htmlAttributes}
+>
+  <div class="st-banner-media">
+    <img
+      class="st-banner-img"
+      src={imageSrc}
+      alt={imageAlt}
+      width={imageWidth}
+      height={imageHeight}
+      loading="lazy"
+    />
+  </div>
+  <div class="st-banner-veil" aria-hidden="true"></div>
+
+  {layout === "two-col" && (
+    <div class="st-banner-content">
+      <div class="st-wrap-small">
+        <div class="st-banner-cols">
+          <div class="st-banner-left">
+            <span class="st-sub st-sub--light st-up">{eyebrow}</span>
+            <h2 class="st-title-l st-title--light st-up-d">
+              <span><em>{headingItalic}</em><br />{headingPlain}</span>
+            </h2>
+          </div>
+          <div class="st-banner-right">
+            <p class="st-body st-body--light st-right">{body}</p>
+            <a href={buttonHref} class="st-btn st-btn--light st-up-dl">{buttonText}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {layout === "centered" && (
+    <div class="st-banner-content">
+      <div class="st-wrap-small st-banner-centered">
+        <p class="st-pullquote st-up"><em>"{quoteText}"</em></p>
+        {quoteAttribution && (
+          <span class="st-pullquote-attr st-up-d">{quoteAttribution}</span>
+        )}
+      </div>
+    </div>
+  )}
+</section>
+
+<style is:global>
+  .st-banner {
+    position: relative;
+    height: clamp(480px, 68vh, 760px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .st-banner--image-only {
+    height: clamp(340px, 48vw, 560px);
+  }
+  .st-banner-media {
+    position: absolute;
+    inset: -20% 0;
+  }
+  .st-banner--image-only .st-banner-media {
+    inset: 0;
+  }
+  .st-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    will-change: transform;
+  }
+  .st-banner-veil {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 6, 4, 0.6);
+    z-index: 1;
+  }
+  .st-banner--image-only .st-banner-veil {
+    background: rgba(8, 6, 4, 0.25);
+  }
+  .st-banner-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  /* ─── two-col layout ─── */
+  .st-banner-cols {
+    display: flex;
+    gap: clamp(2rem, 6vw, 8rem);
+    align-items: flex-start;
+  }
+  .st-banner-left {
+    flex: 0 0 44%;
+  }
+  .st-banner-right {
+    flex: 1;
+    padding-top: 0.5rem;
+  }
+
+  /* ─── centered layout ─── */
+  .st-banner-centered {
+    text-align: center;
+  }
+  .st-pullquote {
+    font-family: var(--font-headline);
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0 0 1.4rem;
+  }
+  .st-pullquote em {
+    font-style: italic;
+  }
+  .st-pullquote-attr {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (max-width: 960px) {
+    .st-banner-cols {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .st-banner-left {
+      flex: auto;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    // Scroll-reveal — guarded so only one instance runs per page load
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+
+    // Banner parallax — handles multiple banners on the same page
+    const banners = [...document.querySelectorAll<HTMLElement>(".st-banner")];
+    let ticking = false;
+
+    function updateBanners() {
+      ticking = false;
+      const vh = window.innerHeight;
+      banners.forEach((bannerEl) => {
+        const img = bannerEl.querySelector<HTMLElement>(".st-banner-img");
+        if (img) {
+          const rect = bannerEl.getBoundingClientRect();
+          const mid = vh / 2 - rect.top - rect.height / 2;
+          img.style.transform = `translateY(${mid * 0.28}px)`;
+        }
+      });
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(updateBanners);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateBanners();
+  })();
+</script>

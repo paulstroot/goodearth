@@ -1,0 +1,140 @@
+---
+interface Button {
+  text: string;
+  href: string;
+  /** Visual style — add new options here to extend the dropdown in the CMS */
+  style?: "dark" | "outline" | "light";
+  external?: boolean;
+}
+
+const {
+  eyebrow = "",
+  headingItalic = "",
+  headingPlain = "",
+  body = "",
+  buttons = [] as Button[],
+  reverse = false,
+  imageSrc = "",
+  imageAlt = "",
+  imageWidth = 650,
+  imageHeight = 488,
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+
+const italicLines = (headingItalic as string).split("\n").filter(Boolean);
+const plainLines = (headingPlain as string).split("\n").filter(Boolean);
+---
+
+<section class="st-section" {...htmlAttributes}>
+  <div class="st-wrap-left">
+    <div class:list={["st-tradition-cols", reverse && "st-tradition-cols--reverse"]}>
+      <div class="st-tradition-text">
+        <span class="st-sub st-up">{eyebrow}</span>
+        <h2 class="st-title-l st-up-d">
+          <span>
+            {italicLines.length > 0 && (
+              <em>
+                {italicLines.map((line, i) => (
+                  <>{i > 0 && <br />}{line}</>
+                ))}
+              </em>
+            )}
+            {plainLines.length > 0 && <br />}
+            {plainLines.map((line, i) => (
+              <>{i > 0 && <br />}{line}</>
+            ))}
+          </span>
+        </h2>
+        <p class="st-body st-tradition-body st-up-d">{body}</p>
+        {buttons.length > 0 && (
+          <div class="st-tradition-buttons">
+            {buttons.map((btn) => (
+              <a
+                href={btn.href}
+                class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`, "st-up-dl"]}
+                target={btn.external ? "_blank" : undefined}
+                rel={btn.external ? "noopener noreferrer" : undefined}
+              >
+                {btn.text}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+      <div class="st-tradition-img st-wide">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          width={imageWidth}
+          height={imageHeight}
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .st-tradition-cols {
+    display: flex;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
+  }
+  .st-tradition-cols--reverse {
+    flex-direction: row-reverse;
+  }
+  .st-tradition-text {
+    flex: 0 0 46%;
+  }
+  .st-tradition-body {
+    margin-bottom: 2rem;
+  }
+  .st-tradition-img {
+    flex: 1;
+  }
+  .st-tradition-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .st-tradition-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 960px) {
+    .st-tradition-cols,
+    .st-tradition-cols--reverse {
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .st-tradition-text {
+      flex: auto;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+  })();
+</script>

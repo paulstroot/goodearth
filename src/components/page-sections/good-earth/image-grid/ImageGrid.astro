@@ -1,0 +1,216 @@
+---
+interface Image {
+  src: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
+
+const {
+  images = [] as Image[],
+  quoteText = "",
+  quoteName = "",
+  quoteDesc = "",
+  quoteImageSrc = "",
+  quoteImageAlt = "",
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+
+const col1 = images.slice(0, 2);
+const col2 = images.slice(2, 4);
+const col3 = images.slice(4, 6);
+---
+
+<section class="st-image-grid-section" {...htmlAttributes}>
+  <div class="st-img-grid-outer">
+    <div class="st-img-grid">
+      {
+        [col1, col2, col3].map((col) => (
+          <div class="st-img-col">
+            {col.map((img) => (
+              <div class="st-img-wrap st-scale">
+                <img
+                  class="st-img-slide"
+                  src={img.src}
+                  alt={img.alt ?? ""}
+                  width={img.width}
+                  height={img.height}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="st-wrap">
+    <div class="st-quote-cols">
+      <div class="st-quote-img st-wide">
+        <img
+          src={quoteImageSrc}
+          alt={quoteImageAlt}
+          width="900"
+          height="675"
+          loading="lazy"
+        />
+      </div>
+      <div class="st-quote-body">
+        <p class="st-quote st-right"><em>"{quoteText}"</em></p>
+        <div class="st-right-d">
+          <span class="st-quote-name">{quoteName}</span>
+          <span class="st-quote-desc">{quoteDesc}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .st-image-grid-section {
+    background: var(--bg);
+    padding: 0 0 clamp(4rem, 7vh, 7rem);
+  }
+
+  /* ─── 3-column staggered image grid ─── */
+  .st-img-grid-outer {
+    padding: 0 clamp(1rem, 2.5vw, 3.5rem);
+    margin-bottom: clamp(5rem, 8vh, 8rem);
+  }
+  .st-img-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.3rem, 0.5vw, 0.6rem);
+    height: clamp(600px, 80vh, 900px);
+  }
+  .st-img-col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.3rem, 0.5vw, 0.6rem);
+    height: 100%;
+    overflow: hidden;
+  }
+  /* Staggered split heights per column */
+  .st-img-col:nth-child(1) .st-img-wrap:nth-child(1) { flex: 54; }
+  .st-img-col:nth-child(1) .st-img-wrap:nth-child(2) { flex: 46; }
+  .st-img-col:nth-child(2) .st-img-wrap:nth-child(1) { flex: 38; }
+  .st-img-col:nth-child(2) .st-img-wrap:nth-child(2) { flex: 62; }
+  .st-img-col:nth-child(3) .st-img-wrap:nth-child(1) { flex: 63; }
+  .st-img-col:nth-child(3) .st-img-wrap:nth-child(2) { flex: 37; }
+
+  .st-img-wrap {
+    overflow: hidden;
+    line-height: 0;
+    min-height: 0;
+  }
+  .st-img-wrap img {
+    display: block;
+    width: 100%;
+    height: calc(100% + 120px);
+    object-fit: cover;
+    margin-top: -60px;
+    will-change: transform;
+  }
+
+  /* ─── Image + quote ─── */
+  .st-quote-cols {
+    display: flex;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+    margin-bottom: clamp(4rem, 7vh, 7rem);
+  }
+  .st-quote-img {
+    flex: 0 0 58%;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+  }
+  .st-quote-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .st-quote-body {
+    flex: 1;
+  }
+
+  @media (max-width: 960px) {
+    .st-img-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .st-img-col:last-child {
+      display: none;
+    }
+    .st-quote-cols {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .st-quote-img {
+      flex: auto;
+    }
+  }
+  @media (max-width: 560px) {
+    .st-img-grid {
+      grid-template-columns: 1fr;
+    }
+    .st-img-col:last-child {
+      display: flex;
+    }
+    .st-img-col:nth-child(2) {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+
+    // Image grid parallax
+    const slideImgs = [...document.querySelectorAll<HTMLElement>(".st-img-slide")];
+    let ticking = false;
+
+    function updateGrid() {
+      ticking = false;
+      const vh = window.innerHeight;
+      slideImgs.forEach((img) => {
+        const rect = img.getBoundingClientRect();
+        const progress = (vh - rect.top) / (vh + rect.height);
+        const clamped = Math.max(0, Math.min(1, progress));
+        img.style.transform = `translateY(${(clamped * 2 - 1) * 52}px)`;
+      });
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(updateGrid);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+    updateGrid();
+  })();
+</script>

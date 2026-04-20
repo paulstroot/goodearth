@@ -3,6 +3,7 @@
    ============================================================ */
 
 @import "./tokens.css";
+@import "./ge-components.css";
 
 /* --- Reset & Base --- */
 *,

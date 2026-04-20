@@ -1,7 +1,6 @@
 ---
-import footerData from "@data/footer.json";
-import mainNavData from "@data/mainNav.json";
-import Page from "@layouts/Page.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import MainComponent from "@components/utils/MainComponent.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -14,12 +13,10 @@ export async function getStaticPaths() {
   return pages
     .filter((page) => {
       const slug = page.id.replace(/index$/, "");
-
       return slug !== "blog";
     })
     .map((page) => {
       const slug = page.id.replace(/index$/, "");
-
       if (slug.length === 0) return { params: { slug: undefined }, props: { page } };
       return { params: { slug }, props: { page } };
     });
@@ -27,12 +24,10 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
+const sections = page.data.pageSections ?? [];
 ---
 
-<Page
-  frontmatter={page.data}
-  mainNav={mainNavData}
-  footer={footerData}
->
+<BaseLayout title={page.data.title} description={page.data.description}>
+  {sections.length > 0 && <MainComponent sections={sections} />}
   <Content />
-</Page>
+</BaseLayout>

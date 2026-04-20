@@ -1,0 +1,216 @@
+/* ============================================================
+   Good Earth – Shared Component Styles
+   Utilities shared across all Good Earth page section components.
+   Imported by global.css so these are available globally.
+   ============================================================ */
+
+/* CSS variables used by Good Earth components — defined at :root so they
+   work in any component without requiring a .st-page ancestor wrapper */
+:root {
+  --bg: #f3f1eb;
+  --text: #1a1a1a;
+  --mid: #555;
+  --gold: #8c6e3c;
+}
+
+/* .st-page is kept as an opt-in wrapper for pages that need an explicit
+   background and color scope (e.g. custom .astro pages) */
+.st-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ─── Containers ─── */
+.st-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 6rem);
+}
+.st-wrap-small {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 6rem);
+}
+.st-wrap-left {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem) 0 clamp(1.5rem, 5vw, 6rem);
+}
+
+/* ─── Typography tokens ─── */
+.st-sub {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+.st-sub--light {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.st-title-l {
+  font-family: var(--font-headline);
+  font-weight: 300;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 2rem;
+}
+.st-title-l em {
+  font-style: italic;
+}
+.st-title--light {
+  color: #fff;
+}
+
+.st-body {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.05vw, 1rem);
+  line-height: 1.85;
+  color: var(--mid);
+  margin: 0 0 2rem;
+  max-width: 460px;
+}
+.st-body--light {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 420px;
+}
+
+/* ─── Buttons ─── */
+.st-btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.9em 2.2em;
+  border: 1px solid transparent;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+.st-btn--dark {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
+}
+.st-btn--dark:hover {
+  background: #333;
+  border-color: #333;
+}
+.st-btn--light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.st-btn--light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+.st-btn--outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+.st-btn--outline:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* ─── Section wrapper ─── */
+.st-section {
+  background: var(--bg);
+  padding: clamp(5rem, 9vh, 9rem) 0;
+}
+.st-section--close {
+  padding-bottom: clamp(6rem, 12vh, 12rem);
+}
+
+/* ─── Quote typography (shared by RestaurantIntro and ClosingQuote) ─── */
+.st-quote {
+  font-family: var(--font-headline);
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2vw, 2.1rem);
+  line-height: 1.4;
+  color: var(--text);
+  margin: 0 0 1.5rem;
+}
+.st-quote em {
+  font-style: italic;
+}
+.st-quote-name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+.st-quote-desc {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: #999;
+  letter-spacing: 0.07em;
+}
+
+/* ══════════════════════════════════════════
+   SCROLL-REVEAL ANIMATIONS
+   JavaScript adds .is-vis when elements enter the viewport.
+══════════════════════════════════════════ */
+.st-up,
+.st-up-d,
+.st-up-dl {
+  opacity: 0;
+  transform: translateY(34px);
+}
+.st-up {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.st-up-d {
+  transition: opacity 0.9s ease 0.16s, transform 0.9s ease 0.16s;
+}
+.st-up-dl {
+  transition: opacity 0.9s ease 0.32s, transform 0.9s ease 0.32s;
+}
+
+.st-right,
+.st-right-d {
+  opacity: 0;
+  transform: translateX(34px);
+}
+.st-right {
+  transition: opacity 1s ease, transform 1s ease;
+}
+.st-right-d {
+  transition: opacity 1s ease 0.26s, transform 1s ease 0.26s;
+}
+
+.st-scale {
+  opacity: 0;
+  transform: scale(1.07);
+  transition: opacity 1.3s ease, transform 1.5s ease;
+}
+
+.st-wide {
+  opacity: 0;
+  transform: translateY(52px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.st-up.is-vis,
+.st-up-d.is-vis,
+.st-up-dl.is-vis,
+.st-right.is-vis,
+.st-right-d.is-vis,
+.st-scale.is-vis,
+.st-wide.is-vis {
+  opacity: 1;
+  transform: none;
+}

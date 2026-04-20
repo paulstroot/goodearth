@@ -1,0 +1,68 @@
+---
+_schema: default
+title: Location & Hours
+description: >-
+  Visit Good Earth Restaurant in Edina, MN at the Galleria. Open Mon–Sat 8am–8pm, Sun 8am–7pm.
+pageSections:
+  - _component: page-sections/good-earth/hero-fullscreen
+    eyebrow: Edina, Minnesota
+    headingItalic: "Location"
+    headingPlain: "& Hours."
+    subtitle: Come visit us at the Galleria.
+    imageSrc: /images/pexels-elina-sazonova-1850600.jpg
+    imageAlt: ""
+    imageWidth: 1600
+    imageHeight: 1067
+
+  - _component: page-sections/good-earth/location-map
+    eyebrow: The Galleria · Edina
+    headingItalic: "Edina,"
+    headingPlain: "Minnesota."
+    badgeText: Open Today
+    address: "3460 Galleria\nEdina, MN 55435"
+    phone: "(952) 925-1001"
+    phoneHref: "tel:9529251001"
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.0!2d-93.33!3d44.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f621e1b3e5a5c5%3A0x8bdf8e9c4c4e4e4e!2sGood+Earth+Restaurant!5e0!3m2!1sen!2sus!4v1"
+    directionsUrl: "https://maps.google.com/maps?q=Good+Earth+Restaurant,+Galleria,+Edina,+MN+55435"
+    directionsLabel: Get Directions
+    hours:
+      - days: Monday – Saturday
+        time: 8:00 am – 8:00 pm
+      - days: Sunday
+        time: 8:00 am – 7:00 pm
+    buttons:
+      - text: Reserve a Table
+        href: "https://www.opentable.com/restref/client/?rid=27313&restref=27313"
+        style: dark
+        external: true
+      - text: Order Delivery
+        href: "https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263"
+        style: outline
+        external: true
+      - text: Call for Takeout
+        href: "tel:9529251001"
+        style: outline
+
+  - _component: page-sections/good-earth/parallax-banner
+    layout: centered
+    quoteText: >-
+      A good meal deserves a warm room and familiar faces.
+    quoteAttribution: Good Earth · Edina, Minnesota · Since 1974
+    imageSrc: /images/pexels-mike-468229-1192034.jpg
+    imageAlt: ""
+    imageWidth: 1920
+    imageHeight: 1280
+
+  - _component: page-sections/good-earth/two-column-headline-text
+    eyebrow: Plan your visit
+    headingItalic: "We'd love"
+    headingPlain: "to see you."
+    paddingBottom: true
+    leftButtons:
+      - text: Our Story
+        href: /about
+        style: dark
+      - text: Work With Us
+        href: /careers
+        style: outline
+---

@@ -1,0 +1,191 @@
+---
+interface Button {
+  text: string;
+  href: string;
+  style?: "dark" | "outline" | "light" | "white" | "ghost";
+  external?: boolean;
+}
+
+const {
+  eyebrow = "",
+  headingItalic = "",
+  headingPlain = "",
+  body = "",
+  buttons = [] as Button[],
+  theme = "dark" as "dark" | "light" | "green",
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+
+const italicLines = (headingItalic as string).split("\n").filter(Boolean);
+const plainLines = (headingPlain as string).split("\n").filter(Boolean);
+---
+
+<section
+  class:list={["st-cta-banner", `st-cta-banner--${theme}`]}
+  {...htmlAttributes}
+>
+  <div class="st-wrap-small">
+    <div class="st-cta-inner st-up">
+      {eyebrow && <span class="st-cta-eyebrow">{eyebrow}</span>}
+      <h2 class="st-cta-heading">
+        {italicLines.length > 0 && (
+          <em>
+            {italicLines.map((line, i) => (
+              <>{i > 0 && <br />}{line}</>
+            ))}
+          </em>
+        )}
+        {plainLines.length > 0 && <br />}
+        {plainLines.map((line, i) => (
+          <>{i > 0 && <br />}{line}</>
+        ))}
+      </h2>
+      {body && <p class="st-cta-body">{body}</p>}
+      {buttons.length > 0 && (
+        <div class="st-cta-actions">
+          {buttons.map((btn) => (
+            <a
+              href={btn.href}
+              class:list={["st-btn", `st-btn--${btn.style ?? "white"}`]}
+              target={btn.external ? "_blank" : undefined}
+              rel={btn.external ? "noopener noreferrer" : undefined}
+            >
+              {btn.text}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .st-cta-banner {
+    padding: clamp(5rem, 10vw, 9rem) 0;
+    text-align: center;
+    background: var(--text);
+  }
+  .st-cta-banner--dark {
+    background: #1a1a1a;
+    --cta-eyebrow: rgba(255, 255, 255, 0.35);
+    --cta-heading: #fff;
+    --cta-body: rgba(255, 255, 255, 0.5);
+  }
+  .st-cta-banner--light {
+    background: var(--bg);
+    --cta-eyebrow: var(--gold);
+    --cta-heading: var(--text);
+    --cta-body: var(--mid);
+  }
+  .st-cta-banner--green {
+    background: #2e5a27;
+    --cta-eyebrow: rgba(255, 255, 255, 0.5);
+    --cta-heading: #fff;
+    --cta-body: rgba(255, 255, 255, 0.6);
+  }
+
+  .st-cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .st-cta-eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cta-eyebrow, rgba(255, 255, 255, 0.35));
+    margin-bottom: 1.1rem;
+  }
+  .st-cta-heading {
+    font-family: var(--font-headline);
+    font-weight: 300;
+    font-size: clamp(3.2rem, 6vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    color: var(--cta-heading, #fff);
+    margin: 0 0 1.8rem;
+  }
+  .st-cta-heading em {
+    font-style: italic;
+  }
+  .st-cta-body {
+    font-family: var(--font-display);
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+    line-height: 1.8;
+    color: var(--cta-body, rgba(255, 255, 255, 0.5));
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+  .st-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* White button — solid white bg for dark/green theme CTAs */
+  .st-btn--white {
+    background: #fff;
+    color: #1a1a1a;
+    border-color: #fff;
+  }
+  .st-btn--white:hover {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(255, 255, 255, 0.88);
+  }
+
+  /* Ghost button — transparent, white border, for secondary on dark/green */
+  .st-btn--ghost {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.55);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  .st-btn--ghost:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Green-tinted ghost for green theme */
+  .st-cta-banner--light .st-btn--ghost {
+    color: var(--mid);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+  .st-cta-banner--light .st-btn--ghost:hover {
+    color: var(--text);
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: 560px) {
+    .st-cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+  })();
+</script>

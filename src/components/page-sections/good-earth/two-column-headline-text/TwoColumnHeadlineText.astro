@@ -1,0 +1,146 @@
+---
+interface Button {
+  text: string;
+  href: string;
+  style?: "dark" | "outline" | "light";
+  external?: boolean;
+}
+
+const {
+  eyebrow = "",
+  headingItalic = "",
+  headingPlain = "",
+  body = "",
+  buttonText = "",
+  buttonHref = "",
+  buttonExternal = false,
+  leftButtons = [] as Button[],
+  paddingBottom = false,
+  _component,
+  useDefaultEditableBinding: _ueb,
+  ...htmlAttributes
+} = Astro.props;
+
+// Split on \n so YAML "line one\nline two" renders with <br /> between lines
+const italicLines = (headingItalic as string).split("\n").filter(Boolean);
+const plainLines = (headingPlain as string).split("\n").filter(Boolean);
+
+// Split body on blank lines (paragraph breaks in YAML literal block scalars)
+const paragraphs = (body as string)
+  .split(/\n\n+/)
+  .map((p) => p.replace(/\n/g, " ").trim())
+  .filter(Boolean);
+---
+
+<section class:list={["st-two-col-intro", paddingBottom && "st-two-col-intro--pb"]} {...htmlAttributes}>
+  <div class="st-wrap">
+    <div class="st-intro-cols">
+      <div class="st-intro-left">
+        <span class="st-sub st-up">{eyebrow}</span>
+        <h2 class="st-title-l st-up-d">
+          <span>
+            {italicLines.length > 0 && (
+              <em>
+                {italicLines.map((line, i) => (
+                  <>{i > 0 && <br />}{line}</>
+                ))}
+              </em>
+            )}
+            {plainLines.length > 0 && <br />}
+            {plainLines.map((line, i) => (
+              <>{i > 0 && <br />}{line}</>
+            ))}
+          </span>
+        </h2>
+        {leftButtons.length > 0 && (
+          <div class="st-intro-left-btns st-up-dl">
+            {leftButtons.map((btn) => (
+              <a
+                href={btn.href}
+                class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}
+                target={btn.external ? "_blank" : undefined}
+                rel={btn.external ? "noopener noreferrer" : undefined}
+              >
+                {btn.text}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+      <div class="st-intro-right">
+        {paragraphs.map((p, i) => (
+          <p class:list={["st-body", i === 0 ? "st-right" : "st-right-d"]}>{p}</p>
+        ))}
+        {buttonText && (
+          <a
+            href={buttonHref}
+            class="st-btn st-btn--dark st-up-dl"
+            target={buttonExternal ? "_blank" : undefined}
+            rel={buttonExternal ? "noopener noreferrer" : undefined}
+          >{buttonText}</a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .st-two-col-intro {
+    background: var(--bg);
+    padding: clamp(5rem, 9vh, 9rem) 0 0;
+  }
+  .st-two-col-intro--pb {
+    padding-bottom: clamp(5rem, 9vh, 9rem);
+  }
+  .st-intro-left-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .st-intro-cols {
+    display: flex;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: flex-start;
+    margin-bottom: clamp(5rem, 8vh, 8rem);
+  }
+  .st-intro-left {
+    flex: 0 0 50%;
+  }
+  .st-intro-right {
+    flex: 1;
+    padding-top: 0.6rem;
+  }
+
+  @media (max-width: 960px) {
+    .st-intro-cols {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .st-intro-left {
+      flex: auto;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const w = window as Window & { __stReveal?: boolean };
+    if (!w.__stReveal) {
+      w.__stReveal = true;
+      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
+      const reveals = document.querySelectorAll<HTMLElement>(sel);
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-vis");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.11 }
+      );
+      reveals.forEach((el) => io.observe(el));
+    }
+  })();
+</script>
