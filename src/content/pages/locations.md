@@ -33,17 +33,13 @@ pageSections:
         dayStart: '1'
         dayEnd: '6'
         open: '08:00'
-        close: '20:00'
+        close: '17:00'
       - label: Sunday
         dayStart: '0'
         dayEnd: '0'
         open: '08:00'
         close: '19:00'
-    exceptions:
-      - date: 4-21
-        open: ''
-        close: ''
-        label: Super Monday
+    exceptions: []
     buttons:
       - text: Reserve a Table
         href: https://www.opentable.com/restref/client/?rid=27313&restref=27313
