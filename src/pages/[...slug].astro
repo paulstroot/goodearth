@@ -1,6 +1,6 @@
 ---
 import MainComponent from "@components/utils/MainComponent.astro";
-import BaseLayout from "@layouts/Page.astro";
+import Page from "@layouts/Page.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -29,10 +29,7 @@ const { Content } = await render(page);
 const sections = page.data.pageSections ?? [];
 ---
 
-<BaseLayout
-  title={page.data.title}
-  description={page.data.description}
->
+<Page frontmatter={page.data}>
   {sections.length > 0 && <MainComponent sections={sections} />}
-  <Content />
-</BaseLayout>
+  a<Content />b
+</Page>

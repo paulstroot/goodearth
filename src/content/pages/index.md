@@ -5,10 +5,10 @@ description: Natural, Unprocessed. Good Earth Restaurant in Edina, MN. Seasonal,
 pageSections:
   - _component: page-sections/good-earth/hero-fullscreen
     eyebrow: Good Earth Restaurant · Edina, Minnesota
-    headingItalic: "Natural,"
+    headingItalic: 'Natural,'
     headingPlain: Unprocessed.
     imageSrc: /images/pexels-elina-sazonova-1850600.jpg
-    imageAlt: ""
+    imageAlt: ''
     imageWidth: 1600
     imageHeight: 1067
 
@@ -26,40 +26,40 @@ pageSections:
   - _component: page-sections/good-earth/image-grid
     images:
       - src: /images/pexels-annaelle-quionquion-2652658-15279908.jpg
-        alt: ""
+        alt: ''
         width: 1100
         height: 826
       - src: /images/pexels-sam-lion-5709296.jpg
-        alt: ""
+        alt: ''
         width: 1100
         height: 825
       - src: /images/pexels-gustavo-fring-5622165.jpg
-        alt: ""
+        alt: ''
         width: 1100
         height: 826
       - src: /images/pexels-valeriya-16204678.jpg
-        alt: ""
+        alt: ''
         width: 1100
         height: 1467
       - src: /images/pexels-shootsaga-31610378.jpg
-        alt: ""
+        alt: ''
         width: 1100
         height: 826
       - src: /images/pexels-tamira-kanemagi-2159935915-36567404.jpg
-        alt: ""
+        alt: ''
         width: 1100
         height: 825
     quoteText: >-
       The atmosphere of a place, the warmth of a room, the directness from soil
       to plate — this is Good Earth.
     quoteName: Good Earth
-    quoteDesc: "Edina, Minnesota — since 1974"
+    quoteDesc: 'Edina, Minnesota — since 1974'
     quoteImageSrc: /images/pexels-wolfart-32383596.jpg
-    quoteImageAlt: ""
+    quoteImageAlt: ''
 
   - _component: page-sections/good-earth/menu-cards
     eyebrow: All Menus
-    headingItalic: "Something for"
+    headingItalic: 'Something for'
     headingPlain: every appetite
 
   - _component: page-sections/good-earth/parallax-banner
@@ -73,7 +73,7 @@ pageSections:
     buttonText: Learn our story
     buttonHref: /about
     imageSrc: /images/pexels-mike-468229-1192034.jpg
-    imageAlt: ""
+    imageAlt: ''
     imageWidth: 1920
     imageHeight: 1280
 
@@ -86,7 +86,7 @@ pageSections:
       farms, and passionate cooks who know that real food makes a real difference.
     reverse: false
     imageSrc: /images/pexels-cristian-rojas-8230026.jpg
-    imageAlt: ""
+    imageAlt: ''
     imageWidth: 650
     imageHeight: 488
     buttons:
@@ -102,7 +102,9 @@ pageSections:
     quoteName: Good Earth Kitchen
     quoteDesc: Edina, Minnesota
     imageSrc: /images/pexels-antonette-reyes-1123173-2526987.jpg
-    imageAlt: ""
+    imageAlt: ''
     imageWidth: 900
     imageHeight: 675
 ---
+
+Hello World
