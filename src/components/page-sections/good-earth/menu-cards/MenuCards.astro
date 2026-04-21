@@ -154,6 +154,12 @@ const menus = menusJson.menus.map((m) => ({
     color: var(--gold);
   }
 
+  .cms-editor-active .st-menu-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   @media (max-width: 860px) {
     .st-menu-grid {
       grid-template-columns: repeat(3, 1fr);
@@ -168,6 +174,7 @@ const menus = menusJson.menus.map((m) => ({
 
 <script>
   (function () {
+    if ((window as any).inEditorMode) return;
     // Staggered left-to-right card reveal
     const menuGrid = document.querySelector<HTMLElement>(".st-menu-grid");
     if (menuGrid) {

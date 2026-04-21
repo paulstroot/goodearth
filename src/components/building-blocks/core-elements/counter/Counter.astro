@@ -37,6 +37,7 @@ const duration = 500;
   import { onPageLoad } from "@component-utils/onPageLoad";
 
   const initCounters = () => {
+    if ((window as any).inEditorMode) return;
     const counters = document.querySelectorAll(".counter .number");
     if (!counters.length) return;
 

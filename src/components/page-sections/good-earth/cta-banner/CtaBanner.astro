@@ -160,6 +160,18 @@ const plainLines = (headingPlain as string).split("\n").filter(Boolean);
     border-color: rgba(0, 0, 0, 0.5);
   }
 
+  .cms-editor-active .st-up,
+  .cms-editor-active .st-up-d,
+  .cms-editor-active .st-up-dl,
+  .cms-editor-active .st-right,
+  .cms-editor-active .st-right-d,
+  .cms-editor-active .st-scale,
+  .cms-editor-active .st-wide {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   @media (max-width: 560px) {
     .st-cta-actions {
       flex-direction: column;
@@ -170,6 +182,7 @@ const plainLines = (headingPlain as string).split("\n").filter(Boolean);
 
 <script>
   (function () {
+    if ((window as any).inEditorMode) return;
     const w = window as Window & { __stReveal?: boolean };
     if (!w.__stReveal) {
       w.__stReveal = true;

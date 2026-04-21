@@ -109,6 +109,18 @@ const revealClass = ["st-up", "st-up-d", "st-up-dl"];
     margin: 0;
   }
 
+  .cms-editor-active .st-up,
+  .cms-editor-active .st-up-d,
+  .cms-editor-active .st-up-dl,
+  .cms-editor-active .st-right,
+  .cms-editor-active .st-right-d,
+  .cms-editor-active .st-scale,
+  .cms-editor-active .st-wide {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   @media (max-width: 960px) {
     .st-features-grid {
       grid-template-columns: 1fr;
@@ -119,6 +131,7 @@ const revealClass = ["st-up", "st-up-d", "st-up-dl"];
 
 <script>
   (function () {
+    if ((window as any).inEditorMode) return;
     const w = window as Window & { __stReveal?: boolean };
     if (!w.__stReveal) {
       w.__stReveal = true;

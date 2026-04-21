@@ -171,6 +171,26 @@ const {
     }
   }
 
+  .cms-editor-active .st-up,
+  .cms-editor-active .st-up-d,
+  .cms-editor-active .st-up-dl,
+  .cms-editor-active .st-right,
+  .cms-editor-active .st-right-d,
+  .cms-editor-active .st-scale,
+  .cms-editor-active .st-wide {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .cms-editor-active .st-hero-content .st-sub,
+  .cms-editor-active .st-hero-title,
+  .cms-editor-active .st-hero-sub,
+  .cms-editor-active .st-hero-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   @media (max-width: 560px) {
     .st-hero-title {
       font-size: clamp(2.8rem, 13vw, 5rem);
@@ -185,6 +205,7 @@ const {
 
 <script>
   (function () {
+    if ((window as any).inEditorMode) return;
     // Scroll-reveal — guarded so only one instance runs per page load
     const w = window as Window & { __stReveal?: boolean };
     if (!w.__stReveal) {

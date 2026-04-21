@@ -156,6 +156,18 @@ const {
     color: rgba(255, 255, 255, 0.4);
   }
 
+  .cms-editor-active .st-up,
+  .cms-editor-active .st-up-d,
+  .cms-editor-active .st-up-dl,
+  .cms-editor-active .st-right,
+  .cms-editor-active .st-right-d,
+  .cms-editor-active .st-scale,
+  .cms-editor-active .st-wide {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   @media (max-width: 960px) {
     .st-banner-cols {
       flex-direction: column;
@@ -169,6 +181,7 @@ const {
 
 <script>
   (function () {
+    if ((window as any).inEditorMode) return;
     // Scroll-reveal — guarded so only one instance runs per page load
     const w = window as Window & { __stReveal?: boolean };
     if (!w.__stReveal) {
