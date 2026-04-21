@@ -72,7 +72,7 @@ pageSections:
     eyebrow: Plan your visit
     headingItalic: We'd love
     headingPlain: to see you.
-    body: Body copy goes here.
+    body:
     buttonText: ''
     buttonHref: ''
     buttonExternal: false

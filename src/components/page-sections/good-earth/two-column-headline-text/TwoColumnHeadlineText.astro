@@ -26,9 +26,9 @@ const italicLines = (headingItalic as string).split("\n").filter(Boolean);
 const plainLines = (headingPlain as string).split("\n").filter(Boolean);
 
 // Split body on blank lines (paragraph breaks in YAML literal block scalars)
-const paragraphs = (body as string)
+const paragraphs = (body ?? "")
   .split(/\n\n+/)
-  .map((p) => p.replace(/\n/g, " ").trim())
+  .map((p: string) => p.replace(/\n/g, " ").trim())
   .filter(Boolean);
 ---
 
