@@ -232,3 +232,17 @@
   opacity: 1;
   transform: none;
 }
+
+/* When viewed inside the CloudCannon Visual Editor, skip all scroll-reveal
+   transitions so elements are always visible regardless of scroll position. */
+.cms-editor-active .st-up,
+.cms-editor-active .st-up-d,
+.cms-editor-active .st-up-dl,
+.cms-editor-active .st-right,
+.cms-editor-active .st-right-d,
+.cms-editor-active .st-scale,
+.cms-editor-active .st-wide {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}

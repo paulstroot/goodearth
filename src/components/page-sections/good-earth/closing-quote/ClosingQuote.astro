@@ -58,18 +58,6 @@ const {
     flex: 1;
   }
 
-  .cms-editor-active .st-up,
-  .cms-editor-active .st-up-d,
-  .cms-editor-active .st-up-dl,
-  .cms-editor-active .st-right,
-  .cms-editor-active .st-right-d,
-  .cms-editor-active .st-scale,
-  .cms-editor-active .st-wide {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
   @media (max-width: 960px) {
     .st-final-cols {
       flex-direction: column;
@@ -81,26 +69,3 @@ const {
   }
 </style>
 
-<script>
-  (function () {
-    if ((window as any).inEditorMode) return;
-    // Scroll-reveal — guarded so only one instance runs per page load
-    const w = window as Window & { __stReveal?: boolean };
-    if (!w.__stReveal) {
-      w.__stReveal = true;
-      const sel = ".st-up,.st-up-d,.st-up-dl,.st-right,.st-right-d,.st-scale,.st-wide";
-      const reveals = document.querySelectorAll<HTMLElement>(sel);
-      const io = new IntersectionObserver(
-        (entries) =>
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("is-vis");
-              io.unobserve(e.target);
-            }
-          }),
-        { threshold: 0.11 }
-      );
-      reveals.forEach((el) => io.observe(el));
-    }
-  })();
-</script>
