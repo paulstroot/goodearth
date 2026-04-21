@@ -333,7 +333,7 @@ function formatTime(t: string): string {
     const badge = document.getElementById("st-loc-badge") as HTMLElement | null;
     if (!badge) return;
 
-    interface HoursRow { label: string; dayStart: number; dayEnd: number; open: string; close: string; }
+    interface HoursRow { label: string; dayStart: number | string; dayEnd: number | string; open: string; close: string; }
     interface HoursException { date: string; open?: string; close?: string; label: string; }
 
     const hours: HoursRow[] = JSON.parse(badge.dataset.hours || "[]");
@@ -399,7 +399,7 @@ function formatTime(t: string): string {
       }
 
       // Regular hours
-      const row = hours.find((r) => inDayRange(currentWeekday, r.dayStart, r.dayEnd));
+      const row = hours.find((r) => inDayRange(currentWeekday, Number(r.dayStart), Number(r.dayEnd)));
       if (!row) return { text: "CLOSED", closed: true };
       return statusFromRange(nowMin, toMinutes(row.open), toMinutes(row.close), "CLOSED");
     }

@@ -26,13 +26,13 @@ pageSections:
     directionsLabel: Get Directions
     hours:
       - label: Monday – Saturday
-        dayStart: 1
-        dayEnd: 6
+        dayStart: "1"
+        dayEnd: "6"
         open: "08:00"
         close: "20:00"
       - label: Sunday
-        dayStart: 0
-        dayEnd: 0
+        dayStart: "0"
+        dayEnd: "0"
         open: "08:00"
         close: "19:00"
     buttons:

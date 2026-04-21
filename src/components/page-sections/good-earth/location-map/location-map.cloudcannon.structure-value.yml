@@ -33,8 +33,8 @@ _structures:
         icon: schedule
         value:
           label: Monday – Friday
-          dayStart: 1
-          dayEnd: 5
+          dayStart: "1"
+          dayEnd: "5"
           open: "08:00"
           close: "20:00"
         preview:
@@ -52,38 +52,38 @@ _structures:
             comment: First day of this range (used to calculate the live status badge).
             options:
               values:
-                - id: 0
+                - id: "0"
                   name: Sunday
-                - id: 1
+                - id: "1"
                   name: Monday
-                - id: 2
+                - id: "2"
                   name: Tuesday
-                - id: 3
+                - id: "3"
                   name: Wednesday
-                - id: 4
+                - id: "4"
                   name: Thursday
-                - id: 5
+                - id: "5"
                   name: Friday
-                - id: 6
+                - id: "6"
                   name: Saturday
           dayEnd:
             type: select
             comment: Last day of this range (inclusive).
             options:
               values:
-                - id: 0
+                - id: "0"
                   name: Sunday
-                - id: 1
+                - id: "1"
                   name: Monday
-                - id: 2
+                - id: "2"
                   name: Tuesday
-                - id: 3
+                - id: "3"
                   name: Wednesday
-                - id: 4
+                - id: "4"
                   name: Thursday
-                - id: 5
+                - id: "5"
                   name: Friday
-                - id: 6
+                - id: "6"
                   name: Saturday
           open:
             type: text
@@ -94,7 +94,7 @@ _structures:
   hoursExceptions:
     values:
       - label: Hours Exception
-        icon: event_busy
+        icon: schedule
         value:
           date: "12-25"
           open: ""
