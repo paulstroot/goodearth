@@ -9,14 +9,14 @@ pageSections:
     eyebrow: Our Story
     headingItalic: 'About'
     headingPlain: Good Earth.
-    subtitle: Cooking in harmony with the seasons since 1974.
+    subtitle: Cooking in harmony with the seasons since 1978.
     imageSrc: /images/pexels-ron-lach-8455391.jpg
     imageAlt: ''
     imageWidth: 1600
     imageHeight: 1067
 
   - _component: page-sections/good-earth/two-column-headline-text
-    eyebrow: Since 1974
+    eyebrow: Since 1978
     headingItalic: "The more direct\nour connection\nto the planet,"
     headingPlain: "the better off\nwe are."
     body: |

@@ -3,7 +3,7 @@
     "logoSrc": "/images/logo-dark.svg",
     "logoAlt": "Good Earth",
     "tagline": "Natural, Unprocessed",
-    "description": "Cooking in harmony with the seasons since 1974. Committed to freshness, purity, and responsible sourcing."
+    "description": "Cooking in harmony with the seasons since 1978. Committed to freshness, purity, and responsible sourcing."
   },
   "socials": [
     {
@@ -29,9 +29,7 @@
     },
     {
       "heading": "Menus",
-      "links": [
-        { "name": "[MENUS]" }
-      ]
+      "links": [{ "name": "[MENUS]" }]
     }
   ],
   "visit": {

@@ -1,7 +1,7 @@
 ---
 _schema: default
 title: Home
-description: Natural, Unprocessed. Good Earth Restaurant in Edina, MN. Seasonal, fresh, responsibly sourced food served daily since 1974.
+description: Natural, Unprocessed. Good Earth Restaurant in Edina, MN. Seasonal, fresh, responsibly sourced food served daily since 1978.
 pageSections:
   - _component: page-sections/good-earth/hero-fullscreen
     eyebrow: Good Earth Restaurant · Edina, Minnesota
@@ -17,7 +17,7 @@ pageSections:
     headingItalic: A good meal begins
     headingPlain: with good soil.
     body: >-
-      Since 1974, Good Earth has nourished Edina with seasonal, organic, and
+      Since 1978, Good Earth has nourished Edina with seasonal, organic, and
       responsibly sourced food. We know every farmer, every ingredient — because
       we believe what goes into your body should nourish, not compromise.
     buttonText: Discover more
@@ -53,7 +53,7 @@ pageSections:
       The atmosphere of a place, the warmth of a room, the directness from soil
       to plate — this is Good Earth.
     quoteName: Good Earth
-    quoteDesc: 'Edina, Minnesota — since 1974'
+    quoteDesc: 'Edina, Minnesota — since 1978'
     quoteImageSrc: /images/pexels-wolfart-32383596.jpg
     quoteImageAlt: ''
 
@@ -78,7 +78,7 @@ pageSections:
     imageHeight: 1280
 
   - _component: page-sections/good-earth/tradition-split
-    eyebrow: Since 1974
+    eyebrow: Since 1978
     headingItalic: Tradition meets
     headingPlain: freshness
     body: >-
@@ -106,5 +106,3 @@ pageSections:
     imageWidth: 900
     imageHeight: 675
 ---
-
-Hello World
