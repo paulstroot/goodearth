@@ -2,8 +2,8 @@
 import StructuredData from "@components/utils/StructuredData.astro";
 import seoData from "@data/seo.json";
 import { SEO } from "astro-seo";
-import "../styles/global.css";
-import SiteFonts from "./SiteFonts.astro";
+import "@styles/global.css";
+import SiteFonts from "@layouts/SiteFonts.astro";
 
 export interface Props {
   title: string;
@@ -16,7 +16,6 @@ const props = Astro.props;
 const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
 const pageDescription = props.description || seoData.description;
 const pageImage = props.image || seoData.logoSource;
-
 const {
   title = "Good Earth Restaurant",
   description = "Natural, Unprocessed. Good Earth Restaurant in Edina, Minnesota. Serving seasonal, fresh food in harmony with nature since 1974.",
@@ -24,7 +23,10 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  data-theme="light"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -91,10 +93,11 @@ const {
       title="Sitemap"
       href="/sitemap-index.xml"
     />
+    <slot name="head" />
   </head>
   <body>
-    <main id="main-content">
+    <div>
       <slot />
-    </main>
+    </div>
   </body>
 </html>
