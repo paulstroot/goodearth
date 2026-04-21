@@ -32,7 +32,7 @@ const col3 = images.slice(4, 6);
       {
         [col1, col2, col3].map((col) => (
           <div class="st-img-col">
-            {col.map((img) => (
+            {col.map((img: Image) => (
               <div class="st-img-wrap st-scale">
                 <img
                   class="st-img-slide"

@@ -1,6 +1,5 @@
 ---
 import Icon from "@core-elements/icon/Icon.astro";
-import Mobile from "@components/navigation/mobile/Mobile.astro";
 import navData from "../data/nav.json";
 import { generateNavData } from "../utils/navGenerator.js";
 
@@ -8,19 +7,22 @@ const mobileNavData = await generateNavData(navData);
 ---
 
 <div class="library-mobile-nav">
-  <Icon
-    name="library/logo"
-    size="none"
-    class="sidebar-logo"
-  />
-  <Mobile navData={mobileNavData}>
-    <span slot="logo">
-      <Icon
-        name="library/logo"
-        size="none"
-        class="component-docs-sidebar-logo"
-        style="height: 35px; width: auto;"
-      />
-    </span>
-  </Mobile>
+  <Icon name="library/logo" size="none" class="sidebar-logo" />
+  <nav class="mobile-docs-nav">
+    <ul>
+      {mobileNavData.map((section: any) => (
+        <>
+          {section.items?.map((item: any) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </>
+      ))}
+    </ul>
+  </nav>
 </div>
+
+<style>
+  .mobile-docs-nav ul { list-style: none; padding: 0; margin: 0; }
+  .mobile-docs-nav a { font-size: 0.9rem; color: inherit; text-decoration: none; display: block; padding: 0.4rem 1rem; }
+  .mobile-docs-nav a:hover { text-decoration: underline; }
+</style>

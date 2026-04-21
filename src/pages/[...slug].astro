@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
 import MainComponent from "@components/utils/MainComponent.astro";
+import BaseLayout from "@layouts/Page.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -13,10 +13,12 @@ export async function getStaticPaths() {
   return pages
     .filter((page) => {
       const slug = page.id.replace(/index$/, "");
+
       return slug !== "blog";
     })
     .map((page) => {
       const slug = page.id.replace(/index$/, "");
+
       if (slug.length === 0) return { params: { slug: undefined }, props: { page } };
       return { params: { slug }, props: { page } };
     });
@@ -27,7 +29,10 @@ const { Content } = await render(page);
 const sections = page.data.pageSections ?? [];
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description}>
+<BaseLayout
+  title={page.data.title}
+  description={page.data.description}
+>
   {sections.length > 0 && <MainComponent sections={sections} />}
   <Content />
 </BaseLayout>

@@ -89,7 +89,6 @@ export default [
       parser: astroEslintParser,
       parserOptions: {
         parser: typescriptParser,
-        project: "./tsconfig.json",
         extraFileExtensions: [".astro"],
       },
     },

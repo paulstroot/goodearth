@@ -1,33 +1,51 @@
 {
-  "logoSource": "/images/logo.svg",
-  "logoAlt": "Logo",
-  "links": [
-    {
-      "name": "Home",
-      "path": "/"
-    },
-    {
-      "name": "Why",
-      "path": "/why/"
-    },
-    {
-      "name": "Blog",
-      "path": "/blog/"
-    }
-  ],
+  "brand": {
+    "logoSrc": "/images/logo-dark.svg",
+    "logoAlt": "Good Earth",
+    "tagline": "Natural, Unprocessed",
+    "description": "Cooking in harmony with the seasons since 1974. Committed to freshness, purity, and responsible sourcing."
+  },
   "socials": [
     {
-      "icon": "social/github",
-      "link": "https://github.com"
+      "platform": "facebook",
+      "href": "https://www.facebook.com/goodearthmn",
+      "label": "Good Earth on Facebook"
     },
     {
-      "icon": "social/x",
-      "link": "https://twitter.com"
-    },
-    {
-      "icon": "social/linkedin",
-      "link": "https://linkedin.com"
+      "platform": "instagram",
+      "href": "https://www.instagram.com/good_earth_edina/",
+      "label": "Good Earth Edina on Instagram"
     }
   ],
-  "footerText": "© 2026 All rights reserved."
+  "navColumns": [
+    {
+      "heading": "Explore",
+      "links": [
+        { "name": "Home", "path": "/" },
+        { "name": "About", "path": "/about" },
+        { "name": "Location & Hours", "path": "/locations" },
+        { "name": "Careers", "path": "/careers" }
+      ]
+    },
+    {
+      "heading": "Menus",
+      "links": [
+        { "name": "[MENUS]" }
+      ]
+    }
+  ],
+  "visit": {
+    "heading": "Visit Us",
+    "addressLines": ["In the Galleria", "3460 Galleria", "Edina, MN 55435"],
+    "phone": "(952) 925-1001",
+    "phoneHref": "tel:9529251001",
+    "hoursLines": ["Mon – Sat: 8am – 8pm", "Sun: 8am – 7pm"],
+    "reserveText": "Reserve a Table",
+    "reserveHref": "https://www.opentable.com/restref/client/?rid=27313&restref=27313"
+  },
+  "copyrightName": "Good Earth Restaurant",
+  "copyrightLink": {
+    "text": "Parasole Family of Restaurants",
+    "href": "https://www.parasole.com"
+  }
 }

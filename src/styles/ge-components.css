@@ -92,7 +92,10 @@
   text-decoration: none;
   padding: 0.9em 2.2em;
   border: 1px solid transparent;
-  transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+  transition:
+    background 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
 }
 .st-btn--dark {
   background: var(--text);
@@ -102,6 +105,7 @@
 .st-btn--dark:hover {
   background: #333;
   border-color: #333;
+  color: #fff;
 }
 .st-btn--light {
   background: transparent;
@@ -171,13 +175,19 @@
   transform: translateY(34px);
 }
 .st-up {
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 .st-up-d {
-  transition: opacity 0.9s ease 0.16s, transform 0.9s ease 0.16s;
+  transition:
+    opacity 0.9s ease 0.16s,
+    transform 0.9s ease 0.16s;
 }
 .st-up-dl {
-  transition: opacity 0.9s ease 0.32s, transform 0.9s ease 0.32s;
+  transition:
+    opacity 0.9s ease 0.32s,
+    transform 0.9s ease 0.32s;
 }
 
 .st-right,
@@ -186,22 +196,30 @@
   transform: translateX(34px);
 }
 .st-right {
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 .st-right-d {
-  transition: opacity 1s ease 0.26s, transform 1s ease 0.26s;
+  transition:
+    opacity 1s ease 0.26s,
+    transform 1s ease 0.26s;
 }
 
 .st-scale {
   opacity: 0;
   transform: scale(1.07);
-  transition: opacity 1.3s ease, transform 1.5s ease;
+  transition:
+    opacity 1.3s ease,
+    transform 1.5s ease;
 }
 
 .st-wide {
   opacity: 0;
   transform: translateY(52px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .st-up.is-vis,

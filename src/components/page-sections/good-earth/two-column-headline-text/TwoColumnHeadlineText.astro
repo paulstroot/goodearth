@@ -68,7 +68,7 @@ const paragraphs = (body as string)
         {
           leftButtons.length > 0 && (
             <div class="st-intro-left-btns st-up-dl">
-              {leftButtons.map((btn) => (
+              {leftButtons.map((btn: Button) => (
                 <a
                   href={btn.href}
                   class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}

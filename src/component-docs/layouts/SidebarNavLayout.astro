@@ -1,5 +1,4 @@
 ---
-import Side from "@components/navigation/side/Side.astro";
 import Button from "@core-elements/button/Button.astro";
 import Icon from "@core-elements/icon/Icon.astro";
 import navData from "../data/nav.json";
@@ -10,11 +9,7 @@ const sideNavData = await generateNavData(navData);
 
 <div class="library-sidebar">
   <div class="sidebar-logo-container">
-    <Icon
-      name="library/logo"
-      size="none"
-      class="sidebar-logo"
-    />
+    <Icon name="library/logo" size="none" class="sidebar-logo" />
     <Button
       variant="ghost"
       size="sm"
@@ -24,7 +19,18 @@ const sideNavData = await generateNavData(navData);
       link="/"
     />
   </div>
-  <Side navData={sideNavData} />
+  <nav class="sidebar-nav">
+    {sideNavData.map((section: any) => (
+      <div class="sidebar-section">
+        {section.label && <p class="sidebar-section-label">{section.label}</p>}
+        <ul>
+          {section.items?.map((item: any) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </nav>
 </div>
 
 <style is:global>
@@ -44,4 +50,8 @@ const sideNavData = await generateNavData(navData);
       }
     }
   }
+  .sidebar-nav ul { list-style: none; padding: 0; margin: 0 0 1rem; }
+  .sidebar-nav a { font-size: 0.875rem; color: inherit; text-decoration: none; display: block; padding: 0.25rem 0; }
+  .sidebar-nav a:hover { text-decoration: underline; }
+  .sidebar-section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin: 1rem 0 0.4rem; }
 </style>

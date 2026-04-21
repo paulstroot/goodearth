@@ -61,22 +61,6 @@ pageSections:
     eyebrow: All Menus
     headingItalic: "Something for"
     headingPlain: every appetite
-    menus:
-      - label: Seasonal Specials
-        href: /pdfs/Good_Earth_Specials_Menu.pdf
-        icon: specials
-      - label: Breakfast Menu
-        href: /pdfs/Good_Earth_Breakfast_Menu.pdf
-        icon: breakfast
-      - label: Lunch & Dinner
-        href: /pdfs/Good_Earth_Lunch_Dinner_Menu.pdf
-        icon: dining
-      - label: Kids Menu
-        href: /pdfs/Good_Earth_Kids_Menu.pdf
-        icon: kids
-      - label: Event Platters
-        href: /pdfs/Good-Earth-Event-Platters.pdf
-        icon: event
 
   - _component: page-sections/good-earth/parallax-banner
     eyebrow: The Philosophy

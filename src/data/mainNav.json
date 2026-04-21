@@ -2,20 +2,54 @@
   "logoSource": "/images/logo.svg",
   "logoAlt": "Logo",
   "navData": [
+    { "name": "Home", "path": "/" },
     {
-      "name": "Home",
-      "path": "/",
-      "children": []
+      "name": "Menus",
+      "children": [
+        {
+          "name": "[MENUS]"
+        }
+      ]
     },
     {
-      "name": "Why",
-      "path": "/why/",
-      "children": []
+      "name": "Delivery",
+      "children": [
+        {
+          "name": "Edina via Grubhub",
+          "path": "https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263",
+          "isExternal": true
+        }
+      ]
     },
     {
-      "name": "Blog",
-      "path": "/blog/",
-      "children": []
+      "name": "About",
+      "path": "/about",
+      "children": [
+        { "name": "About Good Earth", "path": "/about" },
+        { "name": "Location & Hours", "path": "/locations" },
+        { "name": "Careers", "path": "/careers" }
+      ]
+    },
+    {
+      "name": "Gift Cards",
+      "children": [
+        {
+          "name": "Purchase Gift Cards",
+          "path": "https://store.parasole.com/collections/parasole-gift-cards/products/good-earth-gift-card",
+          "isExternal": true
+        },
+        {
+          "name": "Gift Card Balance",
+          "path": "https://parasole.com/loyalty/card-balance.aspx",
+          "isExternal": true
+        }
+      ]
+    },
+    {
+      "name": "Reservations",
+      "path": "https://www.opentable.com/restref/client/?rid=27313&restref=27313",
+      "isExternal": true,
+      "isCta": true
     }
   ],
   "buttonSections": [

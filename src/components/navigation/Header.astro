@@ -1,5 +1,13 @@
 ---
 // src/components/navigation/Header.astro
+import navJson from "@data/mainNav.json";
+import menusJson from "@data/menus.json";
+
+const menuChildren = menusJson.menus.map((m) => ({
+  label: m.name,
+  href: m.source,
+  isPdf: m.type === "pdf",
+}));
 
 interface NavChild {
   label: string;
@@ -7,6 +15,7 @@ interface NavChild {
   isPdf?: boolean;
   isExternal?: boolean;
 }
+
 interface NavItem {
   label: string;
   href?: string;
@@ -15,63 +24,24 @@ interface NavItem {
   children?: NavChild[];
 }
 
-const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
-  {
-    label: "Menus",
-    children: [
-      { label: "Breakfast Menu", href: "/pdfs/Good_Earth_Breakfast_Menu.pdf", isPdf: true },
-      {
-        label: "Lunch & Dinner Menu",
-        href: "/pdfs/Good_Earth_Lunch_Dinner_Menu.pdf",
-        isPdf: true,
-      },
-      { label: "Seasonal Specials Menu", href: "/pdfs/Good_Earth_Specials_Menu.pdf", isPdf: true },
-      { label: "Kids Menu", href: "/pdfs/Good_Earth_Kids_Menu.pdf", isPdf: true },
-      { label: "Event Platters", href: "/pdfs/Good-Earth-Event-Platters.pdf", isPdf: true },
-    ],
-  },
-  {
-    label: "Delivery",
-    children: [
-      {
-        label: "Edina via Grubhub",
-        href: "https://www.grubhub.com/restaurant/good-earth---edina-3460-w-70th-st-edina/1944263",
-        isExternal: true,
-      },
-    ],
-  },
-  {
-    label: "About",
-    href: "/about",
-    children: [
-      { label: "About Good Earth", href: "/about" },
-      { label: "Location & Hours", href: "/locations" },
-      { label: "Careers", href: "/careers" },
-    ],
-  },
-  {
-    label: "Gift Cards",
-    children: [
-      {
-        label: "Purchase Gift Cards",
-        href: "https://store.parasole.com/collections/parasole-gift-cards/products/good-earth-gift-card",
-        isExternal: true,
-      },
-      {
-        label: "Gift Card Balance",
-        href: "https://parasole.com/loyalty/card-balance.aspx",
-        isExternal: true,
-      },
-    ],
-  },
-  {
-    label: "Reservations",
-    href: "https://www.opentable.com/restref/client/?rid=27313&restref=27313",
-    isExternal: true,
-    isCta: true,
-  },
-];
+const navItems: NavItem[] = navJson.navData.map((item) => ({
+  label: item.name,
+  href: (item as any).path as string | undefined,
+  isCta: (item as any).isCta as boolean | undefined,
+  isExternal: (item as any).isExternal as boolean | undefined,
+  children: item.children?.flatMap((child): NavChild[] =>
+    child.name === "[MENUS]"
+      ? menuChildren
+      : [
+          {
+            label: child.name,
+            href: (child as any).path as string,
+            isPdf: (child as any).isPdf as boolean | undefined,
+            isExternal: (child as any).isExternal as boolean | undefined,
+          },
+        ]
+  ),
+}));
 
 const currentPath = Astro.url.pathname;
 ---
@@ -454,6 +424,7 @@ const currentPath = Astro.url.pathname;
     list-style: none;
     padding: var(--space-2) 0;
     z-index: 200;
+    overflow: hidden;
   }
   .has-dropdown:hover .dropdown,
   .has-dropdown.is-open .dropdown {

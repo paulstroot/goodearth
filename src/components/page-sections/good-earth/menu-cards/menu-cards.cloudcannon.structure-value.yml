@@ -6,7 +6,6 @@ value:
   eyebrow: All Menus
   headingItalic: Something for
   headingPlain: every appetite
-  menus: []
 preview:
   text:
     - Menu Cards
@@ -18,40 +17,3 @@ picker_preview:
   subtext: Row of downloadable menu cards with icons and labels.
 _inputs_from_glob:
   - /src/components/page-sections/good-earth/menu-cards/menu-cards.cloudcannon.inputs.yml
-_structures:
-  menuCardItems:
-    values:
-      - label: Menu Card
-        icon: restaurant_menu
-        value:
-          label: Menu name
-          href: ""
-          icon: dining
-        preview:
-          text:
-            - key: label
-            - Menu Card
-          subtext:
-            - key: href
-        _inputs:
-          label:
-            type: text
-            comment: Display name for the menu card.
-          href:
-            type: url
-            comment: Link to the menu PDF or page.
-          icon:
-            type: select
-            comment: Icon displayed on the card.
-            options:
-              values:
-                - id: specials
-                  name: Specials
-                - id: breakfast
-                  name: Breakfast
-                - id: dining
-                  name: Lunch & Dinner
-                - id: kids
-                  name: Kids
-                - id: event
-                  name: Event Platters
