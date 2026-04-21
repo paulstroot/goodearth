@@ -6,7 +6,6 @@ value:
   eyebrow: Location name
   headingItalic: City,
   headingPlain: State.
-  badgeText: ""
   address: ""
   phone: ""
   phoneHref: ""
@@ -14,6 +13,7 @@ value:
   directionsUrl: ""
   directionsLabel: Get Directions
   hours: []
+  exceptions: []
   buttons: []
 preview:
   text:
@@ -32,21 +32,101 @@ _structures:
       - label: Hours Row
         icon: schedule
         value:
-          days: Monday – Friday
-          time: 8:00 am – 8:00 pm
+          label: Monday – Friday
+          dayStart: 1
+          dayEnd: 5
+          open: "08:00"
+          close: "20:00"
         preview:
           text:
-            - key: days
+            - key: label
             - Hours Row
           subtext:
-            - key: time
+            - key: open
         _inputs:
-          days:
+          label:
             type: text
-            comment: Day range label (e.g. "Monday – Saturday").
-          time:
+            comment: Day range label displayed in the hours table (e.g. "Monday – Saturday").
+          dayStart:
+            type: select
+            comment: First day of this range (used to calculate the live status badge).
+            options:
+              values:
+                - id: 0
+                  name: Sunday
+                - id: 1
+                  name: Monday
+                - id: 2
+                  name: Tuesday
+                - id: 3
+                  name: Wednesday
+                - id: 4
+                  name: Thursday
+                - id: 5
+                  name: Friday
+                - id: 6
+                  name: Saturday
+          dayEnd:
+            type: select
+            comment: Last day of this range (inclusive).
+            options:
+              values:
+                - id: 0
+                  name: Sunday
+                - id: 1
+                  name: Monday
+                - id: 2
+                  name: Tuesday
+                - id: 3
+                  name: Wednesday
+                - id: 4
+                  name: Thursday
+                - id: 5
+                  name: Friday
+                - id: 6
+                  name: Saturday
+          open:
             type: text
-            comment: Opening hours (e.g. "8:00 am – 8:00 pm").
+            comment: Opening time in 24-hour format (e.g. "08:00", "11:30").
+          close:
+            type: text
+            comment: Closing time in 24-hour format (e.g. "20:00", "21:30").
+  hoursExceptions:
+    values:
+      - label: Hours Exception
+        icon: event_busy
+        value:
+          date: "12-25"
+          open: ""
+          close: ""
+          label: Holiday
+        preview:
+          text:
+            - key: label
+            - Hours Exception
+          subtext:
+            - key: date
+        _inputs:
+          date:
+            type: text
+            comment: >-
+              Date in MM-DD format (e.g. "12-25" for Dec 25). Matched every year
+              by month and day — no need to update the year.
+          open:
+            type: text
+            comment: >-
+              Opening time in 24-hour format (e.g. "11:00"). Leave blank to mark
+              the entire day as closed.
+          close:
+            type: text
+            comment: >-
+              Closing time in 24-hour format (e.g. "14:00"). Leave blank to mark
+              the entire day as closed.
+          label:
+            type: text
+            comment: >-
+              Label shown in the badge when closed (e.g. "Christmas" → "CLOSED
+              FOR CHRISTMAS").
   buttonItems:
     values:
       - label: Button

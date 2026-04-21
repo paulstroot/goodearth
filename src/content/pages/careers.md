@@ -55,7 +55,7 @@ pageSections:
           concepts.
         icon: award
   - _component: page-sections/good-earth/cta-banner
-    theme: green
+    theme: dark
     eyebrow: Ready to apply?
     headingItalic: Your next chapter
     headingPlain: starts here.

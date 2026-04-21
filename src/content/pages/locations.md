@@ -18,7 +18,6 @@ pageSections:
     eyebrow: The Galleria · Edina
     headingItalic: 'Edina,'
     headingPlain: 'Minnesota.'
-    badgeText: Open Today
     address: "3460 Galleria\nEdina, MN 55435"
     phone: '(952) 925-1001'
     phoneHref: 'tel:9529251001'
@@ -26,10 +25,16 @@ pageSections:
     directionsUrl: 'https://maps.google.com/maps?q=Good+Earth+Restaurant,+Galleria,+Edina,+MN+55435'
     directionsLabel: Get Directions
     hours:
-      - days: Monday – Saturday
-        time: 8:00 am – 8:00 pm
-      - days: Sunday
-        time: 8:00 am – 7:00 pm
+      - label: Monday – Saturday
+        dayStart: 1
+        dayEnd: 6
+        open: "08:00"
+        close: "20:00"
+      - label: Sunday
+        dayStart: 0
+        dayEnd: 0
+        open: "08:00"
+        close: "19:00"
     buttons:
       - text: Reserve a Table
         href: 'https://www.opentable.com/restref/client/?rid=27313&restref=27313'

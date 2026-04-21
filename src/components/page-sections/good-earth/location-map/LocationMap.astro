@@ -1,13 +1,22 @@
 ---
 interface HoursRow {
-  days: string;
-  time: string;
+  label: string;
+  dayStart: number; // 0=Sun, 1=Mon, …, 6=Sat
+  dayEnd: number;
+  open: string;     // 24h "HH:MM"
+  close: string;    // 24h "HH:MM"
+}
+
+interface HoursException {
+  date: string;    // "MM-DD" — matched annually by month and day
+  open?: string;   // 24h "HH:MM" — omit for all-day closure
+  close?: string;  // 24h "HH:MM" — omit for all-day closure
+  label: string;   // shown in badge, e.g. "Christmas" → "CLOSED FOR CHRISTMAS"
 }
 
 interface Button {
   text: string;
   href: string;
-  /** Visual style — matches the shared st-btn-- variants */
   style?: "dark" | "outline" | "light";
   external?: boolean;
 }
@@ -16,7 +25,6 @@ const {
   eyebrow = "",
   headingItalic = "",
   headingPlain = "",
-  badgeText = "",
   address = "",
   phone = "",
   phoneHref = "",
@@ -24,6 +32,7 @@ const {
   directionsUrl = "",
   directionsLabel = "Get Directions",
   hours = [] as HoursRow[],
+  exceptions = [] as HoursException[],
   buttons = [] as Button[],
   _component,
   useDefaultEditableBinding: _ueb,
@@ -31,12 +40,22 @@ const {
 } = Astro.props;
 
 const addressLines = (address as string).split("\n").filter(Boolean);
+
+function formatTime(t: string): string {
+  const [h, m] = t.split(":").map(Number);
+  const suffix = h >= 12 ? "pm" : "am";
+  const h12 = h % 12 || 12;
+
+  return m === 0 ? `${h12}${suffix}` : `${h12}:${String(m).padStart(2, "0")}${suffix}`;
+}
 ---
 
-<section class="st-section" {...htmlAttributes}>
+<section
+  class="st-section"
+  {...htmlAttributes}
+>
   <div class="st-wrap">
     <div class="st-loc-grid">
-
       <!-- Map column -->
       <div class="st-loc-map-col st-wide">
         <div class="st-loc-map-frame">
@@ -51,29 +70,31 @@ const addressLines = (address as string).split("\n").filter(Boolean);
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        {directionsUrl && (
-          <a
-            href={directionsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="st-loc-directions st-up-d"
-          >
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
+        {
+          directionsUrl && (
+            <a
+              href={directionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="st-loc-directions st-up-d"
             >
-              <polygon points="3 11 22 2 13 21 11 13 3 11"/>
-            </svg>
-            {directionsLabel}
-          </a>
-        )}
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polygon points="3 11 22 2 13 21 11 13 3 11" />
+              </svg>
+              {directionsLabel}
+            </a>
+          )
+        }
       </div>
 
       <!-- Details column -->
@@ -84,59 +105,80 @@ const addressLines = (address as string).split("\n").filter(Boolean);
           <h2 class="st-title-l st-loc-name">
             <span><em>{headingItalic}</em><br />{headingPlain}</span>
           </h2>
-          {badgeText && <span class="st-loc-badge">{badgeText}</span>}
+          <span
+            class="st-loc-badge"
+            id="st-loc-badge"
+            data-hours={JSON.stringify(hours)}
+            data-exceptions={JSON.stringify(exceptions)}
+            hidden
+          ></span>
         </div>
 
-        {(address || phone) && (
-          <div class="st-loc-detail-block st-up-dl">
-            <h3 class="st-loc-detail-label">Address</h3>
-            {addressLines.length > 0 && (
-              <address class="st-loc-address">
-                {addressLines.map((line, i) => (
-                  <>{i > 0 && <br />}{line}</>
-                ))}
-              </address>
-            )}
-            {phone && (
-              <a href={phoneHref || `tel:${phone.replace(/\D/g, "")}`} class="st-loc-phone">
-                {phone}
-              </a>
-            )}
-          </div>
-        )}
+        {
+          (address || phone) && (
+            <div class="st-loc-detail-block st-up-dl">
+              <h3 class="st-loc-detail-label">Address</h3>
+              {addressLines.length > 0 && (
+                <address class="st-loc-address">
+                  {addressLines.map((line, i) => (
+                    <>
+                      {i > 0 && <br />}
+                      {line}
+                    </>
+                  ))}
+                </address>
+              )}
+              {phone && (
+                <a
+                  href={phoneHref || `tel:${phone.replace(/\D/g, "")}`}
+                  class="st-loc-phone"
+                >
+                  {phone}
+                </a>
+              )}
+            </div>
+          )
+        }
 
-        {hours.length > 0 && (
-          <div class="st-loc-detail-block st-up-dl">
-            <h3 class="st-loc-detail-label">Hours</h3>
-            <table class="st-loc-hours">
-              <tbody>
-                {hours.map((row) => (
-                  <tr>
-                    <td>{row.days}</td>
-                    <td><strong>{row.time}</strong></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
+        {
+          hours.length > 0 && (
+            <div class="st-loc-detail-block st-up-dl">
+              <h3 class="st-loc-detail-label">Hours</h3>
+              <table class="st-loc-hours">
+                <tbody>
+                  {hours.map((row: HoursRow) => (
+                    <tr>
+                      <td>{row.label}</td>
+                      <td>
+                        <strong>
+                          {formatTime(row.open)} – {formatTime(row.close)}
+                        </strong>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )
+        }
 
-        {buttons.length > 0 && (
-          <div class="st-loc-actions st-up-dl">
-            {buttons.map((btn) => (
-              <a
-                href={btn.href}
-                class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}
-                target={btn.external ? "_blank" : undefined}
-                rel={btn.external ? "noopener noreferrer" : undefined}
-              >
-                {btn.text}
-              </a>
-            ))}
-          </div>
-        )}
+        {
+          buttons.length > 0 && (
+            <div class="st-loc-actions st-up-dl">
+              {buttons.map((btn: Button) => (
+                <a
+                  href={btn.href}
+                  class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}
+                  target={btn.external ? "_blank" : undefined}
+                  rel={btn.external ? "noopener noreferrer" : undefined}
+                >
+                  {btn.text}
+                </a>
+              ))}
+            </div>
+          )
+        }
       </div>
-
     </div>
   </div>
 </section>
@@ -207,6 +249,11 @@ const addressLines = (address as string).split("\n").filter(Boolean);
     border-radius: 999px;
     margin-bottom: 2.1rem;
     flex-shrink: 0;
+  }
+  .st-loc-badge--closed {
+    color: #a03020;
+    background: rgba(160, 48, 32, 0.08);
+    border-color: rgba(160, 48, 32, 0.25);
   }
   .st-loc-detail-block {
     margin-bottom: 2.2rem;
@@ -279,3 +326,87 @@ const addressLines = (address as string).split("\n").filter(Boolean);
   }
 </style>
 
+<script>
+  (function () {
+    if ((window as any).inEditorMode) return;
+
+    const badge = document.getElementById("st-loc-badge") as HTMLElement | null;
+    if (!badge) return;
+
+    interface HoursRow { label: string; dayStart: number; dayEnd: number; open: string; close: string; }
+    interface HoursException { date: string; open?: string; close?: string; label: string; }
+
+    const hours: HoursRow[] = JSON.parse(badge.dataset.hours || "[]");
+    const exceptions: HoursException[] = JSON.parse(badge.dataset.exceptions || "[]");
+
+    function inDayRange(day: number, start: number, end: number): boolean {
+      return start <= end ? day >= start && day <= end : day >= start || day <= end;
+    }
+
+    function toMinutes(t: string): number {
+      const [h, m] = t.split(":").map(Number);
+      return h * 60 + m;
+    }
+
+    function statusFromRange(
+      nowMin: number,
+      openMin: number,
+      closeMin: number,
+      closedLabel: string
+    ): { text: string; closed: boolean } {
+      if (nowMin < openMin) {
+        const diff = openMin - nowMin;
+        return diff <= 60
+          ? { text: `OPENS IN ${diff} MIN`, closed: true }
+          : { text: closedLabel, closed: true };
+      }
+      if (nowMin >= closeMin) return { text: closedLabel, closed: true };
+      const remaining = closeMin - nowMin;
+      return remaining <= 60
+        ? { text: `CLOSING IN ${remaining} MIN`, closed: false }
+        : { text: "NOW OPEN", closed: false };
+    }
+
+    function getStatus(): { text: string; closed: boolean } {
+      const now = new Date();
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Chicago",
+        weekday: "short",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        hour12: false,
+      }).formatToParts(now);
+
+      const get = (type: string) => parts.find((p) => p.type === type)?.value ?? "0";
+      const dayMap: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+      const currentWeekday = dayMap[get("weekday")] ?? -1;
+      const currentMonth = parseInt(get("month"), 10);
+      const currentDay = parseInt(get("day"), 10);
+      const nowMin = parseInt(get("hour"), 10) * 60 + parseInt(get("minute"), 10);
+
+      // Check exceptions first (matched by month and day, annually)
+      const exc = exceptions.find((e) => {
+        const [em, ed] = e.date.split("-").map(Number);
+        return em === currentMonth && ed === currentDay;
+      });
+
+      if (exc) {
+        const closedLabel = `CLOSED FOR ${exc.label.toUpperCase()}`;
+        if (!exc.open || !exc.close) return { text: closedLabel, closed: true };
+        return statusFromRange(nowMin, toMinutes(exc.open), toMinutes(exc.close), closedLabel);
+      }
+
+      // Regular hours
+      const row = hours.find((r) => inDayRange(currentWeekday, r.dayStart, r.dayEnd));
+      if (!row) return { text: "CLOSED", closed: true };
+      return statusFromRange(nowMin, toMinutes(row.open), toMinutes(row.close), "CLOSED");
+    }
+
+    const { text, closed } = getStatus();
+    badge.textContent = text;
+    badge.classList.toggle("st-loc-badge--closed", closed);
+    badge.hidden = false;
+  })();
+</script>
