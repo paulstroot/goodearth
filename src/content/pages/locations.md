@@ -33,7 +33,7 @@ pageSections:
         dayStart: '1'
         dayEnd: '6'
         open: '08:00'
-        close: '17:00'
+        close: '18:00'
       - label: Sunday
         dayStart: '0'
         dayEnd: '0'
