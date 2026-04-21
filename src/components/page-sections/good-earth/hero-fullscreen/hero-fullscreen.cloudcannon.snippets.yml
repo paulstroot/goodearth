@@ -1,0 +1,44 @@
+heroFullscreen:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Hero Fullscreen
+    subtext:
+      - key: headingPlain
+    icon: fullscreen
+  definitions:
+    component_name: HeroFullscreen
+    named_args:
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: subtitle
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageSrc
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageAlt
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageWidth
+        type: number
+        optional: true
+      - editor_key: imageHeight
+        type: number
+        optional: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/hero-fullscreen/hero-fullscreen.cloudcannon.inputs.yml

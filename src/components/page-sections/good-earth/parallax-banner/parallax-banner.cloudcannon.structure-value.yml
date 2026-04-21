@@ -1,0 +1,29 @@
+label: Parallax Banner
+icon: panorama
+description: Full-width parallax image with optional text overlay in two-column, centered quote, or image-only layouts.
+value:
+  _component: page-sections/good-earth/parallax-banner
+  layout: two-col
+  eyebrow: Eyebrow text
+  headingItalic: Italic heading
+  headingPlain: Plain heading
+  body: Body copy goes here.
+  buttonText: Learn more
+  buttonHref: ""
+  quoteText: ""
+  quoteAttribution: ""
+  imageSrc: /images/pexels-mike-468229-1192034.jpg
+  imageAlt: ""
+  imageWidth: 1920
+  imageHeight: 1280
+preview:
+  text:
+    - Parallax Banner
+  subtext:
+    - key: headingPlain
+  icon: panorama
+picker_preview:
+  text: Parallax Banner
+  subtext: Full-width parallax image with text overlay.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/parallax-banner/parallax-banner.cloudcannon.inputs.yml

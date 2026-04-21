@@ -32,53 +32,74 @@ const paragraphs = (body as string)
   .filter(Boolean);
 ---
 
-<section class:list={["st-two-col-intro", paddingBottom && "st-two-col-intro--pb"]} {...htmlAttributes}>
+<section
+  class:list={["st-two-col-intro", paddingBottom && "st-two-col-intro--pb"]}
+  {...htmlAttributes}
+>
   <div class="st-wrap">
     <div class="st-intro-cols">
       <div class="st-intro-left">
         <span class="st-sub st-up">{eyebrow}</span>
         <h2 class="st-title-l st-up-d">
           <span>
-            {italicLines.length > 0 && (
-              <em>
-                {italicLines.map((line, i) => (
-                  <>{i > 0 && <br />}{line}</>
-                ))}
-              </em>
-            )}
+            {
+              italicLines.length > 0 && (
+                <em>
+                  {italicLines.map((line, i) => (
+                    <>
+                      {i > 0 && <br />}
+                      {line}
+                    </>
+                  ))}
+                </em>
+              )
+            }
             {plainLines.length > 0 && <br />}
-            {plainLines.map((line, i) => (
-              <>{i > 0 && <br />}{line}</>
-            ))}
+            {
+              plainLines.map((line, i) => (
+                <>
+                  {i > 0 && <br />}
+                  {line}
+                </>
+              ))
+            }
           </span>
         </h2>
-        {leftButtons.length > 0 && (
-          <div class="st-intro-left-btns st-up-dl">
-            {leftButtons.map((btn) => (
-              <a
-                href={btn.href}
-                class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}
-                target={btn.external ? "_blank" : undefined}
-                rel={btn.external ? "noopener noreferrer" : undefined}
-              >
-                {btn.text}
-              </a>
-            ))}
-          </div>
-        )}
+        {
+          leftButtons.length > 0 && (
+            <div class="st-intro-left-btns st-up-dl">
+              {leftButtons.map((btn) => (
+                <a
+                  href={btn.href}
+                  class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`]}
+                  target={btn.external ? "_blank" : undefined}
+                  rel={btn.external ? "noopener noreferrer" : undefined}
+                >
+                  {btn.text}
+                </a>
+              ))}
+            </div>
+          )
+        }
       </div>
       <div class="st-intro-right">
-        {paragraphs.map((p, i) => (
-          <p class:list={["st-body", i === 0 ? "st-right" : "st-right-d"]}>{p}</p>
-        ))}
-        {buttonText && (
-          <a
-            href={buttonHref}
-            class="st-btn st-btn--dark st-up-dl"
-            target={buttonExternal ? "_blank" : undefined}
-            rel={buttonExternal ? "noopener noreferrer" : undefined}
-          >{buttonText}</a>
-        )}
+        {
+          paragraphs.map((p, i) => (
+            <p class:list={["st-body", i === 0 ? "st-right" : "st-right-d"]}>{p}</p>
+          ))
+        }
+        {
+          buttonText && (
+            <a
+              href={buttonHref}
+              class="st-btn st-btn--dark st-up-dl"
+              target={buttonExternal ? "_blank" : undefined}
+              rel={buttonExternal ? "noopener noreferrer" : undefined}
+            >
+              {buttonText}
+            </a>
+          )
+        }
       </div>
     </div>
   </div>
@@ -102,7 +123,7 @@ const paragraphs = (body as string)
     display: flex;
     gap: clamp(2rem, 6vw, 6rem);
     align-items: flex-start;
-    margin-bottom: clamp(5rem, 8vh, 8rem);
+    padding-bottom: clamp(5rem, 8vh, 8rem);
   }
   .st-intro-left {
     flex: 0 0 50%;

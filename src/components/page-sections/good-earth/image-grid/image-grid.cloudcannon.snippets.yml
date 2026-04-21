@@ -1,0 +1,36 @@
+imageGrid:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Image Grid
+    subtext:
+      - key: quoteText
+    icon: grid_view
+  definitions:
+    component_name: ImageGrid
+    named_args:
+      - editor_key: images
+        type: array
+      - editor_key: quoteText
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteName
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteDesc
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteImageSrc
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteImageAlt
+        type: string
+        optional: true
+        remove_empty: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/image-grid/image-grid.cloudcannon.inputs.yml

@@ -1,0 +1,28 @@
+menuCards:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Menu Cards
+    subtext:
+      - key: headingPlain
+    icon: restaurant_menu
+  definitions:
+    component_name: MenuCards
+    named_args:
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: menus
+        type: array
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/menu-cards/menu-cards.cloudcannon.inputs.yml

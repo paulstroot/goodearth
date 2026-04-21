@@ -1,0 +1,40 @@
+closingQuote:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Closing Quote
+    subtext:
+      - key: quoteText
+    icon: format_quote
+  definitions:
+    component_name: ClosingQuote
+    named_args:
+      - editor_key: quoteText
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteName
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteDesc
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageSrc
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageAlt
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageWidth
+        type: number
+        optional: true
+      - editor_key: imageHeight
+        type: number
+        optional: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/closing-quote/closing-quote.cloudcannon.inputs.yml

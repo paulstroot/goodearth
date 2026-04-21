@@ -1,0 +1,66 @@
+label: Two Column Headline Text
+icon: article
+description: Heading on the left, body copy and optional button on the right.
+value:
+  _component: page-sections/good-earth/two-column-headline-text
+  eyebrow: Eyebrow text
+  headingItalic: Italic heading
+  headingPlain: Plain heading.
+  body: Body copy goes here.
+  buttonText: ""
+  buttonHref: ""
+  buttonExternal: false
+  leftButtons: []
+  paddingBottom: false
+preview:
+  text:
+    - Two Column Headline Text
+  subtext:
+    - key: headingPlain
+  icon: article
+picker_preview:
+  text: Two Column Headline Text
+  subtext: Heading on the left, body copy and button on the right.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/two-column-headline-text/two-column-headline-text.cloudcannon.inputs.yml
+_structures:
+  buttonItems:
+    values:
+      - label: Button
+        icon: link
+        value:
+          text: Button label
+          href: ""
+          style: dark
+          external: false
+        preview:
+          text:
+            - key: text
+            - Button
+          subtext:
+            - key: href
+        _inputs:
+          text:
+            type: text
+            comment: Button label.
+          href:
+            type: url
+            comment: Button destination URL.
+          style:
+            type: select
+            comment: Button visual style.
+            options:
+              values:
+                - id: dark
+                  name: Dark
+                - id: outline
+                  name: Outline
+                - id: light
+                  name: Light
+                - id: white
+                  name: White
+                - id: ghost
+                  name: Ghost
+          external:
+            type: switch
+            comment: Open link in a new tab.

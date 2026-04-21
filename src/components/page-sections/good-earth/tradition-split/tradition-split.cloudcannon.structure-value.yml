@@ -1,0 +1,67 @@
+label: Tradition Split
+icon: view_column
+description: Two-column section with an image on one side and heading, body, and buttons on the other.
+value:
+  _component: page-sections/good-earth/tradition-split
+  eyebrow: Eyebrow text
+  headingItalic: Italic heading
+  headingPlain: Plain heading
+  body: Body copy goes here.
+  buttons: []
+  reverse: false
+  imageSrc: /images/pexels-cristian-rojas-8230026.jpg
+  imageAlt: ""
+  imageWidth: 900
+  imageHeight: 675
+preview:
+  text:
+    - Tradition Split
+  subtext:
+    - key: headingPlain
+  icon: view_column
+picker_preview:
+  text: Tradition Split
+  subtext: Image and text in a two-column split layout.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/tradition-split/tradition-split.cloudcannon.inputs.yml
+_structures:
+  buttonItems:
+    values:
+      - label: Button
+        icon: link
+        value:
+          text: Button label
+          href: ""
+          style: dark
+          external: false
+        preview:
+          text:
+            - key: text
+            - Button
+          subtext:
+            - key: href
+        _inputs:
+          text:
+            type: text
+            comment: Button label.
+          href:
+            type: url
+            comment: Button destination URL.
+          style:
+            type: select
+            comment: Button visual style.
+            options:
+              values:
+                - id: dark
+                  name: Dark
+                - id: outline
+                  name: Outline
+                - id: light
+                  name: Light
+                - id: white
+                  name: White
+                - id: ghost
+                  name: Ghost
+          external:
+            type: switch
+            comment: Open link in a new tab.

@@ -1,0 +1,33 @@
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the heading. Use \n for line breaks.
+headingPlain:
+  type: text
+  comment: Plain portion of the heading. Use \n for line breaks.
+body:
+  type: text
+  comment: Body copy displayed alongside the image.
+buttons:
+  type: array
+  label: Buttons
+  comment: Action buttons displayed below the body copy.
+  options:
+    structures: _structures.buttonItems
+reverse:
+  type: switch
+  comment: Swap the image and text columns (image on the right when off, left when on).
+imageSrc:
+  type: image
+  comment: Image for the split section.
+imageAlt:
+  type: text
+  comment: Alt text for the image.
+imageWidth:
+  type: number
+  comment: Image width in pixels.
+imageHeight:
+  type: number
+  comment: Image height in pixels.

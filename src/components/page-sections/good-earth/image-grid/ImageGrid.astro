@@ -23,7 +23,10 @@ const col2 = images.slice(2, 4);
 const col3 = images.slice(4, 6);
 ---
 
-<section class="st-image-grid-section" {...htmlAttributes}>
+<section
+  class="st-image-grid-section"
+  {...htmlAttributes}
+>
   <div class="st-img-grid-outer">
     <div class="st-img-grid">
       {
@@ -78,7 +81,7 @@ const col3 = images.slice(4, 6);
   /* ─── 3-column staggered image grid ─── */
   .st-img-grid-outer {
     padding: 0 clamp(1rem, 2.5vw, 3.5rem);
-    margin-bottom: clamp(5rem, 8vh, 8rem);
+    padding-bottom: clamp(5rem, 8vh, 8rem);
   }
   .st-img-grid {
     display: grid;
@@ -94,12 +97,24 @@ const col3 = images.slice(4, 6);
     overflow: hidden;
   }
   /* Staggered split heights per column */
-  .st-img-col:nth-child(1) .st-img-wrap:nth-child(1) { flex: 54; }
-  .st-img-col:nth-child(1) .st-img-wrap:nth-child(2) { flex: 46; }
-  .st-img-col:nth-child(2) .st-img-wrap:nth-child(1) { flex: 38; }
-  .st-img-col:nth-child(2) .st-img-wrap:nth-child(2) { flex: 62; }
-  .st-img-col:nth-child(3) .st-img-wrap:nth-child(1) { flex: 63; }
-  .st-img-col:nth-child(3) .st-img-wrap:nth-child(2) { flex: 37; }
+  .st-img-col:nth-child(1) .st-img-wrap:nth-child(1) {
+    flex: 54;
+  }
+  .st-img-col:nth-child(1) .st-img-wrap:nth-child(2) {
+    flex: 46;
+  }
+  .st-img-col:nth-child(2) .st-img-wrap:nth-child(1) {
+    flex: 38;
+  }
+  .st-img-col:nth-child(2) .st-img-wrap:nth-child(2) {
+    flex: 62;
+  }
+  .st-img-col:nth-child(3) .st-img-wrap:nth-child(1) {
+    flex: 63;
+  }
+  .st-img-col:nth-child(3) .st-img-wrap:nth-child(2) {
+    flex: 37;
+  }
 
   .st-img-wrap {
     overflow: hidden;

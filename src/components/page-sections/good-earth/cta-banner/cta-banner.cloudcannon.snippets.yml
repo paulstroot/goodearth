@@ -1,0 +1,37 @@
+ctaBanner:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - CTA Banner
+    subtext:
+      - key: headingPlain
+    icon: campaign
+  definitions:
+    component_name: CtaBanner
+    named_args:
+      - editor_key: theme
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: body
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: buttons
+        type: array
+        optional: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/cta-banner/cta-banner.cloudcannon.inputs.yml

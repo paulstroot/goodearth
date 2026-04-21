@@ -1,0 +1,29 @@
+theme:
+  type: select
+  comment: Background color theme for the banner.
+  options:
+    values:
+      - id: dark
+        name: Dark (near black)
+      - id: light
+        name: Light (cream)
+      - id: green
+        name: Green (forest)
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the heading. Use \n for line breaks.
+headingPlain:
+  type: text
+  comment: Plain portion of the heading. Use \n for line breaks.
+body:
+  type: text
+  comment: Supporting body copy below the heading.
+buttons:
+  type: array
+  label: Buttons
+  comment: Action buttons displayed below the body copy.
+  options:
+    structures: _structures.buttonItems

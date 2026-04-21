@@ -1,0 +1,89 @@
+label: Location Map
+icon: place
+description: Embedded Google Map beside location details — address, hours, and action buttons.
+value:
+  _component: page-sections/good-earth/location-map
+  eyebrow: Location name
+  headingItalic: City,
+  headingPlain: State.
+  badgeText: ""
+  address: ""
+  phone: ""
+  phoneHref: ""
+  mapEmbedUrl: ""
+  directionsUrl: ""
+  directionsLabel: Get Directions
+  hours: []
+  buttons: []
+preview:
+  text:
+    - Location Map
+  subtext:
+    - key: headingPlain
+  icon: place
+picker_preview:
+  text: Location Map
+  subtext: Embedded map with address, hours, and action buttons.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/location-map/location-map.cloudcannon.inputs.yml
+_structures:
+  hoursRows:
+    values:
+      - label: Hours Row
+        icon: schedule
+        value:
+          days: Monday – Friday
+          time: 8:00 am – 8:00 pm
+        preview:
+          text:
+            - key: days
+            - Hours Row
+          subtext:
+            - key: time
+        _inputs:
+          days:
+            type: text
+            comment: Day range label (e.g. "Monday – Saturday").
+          time:
+            type: text
+            comment: Opening hours (e.g. "8:00 am – 8:00 pm").
+  buttonItems:
+    values:
+      - label: Button
+        icon: link
+        value:
+          text: Button label
+          href: ""
+          style: dark
+          external: false
+        preview:
+          text:
+            - key: text
+            - Button
+          subtext:
+            - key: href
+        _inputs:
+          text:
+            type: text
+            comment: Button label.
+          href:
+            type: url
+            comment: Button destination URL.
+          style:
+            type: select
+            comment: Button visual style.
+            options:
+              values:
+                - id: dark
+                  name: Dark
+                - id: outline
+                  name: Outline
+                - id: light
+                  name: Light
+                - id: white
+                  name: White
+                - id: ghost
+                  name: Ghost
+          external:
+            type: switch
+            comment: Open link in a new tab.

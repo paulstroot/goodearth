@@ -1,0 +1,23 @@
+label: Closing Quote
+icon: format_quote
+description: Large pull-quote with attribution and a companion image.
+value:
+  _component: page-sections/good-earth/closing-quote
+  quoteText: Quote text goes here.
+  quoteName: Name
+  quoteDesc: Description
+  imageSrc: /images/pexels-antonette-reyes-1123173-2526987.jpg
+  imageAlt: ""
+  imageWidth: 900
+  imageHeight: 675
+preview:
+  text:
+    - Closing Quote
+  subtext:
+    - key: quoteText
+  icon: format_quote
+picker_preview:
+  text: Closing Quote
+  subtext: Large pull-quote with image and attribution.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/closing-quote/closing-quote.cloudcannon.inputs.yml

@@ -1,0 +1,24 @@
+label: Hero Fullscreen
+icon: fullscreen
+description: Full-bleed hero with heading and optional subtitle over a background image.
+value:
+  _component: page-sections/good-earth/hero-fullscreen
+  eyebrow: Eyebrow text
+  headingItalic: Italic heading
+  headingPlain: Plain heading.
+  subtitle: ""
+  imageSrc: /images/pexels-elina-sazonova-1850600.jpg
+  imageAlt: ""
+  imageWidth: 1600
+  imageHeight: 1067
+preview:
+  text:
+    - Hero Fullscreen
+  subtext:
+    - key: headingPlain
+  icon: fullscreen
+picker_preview:
+  text: Hero Fullscreen
+  subtext: Full-bleed hero with heading over a background image.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/hero-fullscreen/hero-fullscreen.cloudcannon.inputs.yml

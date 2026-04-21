@@ -1,0 +1,47 @@
+layout:
+  type: select
+  comment: Visual layout variant for the banner.
+  options:
+    values:
+      - id: two-col
+        name: Two Column
+      - id: centered
+        name: Centered Quote
+      - id: image-only
+        name: Image Only
+eyebrow:
+  type: text
+  comment: Small label above the heading (two-col layout only).
+headingItalic:
+  type: text
+  comment: Italic portion of the heading (two-col layout only).
+headingPlain:
+  type: text
+  comment: Plain portion of the heading (two-col layout only).
+body:
+  type: text
+  comment: Body copy in the right column (two-col layout only).
+buttonText:
+  type: text
+  comment: Button label (two-col layout only). Leave empty to hide.
+buttonHref:
+  type: url
+  comment: Button destination URL (two-col layout only).
+quoteText:
+  type: text
+  comment: Pull-quote text (centered layout only).
+quoteAttribution:
+  type: text
+  comment: Attribution line below the quote (centered layout only).
+imageSrc:
+  type: image
+  comment: Background image for the banner.
+imageAlt:
+  type: text
+  comment: Alt text for the background image.
+imageWidth:
+  type: number
+  comment: Image width in pixels.
+imageHeight:
+  type: number
+  comment: Image height in pixels.

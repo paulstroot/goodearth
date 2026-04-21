@@ -1,0 +1,64 @@
+parallaxBanner:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Parallax Banner
+    subtext:
+      - key: headingPlain
+    icon: panorama
+  definitions:
+    component_name: ParallaxBanner
+    named_args:
+      - editor_key: layout
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: body
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: buttonText
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: buttonHref
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteText
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: quoteAttribution
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageSrc
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageAlt
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: imageWidth
+        type: number
+        optional: true
+      - editor_key: imageHeight
+        type: number
+        optional: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/parallax-banner/parallax-banner.cloudcannon.inputs.yml

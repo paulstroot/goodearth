@@ -1,0 +1,50 @@
+label: Image Grid
+icon: grid_view
+description: Staggered 3-column photo grid with a pull-quote.
+value:
+  _component: page-sections/good-earth/image-grid
+  images: []
+  quoteText: Quote text goes here.
+  quoteName: Name
+  quoteDesc: Description
+  quoteImageSrc: ""
+  quoteImageAlt: ""
+preview:
+  text:
+    - Image Grid
+  subtext:
+    - key: quoteText
+  icon: grid_view
+picker_preview:
+  text: Image Grid
+  subtext: Staggered 3-column photo grid with a pull-quote.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/image-grid/image-grid.cloudcannon.inputs.yml
+_structures:
+  imageItems:
+    values:
+      - label: Image
+        icon: image
+        value:
+          src: ""
+          alt: ""
+          width: 1100
+          height: 826
+        preview:
+          text:
+            - Image
+          subtext:
+            - key: alt
+        _inputs:
+          src:
+            type: image
+            comment: Image file.
+          alt:
+            type: text
+            comment: Alt text for the image.
+          width:
+            type: number
+            comment: Image width in pixels.
+          height:
+            type: number
+            comment: Image height in pixels.

@@ -1,0 +1,28 @@
+threeColumnFeatures:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Three Column Features
+    subtext:
+      - key: headingPlain
+    icon: view_week
+  definitions:
+    component_name: ThreeColumnFeatures
+    named_args:
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: items
+        type: array
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/three-column-features/three-column-features.cloudcannon.inputs.yml

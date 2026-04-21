@@ -1,0 +1,15 @@
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the heading.
+headingPlain:
+  type: text
+  comment: Plain portion of the heading.
+items:
+  type: array
+  label: Feature Items
+  comment: Up to three feature columns, each with an icon, title, and body.
+  options:
+    structures: _structures.featureItems

@@ -1,0 +1,60 @@
+locationMap:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Location Map
+    subtext:
+      - key: headingPlain
+    icon: place
+  definitions:
+    component_name: LocationMap
+    named_args:
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: badgeText
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: address
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: phone
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: phoneHref
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: mapEmbedUrl
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: directionsUrl
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: directionsLabel
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: hours
+        type: array
+        optional: true
+      - editor_key: buttons
+        type: array
+        optional: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/location-map/location-map.cloudcannon.inputs.yml

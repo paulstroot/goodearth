@@ -1,0 +1,24 @@
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the main heading.
+headingPlain:
+  type: text
+  comment: Plain (non-italic) portion of the main heading.
+subtitle:
+  type: text
+  comment: Optional subtitle displayed below the heading.
+imageSrc:
+  type: image
+  comment: Full-bleed background image.
+imageAlt:
+  type: text
+  comment: Alt text for the background image.
+imageWidth:
+  type: number
+  comment: Image width in pixels.
+imageHeight:
+  type: number
+  comment: Image height in pixels.

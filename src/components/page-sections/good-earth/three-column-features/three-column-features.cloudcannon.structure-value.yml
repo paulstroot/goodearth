@@ -1,0 +1,63 @@
+label: Three Column Features
+icon: view_week
+description: Three-column grid of features with icon, heading, and body text.
+value:
+  _component: page-sections/good-earth/three-column-features
+  eyebrow: Eyebrow text
+  headingItalic: Italic heading
+  headingPlain: Plain heading.
+  items: []
+preview:
+  text:
+    - Three Column Features
+  subtext:
+    - key: headingPlain
+  icon: view_week
+picker_preview:
+  text: Three Column Features
+  subtext: Three-column grid of features with icons and descriptions.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/three-column-features/three-column-features.cloudcannon.inputs.yml
+_structures:
+  featureItems:
+    values:
+      - label: Feature
+        icon: star
+        value:
+          title: Feature title
+          body: Feature description goes here.
+          icon: farm
+        preview:
+          text:
+            - key: title
+            - Feature
+          subtext:
+            - key: body
+        _inputs:
+          title:
+            type: text
+            comment: Feature heading (displayed in italic).
+          body:
+            type: text
+            comment: Feature description text.
+          icon:
+            type: select
+            comment: Icon displayed above the feature.
+            options:
+              values:
+                - id: farm
+                  name: Farm
+                - id: sea
+                  name: Sea
+                - id: garden
+                  name: Garden
+                - id: people
+                  name: People
+                - id: award
+                  name: Award
+                - id: heart
+                  name: Heart
+                - id: leaf
+                  name: Leaf
+                - id: star
+                  name: Star

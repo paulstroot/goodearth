@@ -1,0 +1,21 @@
+quoteText:
+  type: text
+  comment: The quote or statement text.
+quoteName:
+  type: text
+  comment: Name or label for the attribution.
+quoteDesc:
+  type: text
+  comment: Secondary description for the attribution.
+imageSrc:
+  type: image
+  comment: Image displayed alongside the quote.
+imageAlt:
+  type: text
+  comment: Alt text for the image.
+imageWidth:
+  type: number
+  comment: Image width in pixels.
+imageHeight:
+  type: number
+  comment: Image height in pixels.

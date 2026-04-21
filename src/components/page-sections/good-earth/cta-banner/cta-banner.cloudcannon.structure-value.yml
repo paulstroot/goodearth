@@ -1,0 +1,63 @@
+label: CTA Banner
+icon: campaign
+description: Centered full-width call-to-action with themed background, heading, body, and buttons.
+value:
+  _component: page-sections/good-earth/cta-banner
+  theme: dark
+  eyebrow: Eyebrow text
+  headingItalic: Italic heading
+  headingPlain: Plain heading.
+  body: Supporting body copy goes here.
+  buttons: []
+preview:
+  text:
+    - CTA Banner
+  subtext:
+    - key: headingPlain
+  icon: campaign
+picker_preview:
+  text: CTA Banner
+  subtext: Centered call-to-action with themed background and buttons.
+_inputs_from_glob:
+  - /src/components/page-sections/good-earth/cta-banner/cta-banner.cloudcannon.inputs.yml
+_structures:
+  buttonItems:
+    values:
+      - label: Button
+        icon: link
+        value:
+          text: Button label
+          href: ""
+          style: white
+          external: false
+        preview:
+          text:
+            - key: text
+            - Button
+          subtext:
+            - key: href
+        _inputs:
+          text:
+            type: text
+            comment: Button label.
+          href:
+            type: url
+            comment: Button destination URL.
+          style:
+            type: select
+            comment: Button visual style.
+            options:
+              values:
+                - id: dark
+                  name: Dark
+                - id: outline
+                  name: Outline
+                - id: light
+                  name: Light
+                - id: white
+                  name: White
+                - id: ghost
+                  name: Ghost
+          external:
+            type: switch
+            comment: Open link in a new tab.

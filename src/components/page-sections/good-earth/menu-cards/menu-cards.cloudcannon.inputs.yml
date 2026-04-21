@@ -1,0 +1,15 @@
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the heading.
+headingPlain:
+  type: text
+  comment: Plain (non-italic) portion of the heading.
+menus:
+  type: array
+  label: Menu Cards
+  comment: List of menu cards with label, link, and icon.
+  options:
+    structures: _structures.menuCardItems

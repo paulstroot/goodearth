@@ -1,0 +1,42 @@
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the heading.
+headingPlain:
+  type: text
+  comment: Plain portion of the heading.
+badgeText:
+  type: text
+  comment: Optional badge text shown beside the heading (e.g. "Open Today").
+address:
+  type: text
+  comment: Street address. Use line breaks to split across multiple lines.
+phone:
+  type: text
+  comment: Display phone number (e.g. "(952) 925-1001").
+phoneHref:
+  type: text
+  comment: Phone link href (e.g. "tel:9529251001"). Leave empty to auto-generate from phone.
+mapEmbedUrl:
+  type: text
+  comment: Google Maps embed URL (src attribute of the iframe).
+directionsUrl:
+  type: url
+  comment: URL for the Get Directions link.
+directionsLabel:
+  type: text
+  comment: Label for the directions link.
+hours:
+  type: array
+  label: Hours
+  comment: Opening hours rows.
+  options:
+    structures: _structures.hoursRows
+buttons:
+  type: array
+  label: Action Buttons
+  comment: CTA buttons below the hours (e.g. Reserve, Order, Call).
+  options:
+    structures: _structures.buttonItems

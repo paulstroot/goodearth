@@ -1,0 +1,21 @@
+images:
+  type: array
+  label: Images
+  comment: Exactly 6 images arranged in a 3-column staggered grid.
+  options:
+    structures: _structures.imageItems
+quoteText:
+  type: text
+  comment: Pull-quote displayed beside the image grid.
+quoteName:
+  type: text
+  comment: Name or label for the quote attribution.
+quoteDesc:
+  type: text
+  comment: Secondary description for the quote attribution.
+quoteImageSrc:
+  type: image
+  comment: Small portrait image shown with the quote.
+quoteImageAlt:
+  type: text
+  comment: Alt text for the quote portrait image.

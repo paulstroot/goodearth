@@ -1,0 +1,47 @@
+twoColumnHeadlineText:
+  template: mdx_component
+  inline: false
+  preview:
+    text:
+      - Two Column Headline Text
+    subtext:
+      - key: headingPlain
+    icon: article
+  definitions:
+    component_name: TwoColumnHeadlineText
+    named_args:
+      - editor_key: eyebrow
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingItalic
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: headingPlain
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: body
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: buttonText
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: buttonHref
+        type: string
+        optional: true
+        remove_empty: true
+      - editor_key: buttonExternal
+        type: boolean
+        optional: true
+      - editor_key: leftButtons
+        type: array
+        optional: true
+      - editor_key: paddingBottom
+        type: boolean
+        optional: true
+  _inputs_from_glob:
+    - /src/components/page-sections/good-earth/two-column-headline-text/two-column-headline-text.cloudcannon.inputs.yml

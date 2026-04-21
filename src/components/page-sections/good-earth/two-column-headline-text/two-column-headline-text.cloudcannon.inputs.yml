@@ -1,0 +1,42 @@
+eyebrow:
+  type: text
+  comment: Small label displayed above the heading.
+headingItalic:
+  type: text
+  comment: Italic portion of the heading. Use \n to insert line breaks.
+headingPlain:
+  type: text
+  comment: Plain (non-italic) portion of the heading. Use \n for line breaks.
+body:
+  type: markdown
+  comment: Body copy displayed in the right column. Blank lines create paragraphs.
+  options:
+    blockquote: false
+    bold: true
+    format:
+    italic: true
+    link: true
+    strike: false
+    subscript: false
+    superscript: false
+    underline: false
+    bulletedlist: false
+    numberedlist: false
+buttonText:
+  type: text
+  comment: Label for the right-column button. Leave empty to hide.
+buttonHref:
+  type: url
+  comment: URL for the right-column button.
+buttonExternal:
+  type: switch
+  comment: Open the right-column button link in a new tab.
+leftButtons:
+  type: array
+  label: Left Column Buttons
+  comment: Buttons displayed under the heading in the left column.
+  options:
+    structures: _structures.buttonItems
+paddingBottom:
+  type: switch
+  comment: Add bottom padding (use when this is the last section on the page).
