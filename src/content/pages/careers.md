@@ -10,7 +10,7 @@ pageSections:
     headingItalic: Work @
     headingPlain: Good Earth.
     subtitle: Join a team that cares about real food and real people.
-    imageSrc: /uploads/pexels-kampus-8629107.jpg
+    imageSrc: /src/assets/images/pexels-kampus-8629107.jpg
     imageAlt: ''
     imageWidth: 900
     imageHeight: 675
