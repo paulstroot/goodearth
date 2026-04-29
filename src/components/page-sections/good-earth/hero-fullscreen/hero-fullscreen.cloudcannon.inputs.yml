@@ -13,6 +13,13 @@ subtitle:
 imageSrc:
   type: image
   comment: Full-bleed background image.
+  options:
+    paths:
+      uploads: src/assets/images
+      static: ""
+    resize_style: cover
+    width: 1500
+    height: 775
 imageAlt:
   type: text
   comment: Alt text for the background image.
