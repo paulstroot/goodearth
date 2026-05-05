@@ -10,7 +10,7 @@ pageSections:
     headingItalic: Work @
     headingPlain: Good Earth.
     subtitle: Join a team that cares about real food and real people.
-    imageSrc: /src/assets/images/pexels-kampus-8629107.jpg
+    imageSrc: /src/assets/images/boots.jpg
     imageAlt: ''
     imageWidth: 900
     imageHeight: 675
@@ -77,7 +77,7 @@ pageSections:
     subtext: Subtitle placeholder text that will be replaced with actual content.
     imageSource: /src/assets/images/pexels-kampus-8629107-1.jpg
     imageAlt: Hero image
-    imageAspectRatio: none
+    imageAspectRatio: landscape
     buttonSections:
       - _component: building-blocks/core-elements/button
         text: My Button
