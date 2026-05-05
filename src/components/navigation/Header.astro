@@ -119,6 +119,7 @@ const currentPath = Astro.url.pathname;
                     `${item.isCta ? "nav-link--cta btn btn--primary" : ""}`,
                     `${currentPath === item.href ? "is-active" : ""}`,
                   ]}
+                  aria-current={currentPath === item.href ? "page" : undefined}
                   target={item.isExternal ? "_blank" : undefined}
                   rel={item.isExternal ? "noopener noreferrer" : undefined}
                 >
@@ -135,6 +136,7 @@ const currentPath = Astro.url.pathname;
                       <a
                         href={child.href}
                         class="dropdown-link"
+                        aria-current={currentPath === child.href ? "page" : undefined}
                         target={child.isExternal || child.isPdf ? "_blank" : undefined}
                         rel={child.isExternal || child.isPdf ? "noopener noreferrer" : undefined}
                       >
@@ -258,6 +260,7 @@ const currentPath = Astro.url.pathname;
                       <a
                         href={child.href}
                         class="mobile-subnav-link"
+                        aria-current={currentPath === child.href ? "page" : undefined}
                         target={child.isExternal || child.isPdf ? "_blank" : undefined}
                         rel={child.isExternal || child.isPdf ? "noopener noreferrer" : undefined}
                       >
@@ -271,6 +274,7 @@ const currentPath = Astro.url.pathname;
               <a
                 href={item.href}
                 class="mobile-nav-link"
+                aria-current={currentPath === item.href ? "page" : undefined}
                 target={item.isExternal ? "_blank" : undefined}
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
               >
@@ -377,7 +381,8 @@ const currentPath = Astro.url.pathname;
     white-space: nowrap;
   }
   .nav-link:hover,
-  .nav-link.is-active {
+  .nav-link.is-active,
+  .nav-link[aria-current="page"] {
     color: var(--color-green-dark);
     background: var(--color-green-pale);
   }
@@ -444,7 +449,8 @@ const currentPath = Astro.url.pathname;
       background var(--transition-fast),
       color var(--transition-fast);
   }
-  .dropdown-link:hover {
+  .dropdown-link:hover,
+  .dropdown-link[aria-current="page"] {
     background: var(--color-green-pale);
     color: var(--color-green-dark);
   }
@@ -533,7 +539,8 @@ const currentPath = Astro.url.pathname;
       background var(--transition-fast);
   }
   .mobile-nav-link:hover,
-  .mobile-nav-toggle:hover {
+  .mobile-nav-toggle:hover,
+  .mobile-nav-link[aria-current="page"] {
     color: var(--color-green-dark);
     background: var(--color-green-pale);
   }
@@ -557,7 +564,8 @@ const currentPath = Astro.url.pathname;
     display: flex;
     align-items: center;
   }
-  .mobile-subnav-link:hover {
+  .mobile-subnav-link:hover,
+  .mobile-subnav-link[aria-current="page"] {
     color: var(--color-green-dark);
   }
 
