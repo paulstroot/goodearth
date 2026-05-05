@@ -1,4 +1,5 @@
 ---
+import Image from "@core-elements/image/Image.astro";
 interface Image {
   src: string;
   alt?: string;
@@ -34,13 +35,16 @@ const col3 = images.slice(4, 6);
           <div class="st-img-col">
             {col.map((img: Image) => (
               <div class="st-img-wrap st-scale">
-                <img
-                  class="st-img-slide"
-                  src={img.src}
+                <Image
+                  source={img.src}
                   alt={img.alt ?? ""}
+                  rounded={false}
+                  data-prop-src="imageSrc"
+                  data-prop-alt="imageAlt"
+                  priority={false}
                   width={img.width}
                   height={img.height}
-                  loading="lazy"
+                  class="st-img-slide"
                 />
               </div>
             ))}
@@ -53,12 +57,15 @@ const col3 = images.slice(4, 6);
   <div class="st-wrap">
     <div class="st-quote-cols">
       <div class="st-quote-img st-wide">
-        <img
-          src={quoteImageSrc}
+        <Image
+          source={quoteImageSrc}
           alt={quoteImageAlt}
+          rounded={false}
+          data-prop-src="quoteImageSrc"
+          data-prop-alt="quoteImageAlt"
+          priority={false}
           width="900"
           height="675"
-          loading="lazy"
         />
       </div>
       <div class="st-quote-body">

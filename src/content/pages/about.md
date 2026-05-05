@@ -10,7 +10,7 @@ pageSections:
     headingItalic: About
     headingPlain: Good Earth.
     subtitle: Cooking in harmony with the seasons since 1978.
-    imageSrc: /images/pexels-cristian-rojas-8230026.jpg
+    imageSrc: /src/assets/images/pexels-cristian-rojas-8230026.jpg
     imageAlt: ''
     imageWidth: 1600
     imageHeight: 1067
@@ -53,7 +53,7 @@ pageSections:
     buttonHref: ''
     quoteText: ''
     quoteAttribution: ''
-    imageSrc: /images/pexels-tamira-kanemagi-2159935915-36567404.jpg
+    imageSrc: /src/assets/images/pexels-tamira-kanemagi-2159935915-36567404.jpg
     imageAlt: ''
     imageWidth: 1600
     imageHeight: 900
@@ -69,7 +69,7 @@ pageSections:
       We give the food the time and care it needs to develop its very own
       character.
     quoteAttribution: Good Earth Kitchen · Edina, Minnesota
-    imageSrc: /images/pexels-mike-468229-1192034.jpg
+    imageSrc: /src/assets/images/pexels-mike-468229-1192034.jpg
     imageAlt: ''
     imageWidth: 1920
     imageHeight: 1280
@@ -115,7 +115,7 @@ pageSections:
         style: outline
         external: false
     reverse: true
-    imageSrc: /images/pexels-cristian-rojas-8230026.jpg
+    imageSrc: /src/assets/images/pexels-cristian-rojas-8230026.jpg
     imageAlt: ''
     imageWidth: 900
     imageHeight: 675

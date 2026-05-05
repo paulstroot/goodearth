@@ -1,4 +1,5 @@
 ---
+import Image from "@core-elements/image/Image.astro";
 interface Button {
   text: string;
   href: string;
@@ -50,7 +51,7 @@ const plainLines = (headingPlain as string).split("\n").filter(Boolean);
         <p class="st-body st-tradition-body st-up-d">{body}</p>
         {buttons.length > 0 && (
           <div class="st-tradition-buttons">
-            {buttons.map((btn) => (
+            {buttons.map((btn: Button) => (
               <a
                 href={btn.href}
                 class:list={["st-btn", `st-btn--${btn.style ?? "dark"}`, "st-up-dl"]}
@@ -64,12 +65,13 @@ const plainLines = (headingPlain as string).split("\n").filter(Boolean);
         )}
       </div>
       <div class="st-tradition-img st-wide">
-        <img
-          src={imageSrc}
+        <Image
+          source={imageSrc}
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          loading="lazy"
+          rounded={false}
+          priority={false}
         />
       </div>
     </div>

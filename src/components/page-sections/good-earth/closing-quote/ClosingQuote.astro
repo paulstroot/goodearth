@@ -1,4 +1,5 @@
 ---
+import Image from "@core-elements/image/Image.astro";
 const {
   quoteText = "",
   quoteName = "",
@@ -17,12 +18,13 @@ const {
   <div class="st-wrap">
     <div class="st-final-cols">
       <div class="st-final-img st-wide">
-        <img
-          src={imageSrc}
+        <Image
+          source={imageSrc}
           alt={imageAlt}
           width={imageWidth}
           height={imageHeight}
-          loading="lazy"
+          rounded={false}
+          priority={false}
         />
       </div>
       <div class="st-final-text">

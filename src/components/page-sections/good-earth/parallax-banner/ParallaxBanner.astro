@@ -5,6 +5,8 @@
  *   "centered"   — large pull-quote centered over the image
  *   "image-only" — full-bleed parallax image with no text overlay
  */
+import Image from "@core-elements/image/Image.astro";
+
 const {
   layout = "two-col",
   // two-col props
@@ -34,46 +36,65 @@ const {
   {...htmlAttributes}
 >
   <div class="st-banner-media">
-    <img
-      class="st-banner-img"
-      src={imageSrc}
+    <Image
+      source={imageSrc}
       alt={imageAlt}
+      rounded={false}
+      data-prop-src="imageSrc"
+      data-prop-alt="imageAlt"
+      priority={false}
       width={imageWidth}
       height={imageHeight}
-      loading="lazy"
+      class="st-banner-img"
     />
   </div>
-  <div class="st-banner-veil" aria-hidden="true"></div>
+  <div
+    class="st-banner-veil"
+    aria-hidden="true"
+  >
+  </div>
 
-  {layout === "two-col" && (
-    <div class="st-banner-content">
-      <div class="st-wrap-small">
-        <div class="st-banner-cols">
-          <div class="st-banner-left">
-            <span class="st-sub st-sub--light st-up">{eyebrow}</span>
-            <h2 class="st-title-l st-title--light st-up-d">
-              <span><em>{headingItalic}</em><br />{headingPlain}</span>
-            </h2>
-          </div>
-          <div class="st-banner-right">
-            <p class="st-body st-body--light st-right">{body}</p>
-            <a href={buttonHref} class="st-btn st-btn--light st-up-dl">{buttonText}</a>
+  {
+    layout === "two-col" && (
+      <div class="st-banner-content">
+        <div class="st-wrap-small">
+          <div class="st-banner-cols">
+            <div class="st-banner-left">
+              <span class="st-sub st-sub--light st-up">{eyebrow}</span>
+              <h2 class="st-title-l st-title--light st-up-d">
+                <span>
+                  <br />
+                  {headingPlain}
+                </span>
+              </h2>
+            </div>
+            <div class="st-banner-right">
+              <p class="st-body st-body--light st-right">{body}</p>
+              <a
+                href={buttonHref}
+                class="st-btn st-btn--light st-up-dl"
+              >
+                {buttonText}
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )}
+    )
+  }
 
-  {layout === "centered" && (
-    <div class="st-banner-content">
-      <div class="st-wrap-small st-banner-centered">
-        <p class="st-pullquote st-up"><em>"{quoteText}"</em></p>
-        {quoteAttribution && (
-          <span class="st-pullquote-attr st-up-d">{quoteAttribution}</span>
-        )}
+  {
+    layout === "centered" && (
+      <div class="st-banner-content">
+        <div class="st-wrap-small st-banner-centered">
+          <p class="st-pullquote st-up">
+            <em>"{quoteText}"</em>
+          </p>
+          {quoteAttribution && <span class="st-pullquote-attr st-up-d">{quoteAttribution}</span>}
+        </div>
       </div>
-    </div>
-  )}
+    )
+  }
 </section>
 
 <style is:global>

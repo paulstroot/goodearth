@@ -10,7 +10,7 @@ pageSections:
     headingItalic: Location
     headingPlain: '& Hours.'
     subtitle: Come visit us at the Galleria.
-    imageSrc: /images/pexels-elina-sazonova-1850600.jpg
+    imageSrc: /src/assets/images/pexels-elina-sazonova-1850600.jpg
     imageAlt: ''
     imageWidth: 1600
     imageHeight: 1067
@@ -64,7 +64,7 @@ pageSections:
     buttonHref: ''
     quoteText: A good meal deserves a warm room and familiar faces.
     quoteAttribution: Good Earth · Edina, Minnesota · Since 1978
-    imageSrc: /images/pexels-mike-468229-1192034.jpg
+    imageSrc: /src/assets/images/pexels-mike-468229-1192034.jpg
     imageAlt: ''
     imageWidth: 1920
     imageHeight: 1280

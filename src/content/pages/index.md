@@ -29,27 +29,27 @@ pageSections:
     paddingBottom: false
   - _component: page-sections/good-earth/image-grid
     images:
-      - src: /images/pexels-annaelle-quionquion-2652658-15279908.jpg
+      - src: /src/assets/images/pexels-annaelle-quionquion-2652658-15279908.jpg
         alt: ''
         width: 1100
         height: 826
-      - src: /images/pexels-sam-lion-5709296.jpg
+      - src: /src/assets/images/pexels-sam-lion-5709296.jpg
         alt: ''
         width: 1100
         height: 825
-      - src: /images/pexels-gustavo-fring-5622165.jpg
+      - src: /src/assets/images/pexels-gustavo-fring-5622165.jpg
         alt: ''
         width: 1100
         height: 826
-      - src: /images/pexels-valeriya-16204678.jpg
+      - src: /src/assets/images/pexels-valeriya-16204678.jpg
         alt: ''
         width: 1100
         height: 1467
-      - src: /images/pexels-shootsaga-31610378.jpg
+      - src: /src/assets/images/pexels-shootsaga-31610378.jpg
         alt: ''
         width: 1100
         height: 826
-      - src: /images/pexels-tamira-kanemagi-2159935915-36567404.jpg
+      - src: /src/assets/images/pexels-tamira-kanemagi-2159935915-36567404.jpg
         alt: ''
         width: 1100
         height: 825
@@ -58,7 +58,7 @@ pageSections:
       to plate — this is Good Earth.
     quoteName: Good Earth
     quoteDesc: Edina, Minnesota — since 1978
-    quoteImageSrc: /images/pexels-wolfart-32383596.jpg
+    quoteImageSrc: /src/assets/images/pexels-wolfart-32383596.jpg
     quoteImageAlt: ''
   - _component: page-sections/good-earth/menu-cards
     eyebrow: All Menus
@@ -77,7 +77,7 @@ pageSections:
     buttonHref: /about
     quoteText: ''
     quoteAttribution: ''
-    imageSrc: /images/pexels-mike-468229-1192034.jpg
+    imageSrc: /src/assets/images/pexels-mike-468229-1192034.jpg
     imageAlt: ''
     imageWidth: 1920
     imageHeight: 1280
@@ -95,7 +95,7 @@ pageSections:
         style: dark
         external: true
     reverse: false
-    imageSrc: /images/pexels-cristian-rojas-8230026.jpg
+    imageSrc: /src/assets/images/pexels-cristian-rojas-8230026.jpg
     imageAlt: ''
     imageWidth: 650
     imageHeight: 488
@@ -105,7 +105,7 @@ pageSections:
       character.
     quoteName: Good Earth Kitchen
     quoteDesc: Edina, Minnesota
-    imageSrc: /images/pexels-antonette-reyes-1123173-2526987.jpg
+    imageSrc: /src/assets/images/pexels-antonette-reyes-1123173-2526987.jpg
     imageAlt: ''
     imageWidth: 900
     imageHeight: 675
