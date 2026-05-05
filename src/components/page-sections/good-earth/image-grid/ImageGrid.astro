@@ -128,20 +128,19 @@ const col3 = images.slice(4, 6);
     line-height: 0;
     min-height: 0;
   }
-  .st-img-wrap div {
+  .st-img-slide {
+    height: calc(100% + 120px);
+    margin-top: -60px;
+    will-change: transform;
+  }
+  .st-img-wrap .image-inner,
+  .st-img-wrap picture {
     height: 100%;
-    picture {
-      display: block;
-      width: 100%;
-      height: calc(100% + 120px);
-      object-fit: cover;
-      margin-top: -60px;
-      will-change: transform;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
-    }
+  }
+  .st-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* ─── Image + quote ─── */
@@ -155,6 +154,14 @@ const col3 = images.slice(4, 6);
     flex: 0 0 58%;
     aspect-ratio: 3/2;
     overflow: hidden;
+  }
+  .st-quote-img .image {
+    margin-top: 0;
+    height: 100%;
+  }
+  .st-quote-img .image-inner,
+  .st-quote-img picture {
+    height: 100%;
   }
   .st-quote-img img {
     width: 100%;
