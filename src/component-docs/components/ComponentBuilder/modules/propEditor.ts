@@ -11,11 +11,11 @@
  * @module propEditor
  */
 
+import { DEFAULT_EXPOSED_PROPS } from "../constants";
 import { builderState } from "../state";
 import type { ComponentInfo, ComponentNode, InputConfig } from "../types";
-import { createSlider } from "../utils/sliderHelpers";
 import { slotHasSameComponentInEveryItem } from "../utils/shared";
-import { DEFAULT_EXPOSED_PROPS } from "../constants";
+import { createSlider } from "../utils/sliderHelpers";
 
 /** Count exposed props on a node */
 export function getExposedPropCount(node: ComponentNode, componentInfo: ComponentInfo): number {
@@ -576,7 +576,7 @@ function createUrlInput(propName: string, value: string, node: ComponentNode): H
   input.type = "url";
   input.className = "prop-field-input";
   input.value = value || "";
-  input.placeholder = "https://example.com";
+  input.placeholder = "https://smooth-cabbage.cloudvent.net/";
 
   input.addEventListener("input", (e) => {
     builderState.updateNodeProperty(node._nodeId, propName, (e.target as HTMLInputElement).value);
