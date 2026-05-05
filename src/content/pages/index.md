@@ -1,17 +1,19 @@
 ---
 _schema: default
 title: Home
-description: Natural, Unprocessed. Good Earth Restaurant in Edina, MN. Seasonal, fresh, responsibly sourced food served daily since 1978.
+description: >-
+  Natural, Unprocessed. Good Earth Restaurant in Edina, MN. Seasonal, fresh,
+  responsibly sourced food served daily since 1978.
 pageSections:
   - _component: page-sections/good-earth/hero-fullscreen
     eyebrow: Good Earth Restaurant · Edina, Minnesota
-    headingItalic: 'Natural,'
+    headingItalic: Natural,
     headingPlain: Unprocessed.
-    imageSrc: /images/pexels-elina-sazonova-1850600.jpg
+    subtitle: ''
+    imageSrc: /src/assets/images/pexels-mike-468229-1192034.jpg
     imageAlt: ''
     imageWidth: 1600
     imageHeight: 1067
-
   - _component: page-sections/good-earth/two-column-headline-text
     eyebrow: The Restaurant
     headingItalic: A good meal begins
@@ -22,7 +24,9 @@ pageSections:
       we believe what goes into your body should nourish, not compromise.
     buttonText: Discover more
     buttonHref: /about
-
+    buttonExternal: false
+    leftButtons: []
+    paddingBottom: false
   - _component: page-sections/good-earth/image-grid
     images:
       - src: /images/pexels-annaelle-quionquion-2652658-15279908.jpg
@@ -53,16 +57,15 @@ pageSections:
       The atmosphere of a place, the warmth of a room, the directness from soil
       to plate — this is Good Earth.
     quoteName: Good Earth
-    quoteDesc: 'Edina, Minnesota — since 1978'
+    quoteDesc: Edina, Minnesota — since 1978
     quoteImageSrc: /images/pexels-wolfart-32383596.jpg
     quoteImageAlt: ''
-
   - _component: page-sections/good-earth/menu-cards
     eyebrow: All Menus
-    headingItalic: 'Something for'
+    headingItalic: Something for
     headingPlain: every appetite
-
   - _component: page-sections/good-earth/parallax-banner
+    layout: two-col
     eyebrow: The Philosophy
     headingItalic: In harmony
     headingPlain: with nature
@@ -72,29 +75,30 @@ pageSections:
       produces the most nourishing plate.
     buttonText: Learn our story
     buttonHref: /about
+    quoteText: ''
+    quoteAttribution: ''
     imageSrc: /images/pexels-mike-468229-1192034.jpg
     imageAlt: ''
     imageWidth: 1920
     imageHeight: 1280
-
   - _component: page-sections/good-earth/tradition-split
     eyebrow: Since 1978
     headingItalic: Tradition meets
     headingPlain: freshness
     body: >-
-      Every dish reflects decades of relationships with local growers, sustainable
-      farms, and passionate cooks who know that real food makes a real difference.
-    reverse: false
-    imageSrc: /images/pexels-cristian-rojas-8230026.jpg
-    imageAlt: ''
-    imageWidth: 650
-    imageHeight: 488
+      Every dish reflects decades of relationships with local growers,
+      sustainable farms, and passionate cooks who know that real food makes a
+      real difference.
     buttons:
       - text: View seasonal menu
         href: /pdfs/Good_Earth_Specials_Menu.pdf
         style: dark
         external: true
-
+    reverse: false
+    imageSrc: /images/pexels-cristian-rojas-8230026.jpg
+    imageAlt: ''
+    imageWidth: 650
+    imageHeight: 488
   - _component: page-sections/good-earth/closing-quote
     quoteText: >-
       We give the food the time and care it needs to develop its very own
