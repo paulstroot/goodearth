@@ -1,4 +1,6 @@
 ---
+import Image from "@core-elements/image/Image.astro";
+
 const {
   eyebrow = "",
   headingItalic = "",
@@ -20,13 +22,13 @@ const {
   {...htmlAttributes}
 >
   <div class="st-hero-media">
-    <img
-      class="st-hero-img"
-      src={imageSrc}
+    <Image
+      source={imageSrc}
       alt={imageAlt}
-      width={imageWidth}
-      height={imageHeight}
-      fetchpriority="high"
+      rounded={false}
+      data-prop-src="imageSrc"
+      data-prop-alt="imageAlt"
+      priority={true}
     />
   </div>
   <div
