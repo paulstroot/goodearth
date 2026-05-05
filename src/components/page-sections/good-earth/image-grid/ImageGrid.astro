@@ -31,23 +31,27 @@ const col3 = images.slice(4, 6);
   <div class="st-img-grid-outer">
     <div class="st-img-grid">
       {
-        [col1, col2, col3].map((col) => (
+        [col1, col2, col3].map((col, colIdx) => (
           <div class="st-img-col">
-            {col.map((img: Image) => (
-              <div class="st-img-wrap st-scale">
-                <Image
-                  source={img.src}
-                  alt={img.alt ?? ""}
-                  rounded={false}
-                  data-prop-src="imageSrc"
-                  data-prop-alt="imageAlt"
-                  priority={false}
-                  width={img.width}
-                  height={img.height}
-                  class="st-img-slide"
-                />
-              </div>
-            ))}
+            {col.map((img: Image, imgIdx: number) => {
+              const imageIndex = colIdx * 2 + imgIdx;
+
+              return (
+                <div class="st-img-wrap st-scale">
+                  <Image
+                    source={img.src}
+                    alt={img.alt ?? ""}
+                    rounded={false}
+                    data-prop-src={`images.${imageIndex}.src`}
+                    data-prop-alt={`images.${imageIndex}.alt`}
+                    priority={false}
+                    width={img.width}
+                    height={img.height}
+                    class="st-img-slide"
+                  />
+                </div>
+              );
+            })}
           </div>
         ))
       }
