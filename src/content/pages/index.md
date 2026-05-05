@@ -9,9 +9,9 @@ pageSections:
     eyebrow: Good Earth Restaurant · Edina, Minnesota
     headingItalic: Natural,
     headingPlain: Unprocessed.
-    subtitle: ''
+    subtitle:
     imageSrc: /src/assets/images/pexels-mike-468229-1192034.jpg
-    imageAlt: ''
+    imageAlt: Fresh fruit, including oranges, avocados and chickpeas on a dark board.
     imageWidth: 1600
     imageHeight: 1067
   - _component: page-sections/good-earth/two-column-headline-text
@@ -30,27 +30,27 @@ pageSections:
   - _component: page-sections/good-earth/image-grid
     images:
       - src: /src/assets/images/pexels-annaelle-quionquion-2652658-15279908.jpg
-        alt: ''
+        alt: Fresh produce at the market.
         width: 1100
         height: 826
       - src: /src/assets/images/pexels-sam-lion-5709296.jpg
-        alt: ''
+        alt: A basket of fresh produce
         width: 1100
         height: 825
       - src: /src/assets/images/pexels-gustavo-fring-5622165.jpg
-        alt: ''
+        alt: Fresh vegetables ready for prep
         width: 1100
         height: 826
       - src: /src/assets/images/pexels-valeriya-16204678.jpg
-        alt: ''
+        alt: Fresh, organic dish
         width: 1100
         height: 1467
       - src: /src/assets/images/pexels-shootsaga-31610378.jpg
-        alt: ''
+        alt: Fresh cut strawberries in a bowl
         width: 1100
         height: 826
       - src: /src/assets/images/pexels-tamira-kanemagi-2159935915-36567404.jpg
-        alt: ''
+        alt: Fresh fruit on display at a farmer's market stall
         width: 1100
         height: 825
     quoteText: >-
@@ -59,7 +59,7 @@ pageSections:
     quoteName: Good Earth
     quoteDesc: Edina, Minnesota — since 1978
     quoteImageSrc: /src/assets/images/pexels-wolfart-32383596.jpg
-    quoteImageAlt: ''
+    quoteImageAlt: A diner eating roasted beet salad.
   - _component: page-sections/good-earth/menu-cards
     eyebrow: All Menus
     headingItalic: Something for
@@ -77,8 +77,8 @@ pageSections:
     buttonHref: /about
     quoteText: ''
     quoteAttribution: ''
-    imageSrc: /src/assets/images/pexels-mike-468229-1192034.jpg
-    imageAlt: ''
+    imageSrc: /src/assets/images/pexels-kampus-8629107.jpg
+    imageAlt: A chef preparing a fresh meal
     imageWidth: 1920
     imageHeight: 1280
   - _component: page-sections/good-earth/tradition-split
@@ -96,7 +96,9 @@ pageSections:
         external: true
     reverse: false
     imageSrc: /src/assets/images/pexels-cristian-rojas-8230026.jpg
-    imageAlt: ''
+    imageAlt: >-
+      Fresh made avocado toast, plated with homemade yogurt bowl and fresh
+      pineapple 
     imageWidth: 650
     imageHeight: 488
   - _component: page-sections/good-earth/closing-quote
@@ -106,7 +108,7 @@ pageSections:
     quoteName: Good Earth Kitchen
     quoteDesc: Edina, Minnesota
     imageSrc: /src/assets/images/pexels-antonette-reyes-1123173-2526987.jpg
-    imageAlt: ''
+    imageAlt: Brunch plate with a mango smoothie.
     imageWidth: 900
     imageHeight: 675
 ---
