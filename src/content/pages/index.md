@@ -29,7 +29,7 @@ pageSections:
     paddingBottom: false
   - _component: page-sections/good-earth/image-grid
     images:
-      - src: /images/pexels-annaelle-quionquion-2652658-15279908.jpg
+      - src: /public/images/pexels-annaelle-quionquion-2652658-15279908.jpg
         alt: ''
         width: 1100
         height: 826
