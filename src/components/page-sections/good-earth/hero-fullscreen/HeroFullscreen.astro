@@ -29,6 +29,7 @@ const {
       data-prop-src="imageSrc"
       data-prop-alt="imageAlt"
       priority={true}
+      class="st-hero-img"
     />
   </div>
   <div
@@ -99,9 +100,17 @@ const {
   .st-hero-img {
     width: 100%;
     height: 100%;
+    margin-top: 0 !important;
+    will-change: transform;
+  }
+  .st-hero-img .image-inner {
+    height: 100%;
+  }
+  .st-hero-img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center 55%;
-    will-change: transform;
   }
   .st-hero-veil {
     position: absolute;

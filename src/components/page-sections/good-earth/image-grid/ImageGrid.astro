@@ -128,13 +128,20 @@ const col3 = images.slice(4, 6);
     line-height: 0;
     min-height: 0;
   }
-  .st-img-wrap img {
-    display: block;
-    width: 100%;
-    height: calc(100% + 120px);
-    object-fit: cover;
-    margin-top: -60px;
-    will-change: transform;
+  .st-img-wrap div {
+    height: 100%;
+    picture {
+      display: block;
+      width: 100%;
+      height: calc(100% + 120px);
+      object-fit: cover;
+      margin-top: -60px;
+      will-change: transform;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   /* ─── Image + quote ─── */
