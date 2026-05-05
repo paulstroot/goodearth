@@ -10,5 +10,6 @@ if (!(window as any).inEditorMode) {
       }),
     { threshold: 0.11 }
   );
+
   document.querySelectorAll<HTMLElement>(sel).forEach((el) => io.observe(el));
 }
