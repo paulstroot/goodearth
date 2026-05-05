@@ -71,23 +71,4 @@ pageSections:
         href: /locations
         style: ghost
         external: false
-  - _component: page-sections/heroes/hero-split
-    eyebrow: Eyebrow text
-    heading: Heading text
-    subtext: Subtitle placeholder text that will be replaced with actual content.
-    imageSource: /src/assets/images/pexels-kampus-8629107-1.jpg
-    imageAlt: Hero image
-    imageAspectRatio: landscape
-    buttonSections:
-      - _component: building-blocks/core-elements/button
-        text: My Button
-        hideText: false
-        link: ''
-        iconName: ''
-        iconPosition: before
-        variant: primary
-        size: md
-    reverse: false
-    colorScheme: inherit
-    backgroundColor: base
 ---
