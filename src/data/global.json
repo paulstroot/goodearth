@@ -24,7 +24,7 @@
   "reservationUrl": "https://www.opentable.com/restref/client/?rid=27313&restref=27313",
   "exceptions": [
     {
-      "date": "12-25",
+      "date": "2026-12-25T00:00:00.000Z",
       "open": "",
       "close": "",
       "label": "Christmas"
@@ -36,7 +36,7 @@
       "label": "Special Hours"
     },
     {
-      "date": "11-26",
+      "date": "2026-11-26T00:00:00.000Z",
       "open": "",
       "close": "",
       "label": "Thanksgiving"
