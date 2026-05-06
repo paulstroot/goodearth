@@ -15,6 +15,7 @@ export interface Props {
 const props = Astro.props;
 const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
 const pageDescription = props.description || seoData.description;
+const pageKeywords = props.keywords?.join(", ") || seoData.keywords;
 const pageImage = props.image || seoData.logoSource;
 const {
   title = "Good Earth Restaurant",
@@ -85,6 +86,9 @@ const {
             rel: "canonical",
             href: props.canonical || Astro.url.href,
           },
+        ],
+        meta: [
+          ...(pageKeywords ? [{ name: "keywords", content: pageKeywords }] : []),
         ],
       }}
     />
