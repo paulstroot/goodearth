@@ -17,10 +17,6 @@ const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
 const pageDescription = props.description || seoData.description;
 const pageKeywords = props.keywords?.join(", ") || seoData.keywords;
 const pageImage = props.image || seoData.logoSource;
-const {
-  title = "Good Earth Restaurant",
-  description = "Natural, Unprocessed. Good Earth Restaurant in Edina, Minnesota. Serving seasonal, fresh food in harmony with nature since 1978.",
-} = Astro.props;
 ---
 
 <!doctype html>
@@ -51,6 +47,7 @@ const {
     {
       import.meta.env.DEV ? (
         <script
+          is:inline
           type="module"
           src="/@vite/client"
         />
@@ -89,6 +86,7 @@ const {
         ],
         meta: [
           ...(pageKeywords ? [{ name: "keywords", content: pageKeywords }] : []),
+          ...(seoData.blockCrawlers ? [{ name: "robots", content: "noindex, nofollow" }] : []),
         ],
       }}
     />
