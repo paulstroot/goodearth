@@ -53,9 +53,5 @@
       "open": "08:00",
       "close": "19:00"
     }
-  ],
-  "exceptions": [
-    { "date": "12-25", "label": "Christmas" },
-    { "date": "05-06", "open": "10:00", "close": "14:00", "label": "Special Hours" }
   ]
 }
