@@ -133,17 +133,17 @@ _structures:
             - key: date
         _inputs:
           date:
-            type: text
+            type: date
             comment: >-
               Date in MM-DD format (e.g. "12-25" for Dec 25). Matched every year
               by month and day — no need to update the year.
           open:
-            type: text
+            type: time
             comment: >-
               Opening time in 24-hour format (e.g. "11:00"). Leave blank to mark
               the entire day as closed.
           close:
-            type: text
+            type: time
             comment: >-
               Closing time in 24-hour format (e.g. "14:00"). Leave blank to mark
               the entire day as closed.
