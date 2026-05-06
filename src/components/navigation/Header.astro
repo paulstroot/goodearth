@@ -230,11 +230,15 @@ const currentPath = Astro.url.pathname;
       role="list"
     >
       {
-        navItems.map((item) => (
+        navItems.map((item, i) => (
           <li class="mobile-nav-item">
             {item.children ? (
               <>
-                <button class="mobile-nav-link mobile-nav-toggle">
+                <button
+                  class="mobile-nav-link mobile-nav-toggle"
+                  aria-expanded="false"
+                  aria-controls={`mobile-subnav-${i}`}
+                >
                   {item.label}
                   <svg
                     width="10"
@@ -252,6 +256,7 @@ const currentPath = Astro.url.pathname;
                   </svg>
                 </button>
                 <ul
+                  id={`mobile-subnav-${i}`}
                   class="mobile-subnav"
                   hidden
                 >
@@ -595,7 +600,10 @@ const currentPath = Astro.url.pathname;
   document.querySelectorAll(".mobile-nav-toggle").forEach((toggle) => {
     toggle.addEventListener("click", () => {
       const subnav = toggle.nextElementSibling as HTMLElement;
-      if (subnav) subnav.hidden = !subnav.hidden;
+      if (subnav) {
+        subnav.hidden = !subnav.hidden;
+        toggle.setAttribute("aria-expanded", String(!subnav.hidden));
+      }
     });
   });
 
