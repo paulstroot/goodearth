@@ -33,14 +33,7 @@ hours:
     automatically from these values using the restaurant's Central Time timezone.
   options:
     structures: _structures.hoursRows
-exceptions:
-  type: array
-  label: Hours Exceptions
-  comment: >-
-    Override regular hours on specific dates (e.g. holidays). Matched by month
-    and day every year. Leave open/close blank to mark the day as fully closed.
-  options:
-    structures: _structures.hoursExceptions
+
 buttons:
   type: array
   label: Action Buttons

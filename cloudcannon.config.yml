@@ -107,6 +107,51 @@ _inputs:
     comment: The main sections of the page.
   logoSource:
     type: image
+  exceptions:
+    type: array
+    label: Hours Exceptions
+    comment: >-
+      Override regular hours on specific dates (e.g. holidays). Matched by month
+      and day every year. Leave open/close blank to mark the day as fully closed.
+    options:
+      structures: _structures.hoursExceptions
+_structures:
+  hoursExceptions:
+    values:
+      - label: Hours Exception
+        icon: schedule
+        value:
+          date: "12-25"
+          open: ""
+          close: ""
+          label: Holiday
+        preview:
+          text:
+            - key: label
+            - Hours Exception
+          subtext:
+            - key: date
+        _inputs:
+          date:
+            type: text
+            comment: >-
+              Date in MM-DD format (e.g. "12-25" for Dec 25). Matched every year
+              by month and day — no need to update the year.
+          open:
+            type: text
+            comment: >-
+              Opening time in 24-hour format (e.g. "11:00"). Leave blank to mark
+              the entire day as closed.
+          close:
+            type: text
+            comment: >-
+              Closing time in 24-hour format (e.g. "14:00"). Leave blank to mark
+              the entire day as closed.
+          label:
+            type: text
+            comment: >-
+              Label shown in the badge when closed (e.g. "Christmas" → "CLOSED
+              FOR CHRISTMAS").
 _select_data:
   icons:
     - id: academic-cap
