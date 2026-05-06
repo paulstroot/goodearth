@@ -137,6 +137,7 @@ const {
 
 <script>
   (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const heroEl = document.querySelector(".ph-hero") as HTMLElement | null;
     const heroImg = heroEl?.querySelector(".ph-img") as HTMLElement | null;
     const heroContent = heroEl?.querySelector(".ph-content") as HTMLElement | null;

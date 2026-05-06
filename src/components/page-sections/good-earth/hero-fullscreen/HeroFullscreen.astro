@@ -226,6 +226,8 @@ const {
 <script>
   (function () {
     if ((window as any).inEditorMode) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduceMotion.matches) return;
 
     // Hero parallax
     const heroImg = document.querySelector<HTMLElement>(".st-hero-img");
