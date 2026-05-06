@@ -6,5 +6,5 @@
   "logoSource": "/images/logo.svg",
   "titleFormat": "{title} | Good Earth Restaurant",
   "twitterHandle": "",
-  "blockCrawlers": true
+  "hideFromSearchEngines": true
 }

@@ -86,7 +86,7 @@ const pageImage = props.image || seoData.logoSource;
         ],
         meta: [
           ...(pageKeywords ? [{ name: "keywords", content: pageKeywords }] : []),
-          ...(seoData.blockCrawlers ? [{ name: "robots", content: "noindex, nofollow" }] : []),
+          ...(seoData.hideFromSearchEngines ? [{ name: "robots", content: "noindex, nofollow" }] : []),
         ],
       }}
     />
