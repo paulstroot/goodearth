@@ -22,7 +22,20 @@
   "telephone": "(952) 925-1001",
   "phoneHref": "tel:9529251001",
   "reservationUrl": "https://www.opentable.com/restref/client/?rid=27313&restref=27313",
-  "exceptions": [{ "date": "12-25", "label": "Christmas" }],
+  "exceptions": [
+    {
+      "date": "2001-12-25T00:00:00.000Z",
+      "label": "Christmas"
+    },
+    {
+      "date": "2026-11-26T00:00:00.000Z",
+      "label": "Thanksgiving"
+    },
+    {
+      "date": "2026-05-05T10:00:00.000Z",
+      "label": "May sayso"
+    }
+  ],
   "hours": [
     {
       "label": "Monday – Saturday",
