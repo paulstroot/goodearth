@@ -71,7 +71,7 @@ export default defineConfig({
       },
     }),
     sitemap({
-      filter: (page) => !page.includes("/component-docs"),
+      filter: (page) => !page.includes("/component-docs") && !page.includes("/blog"),
     }),
     mdx(),
   ],
