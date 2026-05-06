@@ -10,9 +10,9 @@ interface HoursRow {
 }
 
 interface HoursException {
-  date: string;    // "MM-DD" — matched annually by month and day
-  open?: string;   // 24h "HH:MM" — omit for all-day closure
-  close?: string;  // 24h "HH:MM" — omit for all-day closure
+  date: string;    // ISO datetime string — matched annually by UTC month and day
+  open?: string;   // 12h "H:MM am/pm" — empty string for all-day closure
+  close?: string;  // 12h "H:MM am/pm" — empty string for all-day closure
   label: string;   // shown in badge, e.g. "Christmas" → "CLOSED FOR CHRISTMAS"
 }
 
@@ -348,8 +348,19 @@ function formatTime(t: string): string {
     }
 
     function toMinutes(t: string): number {
-      const [h, m] = t.split(":").map(Number);
-      return h * 60 + m;
+      const lower = t.toLowerCase().trim();
+      const isPm = lower.includes("pm");
+      const timePart = lower.replace(/\s*[ap]m/, "").trim();
+      const [h, m] = timePart.split(":").map(Number);
+      let hours = h;
+      if (isPm && h !== 12) hours += 12;
+      if (!isPm && h === 12) hours = 0; // 12:xx am → midnight
+      return hours * 60 + (m || 0);
+    }
+
+    function parseExceptionDate(dateStr: string): { month: number; day: number } {
+      const d = new Date(dateStr);
+      return { month: d.getUTCMonth() + 1, day: d.getUTCDate() };
     }
 
     function statusFromRange(
@@ -390,9 +401,9 @@ function formatTime(t: string): string {
       const currentDay = parseInt(get("day"), 10);
       const nowMin = parseInt(get("hour"), 10) * 60 + parseInt(get("minute"), 10);
 
-      // Check exceptions first (matched by month and day, annually)
+      // Check exceptions first (matched by UTC month and day, annually)
       const exc = exceptions.find((e) => {
-        const [em, ed] = e.date.split("-").map(Number);
+        const { month: em, day: ed } = parseExceptionDate(e.date);
         return em === currentMonth && ed === currentDay;
       });
 
