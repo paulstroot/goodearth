@@ -28,14 +28,16 @@
       "label": "Christmas"
     },
     {
-      "date": "2026-11-26T00:00:00.000Z",
-      "label": "Thanksgiving"
-    },
-    {
       "date": "05-06",
       "open": "10:00",
       "close": "14:00",
       "label": "Special Hours"
+    },
+    {
+      "date": "2026-11-26T00:00:00.000Z",
+      "open": "",
+      "close": "",
+      "label": "Thanksgiving"
     }
   ],
   "hours": [
