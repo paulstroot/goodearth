@@ -4,6 +4,7 @@
   "description": "Good Earth Restaurant in Edina, MN has been serving natural, unprocessed food since 1978. Fresh seasonal menus with responsible sourcing. Reserve a table today.",
   "keywords": "Good Earth Restaurant, natural food restaurant Edina, healthy restaurant Minnesota, seasonal menu, fresh food, organic restaurant, Galleria Edina, breakfast Edina, lunch Edina, dinner Edina, Parasole restaurants",
   "logoSource": "/images/logo.svg",
+  "ogImage": "/images/og-default.jpg",
   "titleFormat": "{title} | Good Earth Restaurant",
   "hideFromSearchEngines": true
 }
