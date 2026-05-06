@@ -52,6 +52,20 @@ function formatTime(t: string): string {
 
   return m === 0 ? `${h12}${suffix}` : `${h12}:${String(m).padStart(2, "0")}${suffix}`;
 }
+
+const todayUTC = new Date();
+
+todayUTC.setUTCHours(0, 0, 0, 0);
+
+const cutoffUTC = new Date(todayUTC.getTime() + 14 * 24 * 60 * 60 * 1000);
+
+const upcomingExceptions = (exceptions as HoursException[]).filter((exc) => {
+  const d = new Date(exc.date);
+
+  d.setUTCHours(0, 0, 0, 0);
+
+  return d >= todayUTC && d <= cutoffUTC;
+});
 ---
 
 <section
@@ -156,6 +170,28 @@ function formatTime(t: string): string {
                       <td>
                         <strong>
                           {formatTime(row.open)} – {formatTime(row.close)}
+                        </strong>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )
+        }
+
+        {
+          upcomingExceptions.length > 0 && (
+            <div class="st-loc-detail-block st-up-dl">
+              <h3 class="st-loc-detail-label">Holiday & Special Hours</h3>
+              <table class="st-loc-hours">
+                <tbody>
+                  {upcomingExceptions.map((exc) => (
+                    <tr class="st-loc-hours--exception">
+                      <td>Closed {exc.label}</td>
+                      <td>
+                        <strong>
+                          {exc.open && exc.close ? `${exc.open} – ${exc.close}` : "All day"}
                         </strong>
                       </td>
                     </tr>
@@ -307,6 +343,12 @@ function formatTime(t: string): string {
   .st-loc-hours td:last-child {
     text-align: right;
     color: var(--text);
+  }
+  .st-loc-hours--exception td {
+    color: #a03020;
+  }
+  .st-loc-hours--exception td:last-child {
+    color: #a03020;
   }
   .st-loc-actions {
     display: flex;
