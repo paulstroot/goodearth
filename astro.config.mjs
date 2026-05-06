@@ -71,14 +71,7 @@ export default defineConfig({
       },
     }),
     sitemap({
-      filter: (page) => {
-        // Always exclude component library from sitemap if disabled
-        if (process.env.DISABLE_COMPONENT_LIBRARY === "true") {
-          return !page.includes("/component-docs");
-        }
-        // If not disabled, still exclude from sitemap (existing behavior)
-        return !page.includes("/component-docs");
-      },
+      filter: (page) => !page.includes("/component-docs"),
     }),
     mdx(),
   ],
