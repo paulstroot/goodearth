@@ -1,0 +1,42 @@
+{
+  "socials": [
+    {
+      "platform": "facebook",
+      "href": "https://www.facebook.com/goodearthmn",
+      "label": "Good Earth on Facebook"
+    },
+    {
+      "platform": "instagram",
+      "href": "https://www.instagram.com/good_earth_edina/",
+      "label": "Good Earth Edina on Instagram"
+    }
+  ],
+  "addressHeader": "In the Galleria",
+  "address": {
+    "streetAddress": "3460 Galleria",
+    "addressLocality": "Edina",
+    "addressRegion": "MN",
+    "postalCode": "55435",
+    "addressCountry": "US"
+  },
+  "telephone": "(952) 925-1001",
+  "phoneHref": "tel:9529251001",
+  "reservationUrl": "https://www.opentable.com/restref/client/?rid=27313&restref=27313",
+  "exceptions": [{ "date": "12-25", "label": "Christmas" }],
+  "hours": [
+    {
+      "label": "Monday – Saturday",
+      "dayStart": 1,
+      "dayEnd": 6,
+      "open": "08:00",
+      "close": "20:00"
+    },
+    {
+      "label": "Sunday",
+      "dayStart": 0,
+      "dayEnd": 0,
+      "open": "08:00",
+      "close": "19:00"
+    }
+  ]
+}

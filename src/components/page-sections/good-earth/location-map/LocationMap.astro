@@ -1,4 +1,6 @@
 ---
+import globalData from "@data/global.json";
+
 interface HoursRow {
   label: string;
   dayStart: number; // 0=Sun, 1=Mon, …, 6=Sat
@@ -21,18 +23,20 @@ interface Button {
   external?: boolean;
 }
 
+const defaultAddress = `${globalData.address.streetAddress}\n${globalData.address.addressLocality}, ${globalData.address.addressRegion} ${globalData.address.postalCode}`;
+
 const {
   eyebrow = "",
   headingItalic = "",
   headingPlain = "",
-  address = "",
-  phone = "",
-  phoneHref = "",
+  address = defaultAddress,
+  phone = globalData.telephone,
+  phoneHref = globalData.phoneHref,
   mapEmbedUrl = "",
   directionsUrl = "",
   directionsLabel = "Get Directions",
-  hours = [] as HoursRow[],
-  exceptions = [] as HoursException[],
+  hours = globalData.hours as HoursRow[],
+  exceptions = globalData.exceptions as HoursException[],
   buttons = [] as Button[],
   _component,
   useDefaultEditableBinding: _ueb,

@@ -1,6 +1,7 @@
 ---
 // src/components/navigation/Footer.astro
 import footerJson from "@data/footer.json";
+import globalJson from "@data/global.json";
 import menusJson from "@data/menus.json";
 
 const socialIcons: Record<string, string> = {
@@ -20,7 +21,15 @@ const navColumns = footerJson.navColumns.map((col) => ({
   links: col.links.flatMap((link) => (link.name === "[MENUS]" ? menuLinks : [link])),
 }));
 
-const { brand, socials, visit, copyrightName, copyrightLink } = footerJson;
+const { brand, visit, copyrightName, copyrightLink } = footerJson;
+const { socials, addressHeader, address, telephone, phoneHref, reservationUrl, hours } = globalJson;
+
+function fmtTime(t: string): string {
+  const [h, m] = t.split(":").map(Number);
+  const suffix = h >= 12 ? "pm" : "am";
+  const h12 = h % 12 || 12;
+  return m === 0 ? `${h12}${suffix}` : `${h12}:${String(m).padStart(2, "0")}${suffix}`;
+}
 ---
 
 <footer class="site-footer">
@@ -95,29 +104,24 @@ const { brand, socials, visit, copyrightName, copyrightLink } = footerJson;
         <h3>{visit.heading}</h3>
         <address>
           <p>
-            {
-              visit.addressLines.map((line, i) => (
-                <>
-                  {i > 0 && <br />}
-                  {line}
-                </>
-              ))
-            }
+            {addressHeader}<br />
+            {address.streetAddress}<br />
+            {address.addressLocality}, {address.addressRegion} {address.postalCode}
           </p>
-          <p><a href={visit.phoneHref}>{visit.phone}</a></p>
+          <p><a href={phoneHref}>{telephone}</a></p>
           <p class="footer-hours">
             {
-              visit.hoursLines.map((line, i) => (
+              hours.map((row, i) => (
                 <>
                   {i > 0 && <br />}
-                  {line}
+                  {row.label}: {fmtTime(row.open)} – {fmtTime(row.close)}
                 </>
               ))
             }
           </p>
         </address>
         <a
-          href={visit.reserveHref}
+          href={reservationUrl}
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn--outline footer-reserve-btn"

@@ -18,28 +18,11 @@ pageSections:
     eyebrow: The Galleria · Edina
     headingItalic: Edina,
     headingPlain: Minnesota.
-    address: |-
-      3460 Galleria
-      Edina, MN 55435
-    phone: (952) 925-1001
-    phoneHref: tel:9529251001
     mapEmbedUrl: >-
       https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.0!2d-93.33!3d44.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f621e1b3e5a5c5%3A0x8bdf8e9c4c4e4e4e!2sGood+Earth+Restaurant!5e0!3m2!1sen!2sus!4v1
     directionsUrl: >-
       https://maps.google.com/maps?q=Good+Earth+Restaurant,+Galleria,+Edina,+MN+55435
     directionsLabel: Get Directions
-    hours:
-      - label: Monday – Saturday
-        dayStart: '1'
-        dayEnd: '6'
-        open: '08:00'
-        close: '20:00'
-      - label: Sunday
-        dayStart: '0'
-        dayEnd: '0'
-        open: '08:00'
-        close: '19:00'
-    exceptions: []
     buttons:
       - text: Reserve a Table
         href: https://www.opentable.com/restref/client/?rid=27313&restref=27313

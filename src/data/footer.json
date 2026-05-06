@@ -5,18 +5,6 @@
     "tagline": "Natural, Unprocessed",
     "description": "Cooking in harmony with the seasons since 1978. Committed to freshness, purity, and responsible sourcing."
   },
-  "socials": [
-    {
-      "platform": "facebook",
-      "href": "https://www.facebook.com/goodearthmn",
-      "label": "Good Earth on Facebook"
-    },
-    {
-      "platform": "instagram",
-      "href": "https://www.instagram.com/good_earth_edina/",
-      "label": "Good Earth Edina on Instagram"
-    }
-  ],
   "navColumns": [
     {
       "heading": "Explore",
@@ -34,12 +22,7 @@
   ],
   "visit": {
     "heading": "Visit Us",
-    "addressLines": ["In the Galleria", "3460 Galleria", "Edina, MN 55435"],
-    "phone": "(952) 925-1001",
-    "phoneHref": "tel:9529251001",
-    "hoursLines": ["Mon – Sat: 8am – 8pm", "Sun: 8am – 7pm"],
-    "reserveText": "Reserve a Table",
-    "reserveHref": "https://www.opentable.com/restref/client/?rid=27313&restref=27313"
+    "reserveText": "Reserve a Table"
   },
   "copyrightName": "Good Earth Restaurant",
   "copyrightLink": {
