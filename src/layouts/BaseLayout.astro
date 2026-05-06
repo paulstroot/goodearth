@@ -17,6 +17,9 @@ const formattedTitle = seoData.titleFormat.replace("{title}", props.title);
 const pageDescription = props.description || seoData.description;
 const pageKeywords = props.keywords?.join(", ") || seoData.keywords;
 const pageImage = props.image || seoData.ogImage;
+const pageImageAbsolute = pageImage.startsWith("http")
+  ? pageImage
+  : `${seoData.url}${pageImage}`;
 ---
 
 <!doctype html>
@@ -71,11 +74,17 @@ const pageImage = props.image || seoData.ogImage;
         basic: {
           title: formattedTitle,
           type: "website",
-          image: pageImage,
+          image: pageImageAbsolute,
         },
         optional: {
           description: pageDescription,
         },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: formattedTitle,
+        description: pageDescription,
+        image: pageImageAbsolute,
       }}
       extend={{
         link: [
