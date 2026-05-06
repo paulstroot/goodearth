@@ -30,9 +30,9 @@
       "label": "Christmas"
     },
     {
-      "date": "05-06",
-      "open": "10:00",
-      "close": "14:00",
+      "date": "2026-05-06T00:00:00.000Z",
+      "open": "10:00 am",
+      "close": "3:00 pm",
       "label": "Special Hours"
     },
     {
